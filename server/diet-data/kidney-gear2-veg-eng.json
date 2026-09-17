@@ -1,0 +1,394 @@
+{
+  "meta": {
+    "condition": "KIDNEY",
+    "gear": 2,
+    "dietType": "VEG",
+    "language": "ENG",
+    "title": "Gear 2 Diet Chart",
+    "recipesReviewed": false
+  },
+  "mealPlans": [
+    {
+      "title": "Weight loss",
+      "columns": [
+        "Day",
+        "Breakfast",
+        "Herbal tea (optional)"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Green Vegetable Salad + Boiled Black Chickpeas +Nuts & seeds",
+            "Lemon tea"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "Red Rice Puttu + veg kurma/ Chutney+Nuts & seeds",
+            "-"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "cells": [
+            "Green Vegetable Salad + Boiled White Chickpeas +Nuts & seeds",
+            "Ginger Tea"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Moong Dal & Vegetable Idli + sambhar/ Chutney+Nuts & seeds",
+            "-"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Boiled Beans Salad + Sprouted Fenugreek Seeds +Nuts & seeds",
+            "Lemon tea"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Millet Vegetable Khichdi + Nuts & seeds",
+            "-"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Vegetable Salad Bowl+Nuts & seeds",
+            "Ginger tea"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Weight gain",
+      "columns": [
+        "Day",
+        "Breakfast",
+        "Herbal tea (optional)"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Red Rice Puttu + veg kurma/ Chutney+Nuts & seeds",
+            "Lemon tea"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "Green Vegetable Salad + Boiled White Chickpeas+Nuts & seeds",
+            "-"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "cells": [
+            "Moong Dal & Vegetable Idli + sambhar/ Chutney+Nuts & seeds",
+            "Ginger Tea"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Boiled Beans Salad + Sprouted Fenugreek Seeds +Nuts & seeds",
+            "-"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Millet Vegetable Khichdi +Nuts & seeds",
+            "Lemon tea"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Vegetable Salad Bowl+Nuts & seeds",
+            "-"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Millet Pongal + Sambar/Chutney +Nuts & seeds",
+            "Ginger tea"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Leaching Method: Wash the vegetables thoroughly and peel off the skin. Cut the vegetables into small pieces. Soak them in a large amount of water for 2–4 hours. Completely drain and discard the soaking water. Rinse the vegetables again with fresh water. Cook the vegetables in plenty of fresh water. After cooking, drain and discard the cooking water. If needed, prepare the final dish using fresh water."
+  ],
+  "scheduleImage": "/api/diet-image/c0bf70dde0a47ae9.png",
+  "recipeGroups": [
+    {
+      "heading": "Recipes",
+      "recipes": [
+        {
+          "name": "Green vegetable salad",
+          "ingredients": [
+            "Onion",
+            "Tomato",
+            "Cucumber",
+            "Salt",
+            "Pepper powder"
+          ],
+          "steps": [
+            "1. Thinly slice the cucumbers, tomatoes and red onion.",
+            "2. In a large mixing bowl, combine the sliced ​​cucumbers, tomatoes and red onion.",
+            "3. Add salt and pepper to taste.",
+            "4. Finally, add any salad dressing to taste (see recipe notes)"
+          ],
+          "image": "/api/diet-image/474c0bcb3d065a9f.png",
+          "recipe_id": "f811d558d1fdc3e4"
+        },
+        {
+          "name": "Boiled cauliflower + sprouted green beans",
+          "ingredients": [
+            "• Boiled cauliflower",
+            "• Green onion",
+            "• Sprouted green beans",
+            "• Pepper powder",
+            "• Salt"
+          ],
+          "steps": [
+            "1. Boil the cauliflower and add salt to it.",
+            "2. Sprout the greens (see recipe notes below)",
+            "3. Chop the red onion",
+            "4.1 Take a mixing bowl and add the boiled cauliflower, red onion and sprouted green cloves.",
+            "5. Add salt and pepper to taste & toss gently once all the ingredients are combined."
+          ],
+          "image": "/api/diet-image/46c939761e218bb8.png",
+          "recipe_id": "f10039204a096626"
+        },
+        {
+          "name": "Green vegetable salad + steamed white channa",
+          "ingredients": [
+            "• Radish",
+            "• Carrot",
+            "• Cabbage",
+            "• Boiled white beans",
+            "• Salt",
+            "• Pepper powder"
+          ],
+          "steps": [
+            "• Thinly slice the radish, carrot and cabbage.",
+            "• In a large mixing bowl, combine the sliced ​​radish, carrot and cabbage.",
+            "• Add the boiled white beans to this mixture",
+            "• Add salt and pepper to your liking.",
+            "• Finally add any salad dressing to taste (see recipe notes)"
+          ],
+          "image": "/api/diet-image/1a607e8aa15e5ae9.png",
+          "recipe_id": "8c256f9e7929060d"
+        },
+        {
+          "name": "Boiled beans and salad + sprouted fenugreek seeds",
+          "ingredients": [
+            "• Boiled beans",
+            "• Green onions",
+            "• Sprouted fenugreek",
+            "• Tomatoes",
+            "• Pepper powder",
+            "• Salt"
+          ],
+          "steps": [
+            "1. Boil the beans and broccoli and add salt to it.",
+            "2. Sprout the fenugreek (see recipe notes below).",
+            "3. Chop the red onion and tomato Take a mixing bowl and add the boiled peas, red onion, tomato and sprouted fenugreek.",
+            "5. Add salt and pepper to taste."
+          ],
+          "image": "/api/diet-image/006a0843932958ae.png",
+          "recipe_id": "1b3aaab97a472b06"
+        },
+        {
+          "name": "Sprout types",
+          "ingredients": [
+            "1. Whole green gram",
+            "2. Fenugreek seeds"
+          ],
+          "steps": [
+            "• Rinse the lentils thoroughly under running water.",
+            "• Add enough water to cover the lentils by a few inches. Soak the lentils overnight or for 8-12 hours.",
+            "• After soaking, drain the water from the bowl using a fine mesh sieve or by carefully placing the container over a sink. The lentils should be kept inside the bowl.",
+            "• Spread a cotton cloth on a clean surface, such as a countertop or table.• Transfer the washed lentils to the center of the cloth and spread them evenly.",
+            "• Fold the cloth over to completely cover the lentils.",
+            "• Secure the cloth in place by tying it with a rubber band or string. Make sure it is secure but not too tight, as lentils need air circulation to germinate.",
+            "• Store the packaged lentils in a warm, well-ventilated place, out of direct sunlight. A kitchen counter or cupboard works well.",
+            "• In 24 hours - 48 hours. The lentils will sprout and be ready to eat.",
+            "Nuts:",
+            "Soaked Almonds - 5 (or) Walnuts - 1",
+            "(Nuts and seed powder can be taken with salads)",
+            "Seed powder recipe",
+            "Take 25 grams of each - (save and use)",
+            "Chia seeds,",
+            "Flax seeds",
+            "Pumpkin seeds",
+            "Sunflower seeds .",
+            "Roast all the seeds in a pan without oil on low flame for 2-3 minutes. Then grind them in a mixer.",
+            "Store the seed powder in an airtight glass jar and use it for 7 days. Prepare it and use it every 7 days."
+          ],
+          "image": "/api/diet-image/627ce48d8e7d97d0.png",
+          "recipe_id": "c9f7f50942406598"
+        },
+        {
+          "name": "Chow Chow Chutney (Salad Dressing)",
+          "ingredients": [
+            "1 cup chow chow (chayote) – peeled and chopped",
+            "2 garlic cloves",
+            "1–2 green chilies (optional)",
+            "1 tbsp lemon juice",
+            "½ tsp roasted cumin powder",
+            "Salt – to taste",
+            "2–3 tbsp water"
+          ],
+          "steps": [
+            "Steam or boil the chopped chow chow for 5–7 minutes until soft. Let it cool.",
+            "Add the cooked chow chow, garlic, green chili, lemon juice, cumin powder, salt, and water to a blender.",
+            "Blend until smooth and creamy.",
+            "Use 2–3 tablespoons as a dressing for salads.",
+            "Making a bowl of vegetable salad",
+            "To make a vegetable salad bowl, take a mixing bowl",
+            "Add the cooked lentils as much as you want.",
+            "Add the vegetables as much as you want.",
+            "Add 5 soaked almonds or 1 walnut.",
+            "Add 1 tablespoon (15 grams) of seed powder",
+            "Add mint chutney to the dressing.",
+            "Add 2 - 3 tablespoons of sprouted lentils.",
+            "Add some salt and lemon juice to your taste",
+            "Mix everything and stir well.",
+            "The vegetable salad bowl is ready to eat.",
+            "Salad Rules",
+            "Daily intake of pulses should be 50 - 100 grams (cooked).",
+            "If you experience bloating problems, add more vegetables to your bowl.",
+            "Avoid adding beetroot, potatoes and tubers to your vegetable bowl.",
+            "Add a variety of vegetables to your bowl."
+          ],
+          "image": "/api/diet-image/8c6c125d6ee26e3c.png",
+          "recipe_id": "334af0d2feb60eef"
+        },
+        {
+          "name": "Red rice puttu",
+          "ingredients": [
+            "1 cup red rice flour",
+            "1/4 teaspoon salt",
+            "1/3 cup grated coconut",
+            "1/4 cup water",
+            "Red Rice Puttu Recipe:",
+            "Take red rice flour in a wide bowl, add salt and mix.",
+            "Sprinkle hot water little by little into the red rice flour and mix well.",
+            "Use your hand to sprinkle water and mix.",
+            "Don't add too much water, sprinkle little by little and mix all the flour together and moisten it. Make it like a crumbly mixture.",
+            "Once you are done mixing, take a damp clean towel or any cotton cloth, put the rice powder in the cloth and gently tie or cover it lightly.",
+            "Place this cloth on an idli plate and steam it in an idli pot or any available vessel for 15 minutes.",
+            "After steaming, gently open the cloth and place the cooked red rice pudding in a bowl.",
+            "Mix the grated coconut well using a spatula or spoon.",
+            "Now the pudding is ready to serve."
+          ],
+          "image": "/api/diet-image/59543751a674c95e.png",
+          "recipe_id": "acd789e1dfe21fe1"
+        },
+        {
+          "name": "Green gram Vegetable Idli",
+          "ingredients": [
+            "1 cup yellow gram flour (split)",
+            "1/4 cup white gram flour (split)",
+            "1/4 tsp (fenugreek seeds)",
+            "1/2 cup carrot, grated",
+            "1/4 cup green bell pepper (capsicum), chopped",
+            "1/4 cup fenugreek leaves, chopped",
+            "1/2 inch ginger, peeled and chopped",
+            "4 green chilies",
+            "Salt, to taste",
+            "Green Gram and Vegetable Idli Recipe ;",
+            "To prepare Green Gram and Vegetable Idli, first wash the lentils and soak them in 4 cups of water for 2 hours.",
+            "Wash the urad dal and fenugreek seeds and soak them in enough water or 2 hours.",
+            "After 2 hours, grind them separately in a mixie grinder by adding a little water.",
+            "After grinding, add the lentils to a large mixing bowl and using a spoon, mix both the lentils and urad dal mixture together. Cover and let it ferment overnight or for 6 hours.",
+            "After 6 hours, add the grated carrots, chopped chillies and fenugreek leaves and mix well. Keep in mind that the mixture should be thick like idli batter and add water if required.",
+            "Grind ginger and green chillies with 2 tablespoons of water to a thick paste.",
+            "Mix this paste into the prepared idli batter. Add salt and mix well.",
+            "Green algae and vegetable idli batter is ready. Now let's make healthy idlis.",
+            "Grease the idli molds and pour a little of the prepared batter into them.",
+            "Steam the idli in the idli steamer and let it steam for 20 minutes.",
+            "After 20 minutes, turn off the heat and keep them in the steamer for another 5 minutes.",
+            "After some time, open the idli steamer, take out the idli and serve them hot.",
+            "Serve green moong dal and vegetable idli with tomato onion chutney and spinach sambar for a healthy breakfast."
+          ],
+          "image": "/api/diet-image/f83028ccd201790e.png",
+          "recipe_id": "617de30a30d14bcf"
+        }
+      ]
+    },
+    {
+      "heading": "Herbal Tea",
+      "recipes": [
+        {
+          "name": "Option 1: Lemon Tea",
+          "ingredients": [
+            "- 1 cup water",
+            "- 1 tablespoon fresh black tea leaves or 1 tea bag",
+            "-1 tablespoon fresh lemon juice (adjust to taste)",
+            "- Lemon slices for garnish (optional)",
+            "- Mint leaves for garnish (optional)",
+            "Directions:",
+            "1. In a small saucepan, bring a cup of water to a boil.",
+            "2. Add black tea leaves or tea bag to boiling water and steep over medium heat for 2-3 minutes (or according to package directions). Steep longer if you prefer a stronger tea.",
+            "3. While the tea is steeping, cut a fresh lemon in half and squeeze in a tablespoon of lemon juice. Adjust the amount to your taste preferences.",
+            "4. After steeping, remove the tea leaves or tea bag from the water and discard them.",
+            "5. Turn off the gas. Add fresh lemon juice to the brewed tea.",
+            "6. Pour the lemon tea into your favorite tea cup.",
+            "7. Optionally, you can garnish the tea with lemon slices and mint leaves.",
+            "8. Enjoy your hot and refreshing lemon tea!"
+          ],
+          "image": "/api/diet-image/5736903851bc1d27.png",
+          "recipe_id": "8f5d543cc0b20798"
+        },
+        {
+          "name": "Option 2: Ginger tea",
+          "ingredients": [
+            "Fresh ginger or",
+            "Water",
+            "Optional: Cinnamon for extra flavor (optional)",
+            "Directions:",
+            "Boil water in a pot.",
+            "Wash the ginger and ginger well.",
+            "Add the ginger to the boiling water.",
+            "Optionally, add cinnamon for extra flavor.",
+            "Simmer the mixture for 5-10 minutes to allow the flavors to infuse.",
+            "Strain and serve",
+            "(Herbal tea should be taken in the evening)",
+            "If you experience any dizziness or fatigue during meal times,",
+            "please let us know the situation. We will adjust your meal plan accordingly.",
+            "“Take care of your body. It’s the only place you have to live.” – Jim Rohn",
+            "As a nutritionist and as part of my health school, I provide dietary and lifestyle recommendations to help improve your health, especially for individuals with specific medical conditions.However, it is important to understand that these dietary recommendations are not intended to replace or substitute your prescribed medications or medical treatments.My recommendations are meant to complement your current medical care and to support your overall health and well-being.",
+            "I strongly advise against stopping any prescribed medications or medical treatments without consulting your primary healthcare practitioner.If you are considering making any changes to your medical treatment plan, always seek guidance from a qualified healthcare professional."
+          ],
+          "image": "/api/diet-image/cd0456f744df3759.png",
+          "recipe_id": "9d9537418b04edef"
+        }
+      ]
+    },
+    {
+      "heading": "Salad Law",
+      "image": "/api/diet-image/cabd21ea82e296d2.gif",
+      "freeText": [
+        "Salad Rules",
+        "Daily intake of pulses should be 50 - 100 grams (cooked).",
+        "If you experience bloating problems, add more vegetables to your bowl.",
+        "Avoid adding beetroot, potatoes and tubers to your vegetable bowl.",
+        "Add a variety of vegetables to your bowl."
+      ]
+    }
+  ]
+}

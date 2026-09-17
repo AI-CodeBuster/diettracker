@@ -1,0 +1,6 @@
+server/content
+server/data
+client/node_modules
+server/node_modules
+server/diet-images-staging
+server/diet-data/images

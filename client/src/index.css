@@ -1,0 +1,75 @@
+:root {
+  --bg: #f5f4fb;
+  --surface: #ffffff;
+  --surface-alt: #f7f6fd;
+  --border: #e4e1f5;
+  --text: #1e1b31;
+  --text-muted: #625f78;
+  --accent: #5b21b6;
+  --accent-bg: rgba(91, 33, 182, 0.1);
+  --accent-strong: #4c1d95;
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #423f57;
+  --sidebar-hover-bg: #f2effc;
+  --condition-bg: rgba(180, 83, 9, 0.12);
+  --condition-strong: #b45309;
+  --danger: #b91c1c;
+  --danger-bg: rgba(185, 28, 28, 0.08);
+  --warn: #b45309;
+  --warn-bg: rgba(217, 119, 6, 0.14);
+  --success: #15803d;
+  --success-bg: rgba(21, 128, 61, 0.1);
+  /* Solid "highlighter marker" colors for flagged/replaced words inside the
+     rendered diet chart — distinct from --warn/--danger/--success above,
+     which stay reserved for badges, banners, and borders elsewhere in the
+     UI. The chart text itself is styled by the source .docx (usually plain
+     black), so these need to be bright/opaque enough to read clearly under
+     it regardless of the app's own light/dark theme. */
+  --flag-highlight-bg: #fde047;
+  --flag-highlight-border: #ca8a04;
+  --replaced-highlight-bg: #86efac;
+  --replaced-highlight-border: #16a34a;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.08);
+  --shadow-lg: 0 10px 30px rgba(16, 24, 40, 0.18);
+  --radius: 10px;
+
+  font: 16px/1.5 system-ui, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17151f;
+    --surface: #201d2c;
+    --surface-alt: #262233;
+    --border: #342f47;
+    --text: #f2f0f9;
+    --text-muted: #b7b2cc;
+    --accent: #a78bfa;
+    --accent-bg: rgba(167, 139, 250, 0.14);
+    --accent-strong: #c4b5fd;
+    --sidebar-bg: #1c1927;
+    --sidebar-text: #cdc8e0;
+    --sidebar-hover-bg: #29253a;
+    --condition-bg: rgba(251, 146, 60, 0.15);
+    --condition-strong: #fb923c;
+    --danger: #f87171;
+    --danger-bg: rgba(248, 113, 113, 0.12);
+    --warn: #fbbf24;
+    --warn-bg: rgba(251, 191, 36, 0.16);
+    --success: #4ade80;
+    --success-bg: rgba(74, 222, 128, 0.14);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1, h2, h3 { margin: 0; }
+button { font: inherit; }
+input { font: inherit; }
+table { border-collapse: collapse; }

@@ -1,0 +1,11 @@
+{
+  "installCommand": "cd client && npm install && cd ../server && npm install",
+  "buildCommand": "cd client && npm run build",
+  "outputDirectory": "client/dist",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index" }
+  ],
+  "functions": {
+    "api/index.js": { "maxDuration": 30 }
+  }
+}

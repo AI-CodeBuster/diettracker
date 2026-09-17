@@ -1,0 +1,713 @@
+{
+  "meta": {
+    "condition": "KIDNEY",
+    "comorbid": "GASTRIC",
+    "gear": 4,
+    "dietType": "EGG",
+    "language": "ENG",
+    "title": "Gear 4 Diet Chart",
+    "tagline": "\"Don't focus on how much you eat. Focus on what you eat.\"",
+    "recipesReviewed": false
+  },
+  "mealPlans": [
+    {
+      "title": "Weekly chart",
+      "columns": [
+        "Days",
+        "Kashayam (Compulsory) Timing : 7 - 8 am",
+        "Herbal tea/Snacks (Optional) Timing : 4pm"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Banana stem Kashayam",
+            "Masala Pori"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "Turmeric tea",
+            "Ginger Tea"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "cells": [
+            "Fenugreek Seeds Kashayam",
+            "Makhana Chat"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Banana stem Kashaya",
+            "Basil leaves Tea"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Fenugreek Seeds Kashayam",
+            "Masala Pori"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Turmeric tea",
+            "Jeera Tea"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Fenugreek Seeds Kashayam",
+            "Masala Pori"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Weekly chart - weight loss (Non - Vegetarian)",
+      "columns": [
+        "Days",
+        "Dinner"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Kanchi recipe with thuvaiyal +veg salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "Millet idli with sambhar + egg soup"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "cells": [
+            "Kanchi recipe with thuvaiyal+veg salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Mixed millet Dosa with egg gravy + soup"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Kanchi recipe with thuvaiyal +veg salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Millet chapathi with veg kurma (without coconut) + soup"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Kanchi recipe with thuvaiyal +veg salad/veg poriyal"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Weekly chart for weight gain (Non - veg)",
+      "columns": [
+        "Days",
+        "Dinner"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Millet idli with sambhar + egg soup"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "Kanchi recipe with thuvaiyal +veg salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "cells": [
+            "Millet chapathi with veg kurma (without coconut) + soup"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Kanchi recipe with thuvaiyal +veg salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Mixed millet idli with dhal kulambu + soup"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Kanchi recipe with thuvaiyal +veg salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Millet dosa with egg gravy + soup"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Leaching Method: Wash the vegetables thoroughly and peel off the skin. Cut the vegetables into small pieces. Soak them in a large amount of water for 2–4 hours. Completely drain and discard the soaking water. Rinse the vegetables again with fresh water. Cook the vegetables in plenty of fresh water. After cooking, drain and discard the cooking water. If needed, prepare the final dish using fresh water.",
+    "Important Note: If any dizziness or fatigue during the interval of meal time.Kindly let us know about the condition.According to that we will change your meal plan."
+  ],
+  "recipeGroups": [
+    {
+      "heading": "Kashayas",
+      "recipes": [
+        {
+          "name": "Option 1 : Fenugreek Seeds Kashayam",
+          "steps": [
+            "Take ½ teaspoon of Fenugreek Seeds",
+            "and wash well.",
+            "Then take 200 ml of water and let it boil.",
+            "Add the washed Fenugreek Seeds in the boiling water and wait for 5 minutes.",
+            "Then filter and have it empty stomach"
+          ],
+          "recipe_id": "890ebb30f1ed6d23"
+        },
+        {
+          "name": "Option 2 : Turmeric tea",
+          "steps": [
+            "Boil 200 ml of water then add ¼ tsp of turmeric, a pinch of cinnamon powder let it boil for 3-4 minutes.",
+            "Then filter and have it in an empty stomach."
+          ],
+          "image": "/api/diet-image/befd9efa74f1d6bb.png",
+          "recipe_id": "e6d03ae1b2d43f9e"
+        },
+        {
+          "name": "Option 3 : Banana stem Kashayam",
+          "steps": [
+            "Take ½ fistful of diced Banana stem and wash well.",
+            "Then take 200 ml of water and let it boil.",
+            "Add the washed Banana stem in the boiling water and wait for 5 minutes.",
+            "Then filter and have it empty stomach"
+          ],
+          "image": "/api/diet-image/8221b38908281da5.png",
+          "recipe_id": "d6166f100ac6575a"
+        }
+      ]
+    },
+    {
+      "heading": "Snacks",
+      "recipes": [
+        {
+          "name": "Option 1 -Masala Pori",
+          "ingredients": [
+            "Pori (Puffed rice)",
+            "Onion",
+            "Tomato",
+            "Coriander",
+            "Roasted channa",
+            "Grated carrot",
+            "Chilli powder"
+          ],
+          "steps": [
+            "Take a bowl and add chopped onion, tomato, coriander leaves, grated carrot and some chilli powder and mix well.",
+            "Then add roasted chana, pori and mix well",
+            "Now it is ready to serve."
+          ],
+          "image": "/api/diet-image/3e8e76302ff85dd2.png",
+          "recipe_id": "c722b04c2f80b0eb"
+        },
+        {
+          "name": "Option 2- Makhana Chat",
+          "ingredients": [
+            "Makhana (lotus seed)- 20 gms",
+            "Onion",
+            "Tomato",
+            "Cucumber",
+            "Roasted gram"
+          ],
+          "steps": [
+            "Dry roast makhana in pan",
+            "Then transfer it to a bowl, now add chopped onion, tomato, cucumber, roasted gram to it.",
+            "Mix well and serve"
+          ],
+          "image": "/api/diet-image/068d62cbc92aeccf.png",
+          "recipe_id": "8b01107435b3426a"
+        }
+      ]
+    },
+    {
+      "heading": "Herbal Tea",
+      "recipes": [
+        {
+          "name": "Option 1 : Ginger Tea",
+          "ingredients": [
+            "- 1 cup water",
+            "- 1 teaspoon loose black tea leaves or 1 tea bag",
+            "- Ginger 1 inch"
+          ],
+          "steps": [
+            "In a small saucepan, bring one cup of water to a boil.",
+            "Add the black tea leaves or tea bag to the boiling water and let it steep for 2-3 minutes (or according to the package instructions) on medium heat. Steep longer if you prefer a stronger tea.",
+            "While the tea is steeping, crush some ginger, add along with it. Adjust the amount to suit your taste preference.",
+            "After steeping, remove the tea leaves or tea bag from the water and discard them.",
+            "Switch off the Gas. Enjoy your hot and revitalizing ginger tea!"
+          ],
+          "image": "/api/diet-image/9b58ba05051c1b3f.png",
+          "recipe_id": "f6476ab2fa98affc"
+        },
+        {
+          "name": "Option 2: Jeera Tea (Cumin Tea)",
+          "ingredients": [
+            "1 cup water (200 ml)",
+            "1 teaspoon cumin seeds"
+          ],
+          "steps": [
+            "Bring 1 cup of water to a boil.",
+            "Add 1 teaspoon of cumin seeds to the boiling water.",
+            "Simmer on low heat for 5 minutes.",
+            "Strain the tea and serve hot."
+          ],
+          "image": "/api/diet-image/59ef9dc7e0a06f89.png",
+          "recipe_id": "92540653e47c9eea"
+        }
+      ]
+    },
+    {
+      "heading": "Dinner Recipe",
+      "subGroups": [
+        {
+          "heading": "Kanji",
+          "recipes": [
+            {
+              "name": "Little Millet / Kodo Millet / Barnyard / Foxtail ( Everyday take 1 millet )",
+              "steps": [
+                "Coarsely grind Any 1 Millet in a mixer jar in pulse mode just for 2 sec.",
+                "Wash it with water and drain the water using the filter.",
+                "For 1 glass of Millet add 10 glasses of water and let it soak for 8 hours .",
+                "Then in the morning take a mud pot, fill it with the same millet soaked water and let it boil.",
+                "Once the water starts boiling add the soaked millet and stir well.",
+                "Cook till it gets thicker and soft consistency",
+                "Switch Off the flame and let it cool for half an hour.",
+                "Then cover the entire mud pot with cotton cloth.",
+                "Let it ferment for 8 hours",
+                "You can add salt after fermentation",
+                "Then you can take that kanji as a dinner.",
+                "(Note: Little Millet - 3 days/ Kodo Millet - 3 days/ Barnyard Millet- 3 days/ Foxtail-1 day)"
+              ],
+              "image": "/api/diet-image/07eb7776d8b01c4d.jpg",
+              "recipe_id": "735d7c4bdfc7547b"
+            }
+          ]
+        },
+        {
+          "heading": "Thuvaiyal Recipes for Kanji",
+          "recipes": [
+            {
+              "name": "Option 1 : Pudalangai Thogayal",
+              "ingredients": [
+                "- 1 Snake gourd (pudulangai) , cut into small pieces with skin",
+                "- 2 teaspoon Chana dal (Bengal Gram Dal)",
+                "- 2 teaspoon White Urad Dal (Split)",
+                "- 2 teaspoon Sesame seeds (Til seeds)",
+                "- 1/2 teaspoon Cumin seeds (Jeera)",
+                "- 1 inch Ginger , grated",
+                "- 1 cup Tamarind Water",
+                "- 3 Green Chillies , sliced",
+                "- Salt , to taste",
+                "- 1/8 teaspoon Turmeric powder (Haldi)",
+                "- For seasonings",
+                "- 1/4 teaspoon Cumin seeds (Jeera)",
+                "- 1/4 teaspoon Mustard seeds (Rai/ Kadugu)",
+                "- 1 Red Chilli powder , broken",
+                "- 1/2 teaspoon White Urad Dal (Split)",
+                "- 2 cloves Garlic , crushed",
+                "- 1 sprig Curry leaves"
+              ],
+              "steps": [
+                "We begin making the Pudalangai Thogayal Recipe (Snake Gourd Chutney Recipe) by heating a kadai, add oil and crackle the urad dal, channa dal, sesame seeds and cumin seeds. Sauté for few minutes.",
+                "Then add in the cut snake gourd, chilies and ginger. Sauté till the bottle gourd gets cooked. Once done add the tamarind water and salt. Keep cooking till the water reduces and thickens.",
+                "Once done, let it cool down and grind it into a smooth paste in the mixer. Keep it aside.",
+                "Next to make the tempering, heat oil in a small skillet and temper the ingredient slowly that is mentioned above and add it on top of the chutney and serve.",
+                "Serve the Pudalangai Thogayal Recipe."
+              ],
+              "image": "/api/diet-image/c510532f0f5a79a1.png",
+              "recipe_id": "ade07de77f026ad8"
+            },
+            {
+              "name": "Option 2 : Ridge gourd thuvaiyal",
+              "ingredients": [
+                "Ridge ground",
+                "Ural dal",
+                "Coconut",
+                "Red chilli",
+                "Tamarind",
+                "Salt"
+              ],
+              "steps": [
+                "Chop the ridge gourd without peeling it.",
+                "Add little coconut oil and saute the chopped ridge gourd, grated coconut, dry chilli",
+                "Then transfer the sauted ingredients into the mixy jar and some tamarind salt and grind it."
+              ],
+              "image": "/api/diet-image/7d3bcd8c41308b95.png",
+              "recipe_id": "3781e6ecded5d7e6"
+            },
+            {
+              "name": "Option 3 :Vazhaipoo thuvaiyal",
+              "ingredients": [
+                "Vazhaipoo",
+                "Tamarind",
+                "Coconut",
+                "Urad dal",
+                "Red chilli",
+                "Salt"
+              ],
+              "steps": [
+                "Add some water and boil the chopped vazhai poo for 5 mints",
+                "Then add little coconut oil and saute coconut, urad dal, red chilli and boiled vazhaipoo just for 30 sec.",
+                "Then transfer it to a mixie jar",
+                "Add some tamarind & salt grind well."
+              ],
+              "image": "/api/diet-image/331cc345cd6ba96c.jpg",
+              "recipe_id": "aeaf64d28f943ea8"
+            },
+            {
+              "name": "Option 3 : Pirandai Thogayal",
+              "ingredients": [
+                "Pirandai",
+                "Onion",
+                "Bengal gram dal",
+                "Coconut",
+                "Dry chillies",
+                "tamarind",
+                "Salt"
+              ],
+              "steps": [
+                "Clean the brandy and cut it into small pieces. Remove the outer skin.",
+                "Then add some coconut oil and saute dry chillies, onions and shallots.",
+                "Then transfer to a mixing jar and add some tamarind & salt",
+                "Then grind it to a smooth paste."
+              ],
+              "image": "/api/diet-image/fc907283c7e244c5.jpg",
+              "recipe_id": "7ccd1706c5389aa5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Dinner Soups Recipe",
+      "recipes": [
+        {
+          "name": "Option 1 : Mixed Vegetable Clear Soup",
+          "ingredients": [
+            "- Assorted vegetables (carrots, beans, peas, corn, etc.), chopped",
+            "- 1 small onion, finely chopped",
+            "- 2-3 garlic cloves, minced",
+            "- 1-inch piece of ginger, grated",
+            "- 1-2 green chilies, finely chopped",
+            "- Few curry leaves",
+            "- Salt to taste",
+            "- Water"
+          ],
+          "steps": [
+            "1. In a pot, add the chopped vegetables, onion, garlic, ginger, green chilies, and curry leaves. Pour enough water to cover the vegetables and bring it to a boil.",
+            "2. Let the soup simmer until the vegetables are cooked but still retain their crunch.",
+            "3. Add salt to taste. Stir well and serve the clear vegetable soup piping hot. It's a nutritious and comforting option for any time of the day."
+          ],
+          "image": "/api/diet-image/2c1eb48e72125e1f.jpg",
+          "recipe_id": "10de22b75b6191a6"
+        },
+        {
+          "name": "Option 2 : Pumpkin Soup",
+          "ingredients": [
+            "- 63 grams pumpkin",
+            "- Salt as required",
+            "- Cumin powder as required",
+            "- 1/4 cup water",
+            "- 1/4 onion",
+            "- 1/2 teaspoon ghee",
+            "- 1/2 clove",
+            "- 1/4 piece ginger"
+          ],
+          "steps": [
+            "Step 1: Wash pumpkin and chop it well",
+            "Wash the pumpkin under running water and peel it. Then slice the pumpkin into thin slices and keep it aside. Then slice the onions and keep aside until further needed.",
+            "Step 2: Saute the onions and ginger. Take a deep bottomed pan and heat ghee in it. Once the butter melts, add some cloves and saute the mixture. Then add the sliced onions and grated ginger. Saute the contents for a few minutes.",
+            "Step 3: Grind the pumpkin mixture to perfection. Add sliced pumpkin and salt in the pan and saute till the pumpkin gets tender. Once done, remove the pan from the flame. Now take a mixer grinder and add the contents of the pan to the mixer, followed by 2 cups of water. Grind the mixture to a paste.",
+            "Step 4: Garnish and serve the soup hot! Next transfer the paste in a deep bottomed pan and let it simmer. Add cumin powder and salt. Stir well to",
+            "mix the ingredients. Garnish with coriander leaves and serve hot."
+          ],
+          "image": "/api/diet-image/c5de1a66fa034d3b.png",
+          "recipe_id": "b4428d676e892d7c"
+        },
+        {
+          "name": "Option 3 : CABBAGE SOUP",
+          "ingredients": [
+            "3 cups roughly chopped cabbage",
+            "1 small onion roughly chopped",
+            "¼ cup chopped celery (or carrots)",
+            "1 small green chili sliced",
+            "3 cloves",
+            "1 bay leaf",
+            "1 inch ginger",
+            "Salt to taste",
+            "2 tablespoons oil",
+            "1 tablespoon ghee",
+            "Coriander leaves/cilantro for garnishing",
+            "FOR SEASONING:",
+            "2 tablespoons ghee/clarified butter"
+          ],
+          "steps": [
+            "Wash, peel and chop ginger into 2 to 3 large pieces",
+            "Heat a pressure pan and once hot, add oil and butter along with cloves and bay leaves. Saute for a few seconds.",
+            "Add chopped onions, ginger pieces, celery and green chilies.",
+            "Fry for about 1 minute on medium high, stirring often.",
+            "Stir in chopped cabbage and sauté again for 2 minutes.",
+            "Add 1 to 1 ½ cups water and pressure cook on high for 1 whistle.",
+            "If using the instant pot, pressure cook for 2 minutes and then release pressure.",
+            "Remove the whole spices: cloves, ginger, bay leaf and green chilies.",
+            "Blend the mixture in a mixie/blender. You can use an immersion blender too.",
+            "Add water to the consistency you want salt to taste. Mix well and bring to a boil.",
+            "Once it comes to a boil, lower the heat and simmer on medium low for 5 minutes.",
+            "Meanwhile, prepare the seasoning.",
+            "TO MAKE THE SEASONING:",
+            "Heat ghee in a small saucepan and once hot, stir.",
+            "As soon as you see the spice sizzle, remove and add the seasoning to the simmering soup.",
+            "Garnish light, healthy and lip-smacking cabbage soup with chopped cilantro/celery leaves.",
+            "Non veg options"
+          ],
+          "image": "/api/diet-image/e52f5e73d0ac0497.png",
+          "recipe_id": "44a37b5d482298e2"
+        },
+        {
+          "name": "Option 1 : Egg Drop Soup",
+          "ingredients": [
+            "2 cups of plain water",
+            "1 large egg",
+            "A pinch of salt",
+            "Finely chopped coriander or spring onions (optional, for garnish)"
+          ],
+          "steps": [
+            "Pour 2 cups of plain water into a saucepan and bring it to a boil over medium heat.",
+            "In a small bowl, crack the egg and beat it thoroughly until well mixed.",
+            "Once the water begins to boil, reduce the heat to low to avoid rapid bubbling.",
+            "Stir the hot water gently in one direction to create a swirl.",
+            "Slowly drizzle the beaten egg into the water while continuing to stir.",
+            "The egg will cook instantly, forming delicate strands.",
+            "Add salt to taste.",
+            "Optionally, garnish with chopped coriander or spring onions and serve hot."
+          ],
+          "image": "/api/diet-image/21a7f9b1c804b3b1.png",
+          "recipe_id": "e6ccd254da02833d"
+        }
+      ]
+    },
+    {
+      "heading": "Fruits",
+      "freeText": [
+        "Do not mix fruits. It is always best to take 1 fruit at a time.",
+        "Morning time is best to take fruits . Avoid at night because it may lead to disturbed sleep or may increase cold and mucus formation.",
+        "Do not eat fruit along with other foods like rice or vegetables. It will lead to digestion issues",
+        "Diabetes Patients - take fruits as advice by your Doctor or physicians.",
+        "In any situation you want to take fruits in between, always have a gap of 1 hr between your fruits and next meals."
+      ],
+      "image": "/api/diet-image/064d664e3167e3bb.jpg"
+    }
+  ],
+  "generalGuidelines": {
+    "title": "Gear 5 Diet Chart",
+    "tagline": "\"Don't focus on how much you eat. Focus on what you eat.\"",
+    "infoTables": [
+      {
+        "title": "My Health School",
+        "columns": [
+          "Morning",
+          "After Waking Up",
+          "After brushing, floss your tongue and Do Oil Pulling with Sesame Oil Have 2 Glasses of Lukewarm Water."
+        ],
+        "rows": [
+          [
+            "Morning Activities before 8 AM",
+            "After Waking Up",
+            "Walking / Yoga / Stretches Sunbathing and Sun Gazing (Before 7am) Have Kashaya (See Recipe Notes)"
+          ],
+          [
+            "Morning Breakfast",
+            "8 - 10am Based on your schedule and Fasting Regime.",
+            "Routine breakfast"
+          ],
+          [
+            "Mini Fasting",
+            "Till Lunch Time",
+            "4 Hrs Mini Fasting based on your schedule. In between the mini fasting detox tea and water is advisable."
+          ],
+          [
+            "Lunch",
+            "12 - 2 PM based on your schedule and Mini Fasting Range",
+            "Routine lunch After lunch start to take detox tea upto 6pm"
+          ],
+          [
+            "Evening Snacks (Optional)",
+            "4 PM Try to Avoid maximum. Eat only if very Hungry",
+            "After lunch start to take detox tea upto 6pm If you are hungry take any Herbal Tea (See Recipe Notes) Any Snacks (Eat rarely) (See Recipe Notes)"
+          ],
+          [
+            "Early Dinner",
+            "6 PM - 8PM After dinner take intermittent fasting (Eg: 8pm - next day 9am)",
+            "Kanji recipe with Thuvayal + Salads/ leftover veggies (See Recipe Notes) (or) Soups with salad. (See Recipe Notes) After dinner take intermittent fasting (Eg: 8pm - next day 9am) Millet Recipe"
+          ],
+          [
+            "Before bed",
+            "9- 10 PM",
+            "Digital Detox (No TV / Mobile /White Lights) Triphala 1gm in Half Glass warm water Eye wash Brushing the Teeth"
+          ]
+        ]
+      },
+      {
+        "title": "Routine schedules",
+        "columns": [
+          "Good Sleep",
+          "10 PM - 5 / 6am",
+          "Good Sleep"
+        ],
+        "rows": [
+          [
+            "Daily (Detox tea)",
+            "10 AM- 6 PM",
+            "Detox tea 500ml - 1 liter For kidney patients should take detox tea at least 200 ml/day"
+          ],
+          [
+            "Daily",
+            "4 - 6 PM",
+            "Walking / Exercise for 20 minutes"
+          ],
+          [
+            "Daily (Fasting)",
+            "Mini fasting",
+            "In between the meals 4 hours"
+          ],
+          [
+            "",
+            "Intermittent fasting",
+            "After dinner take 13 hours fasting"
+          ],
+          [
+            "Weekly Once",
+            "Morning",
+            "Oil bath with Sesame or Coconut Oil"
+          ],
+          [
+            "Skin Diet",
+            "",
+            "Cosmetics (No chemical cosmetics like face cream, Powders) Use natural face pack powders etc… Use Coconut oil soap or Herbal bathing Powder"
+          ]
+        ]
+      },
+      {
+        "title": "Fasting Rules",
+        "columns": [
+          "S.No",
+          "Do’s",
+          "Don'ts"
+        ],
+        "rows": [
+          [
+            "1",
+            "Can Drink water at the time of fasting",
+            "Don’t take milk tea,milk coffee,black coffee,black tea,green tea, juices and other solid foods"
+          ],
+          [
+            "2",
+            "Only do 4 hours in between the meals",
+            "Above 4 hours of min fasting may affect your sugar levels"
+          ],
+          [
+            "3",
+            "Only Do 13 Hours fasting. : Not more than that",
+            "Above 13 hours of fasting may affect your sugar levels"
+          ]
+        ]
+      },
+      {
+        "columns": [
+          "Restrict",
+          "Reduce",
+          "Replace"
+        ],
+        "rows": [
+          [
+            "Fruit Juice, Soda , Cool Drinks or any Energy drinks,More sweeten fruits",
+            "",
+            "Whole fruit - 1 per day,"
+          ],
+          [
+            "Any Protein, multivitamin Supplements, Cashew nuts,dates,dry grapes and figs",
+            "Roasted and salted almonds,pistachio,peanuts",
+            "Eat more of soaked nuts like almond, walnut, seeds and Healthy non veg (No red meats)"
+          ],
+          [
+            "White Sugar / Brown Sugar / Sugar free powders,Jaggery Powder , Wild honey , Palm Jaggery (Choose Unadulterated Option),Stevia(Thulasi sugar)",
+            "Nil",
+            "Take 1 whole fruit / Day"
+          ],
+          [
+            "Maida and Maida Products (Cakes , biscuits , puffs , Parotta , noodles,Pizza,Shawarma,Burger etc), Refined Wheat Products (Gluten can damage your intestinal Walls)",
+            "",
+            "Millets - Millet noodles , Millet pasta , millets snacks etc"
+          ],
+          [
+            "",
+            "Refined Table Salt",
+            "Sea Salt (Cheap and best) / pink crystal salt (By grinding it make it as a salt powder)"
+          ],
+          [
+            "",
+            "White Rice",
+            "Millets / Brown rice/Red rice / traditional unpolished Rice"
+          ],
+          [
+            "",
+            "Chillies (Red chillies,Mirchi chillies and Green chillies)",
+            ""
+          ],
+          [
+            "Packaged Foods (Biscuits , snacks, chips , bakery products, Packaged fruits)",
+            "",
+            "Green Salads , Whole fruits, homemade wheat or millet biscuits or snacks using jaggery powders etc…."
+          ],
+          [
+            "Processed Foods (Refined oil , Palm oil etc)",
+            "",
+            "Wood Pressed oils , Sea salt , jaggery powder, millets powder etc"
+          ],
+          [
+            "",
+            "Late night parties , cinema ,Tv . mobile phone.",
+            "Schedule early afternoons ."
+          ]
+        ]
+      }
+    ]
+  },
+  "closingQuote": "“Take care of your body. It’s the only place you have to live.” – Jim Rohn",
+  "disclaimer": "As a dietician and part of My health School, I offer dietary recommendations and suggestions to improve your health, especially for individuals with specific medical conditions. However, it is important to understand that these dietary suggestions are not intended to replace or serve as an alternative to your prescribed medications or medical treatments. My recommendations are meant to complement your existing medical care and enhance your overall health and well-being. I strongly advise against discontinuing any prescribed medications or medical treatments without consulting your primary medical practitioner. Always seek the guidance of a qualified healthcare professional if you are considering making any changes to your medical treatment plan. In case of any medical emergency or urgent health concerns, please promptly contact your medical doctor or visit the nearest healthcare facility. Your health and safety are of utmost importance, and appropriate medical attention should be sought whenever necessary."
+}

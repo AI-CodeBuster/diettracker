@@ -1,0 +1,430 @@
+{
+  "meta": {
+    "condition": "BP",
+    "comorbid": "GASTRIC",
+    "gear": 2,
+    "dietType": "EGG",
+    "language": "ENG",
+    "title": "Gear 2 Diet Chart",
+    "tagline": "\"Turn your food into medicine and you won't need medicines anymore.”",
+    "recipesReviewed": false
+  },
+  "mealPlans": [
+    {
+      "title": "Weight loss",
+      "columns": [
+        "Day",
+        "Breakfast",
+        "Herbal Tea (Evening)"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Green Vegetable Salad + Boiled Black Chickpeas + Boiled Egg",
+            "Hibiscus Tea"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "Red Rice Puttu + Egg Curry / Chutney",
+            "Jeera Tea"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "cells": [
+            "Green Vegetable Salad + Boiled White Chickpeas + Egg Omelet",
+            "Tulsi Tea"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Moong Dal & Vegetable Idli + Chutney",
+            "Hibiscus Tea"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Boiled Beans Salad + Sprouted Fenugreek Seeds",
+            "Tulsi Tea"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Millet Vegetable Khichdi + Chutney + Egg Scramble with Vegetables",
+            "Jeera Tea"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Vegetable Salad Bowl + Boiled Egg",
+            "Any Herbal Tea"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Weight gain",
+      "columns": [
+        "Day",
+        "Breakfast",
+        "Herbal Tea (Evening)"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Red Rice Puttu + Egg Curry / Chutney",
+            "Hibiscus Tea"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "Pea Salad + Sprouted Green Gram",
+            "Jeera Tea"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "cells": [
+            "Moong Dal & Vegetable Idli + Chutney",
+            "Tulsi Tea"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Boiled Beans Salad + Sprouted Fenugreek Seeds",
+            "Hibiscus Tea"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Millet Vegetable Khichdi + Chutney + Egg Scramble with Vegetables",
+            "Tulsi Tea"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Vegetable Salad Bowl + Boiled Egg",
+            "Jeera Tea"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Millet Pongal + Sambar/Chutney + Egg Omelette",
+            "Any Herbal Tea"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Important Note Those with ulcers/ Stomach issues should follow this. Avoid very spicy foods, pickles, oily dishes, and fried foods. Cut down on tomatoes and tomato sauce. Avoid highly acidic foods like lemons and oranges. Eat your meals on time; do not stay on an empty stomach for long periods.",
+    "Note: Those with high blood pressure (BP) should avoid: • Foods with high salt content • Pickles • Papad, sun-dried vegetable crisps (*vathal*), and dried fish • Chips and packaged snacks • Canned and processed foods • Fast food and junk food • Deep-fried foods • Soft drinks",
+    "Important Note: If any dizziness or fatigue during the interval of meal time.Kindly let us know about the condition.According to that we will change your meal plan.",
+    "Take 1 - 2 boiled eggs (or) omelets along with it SALAD LAWS Daily intake for legumes should be 50 - 100 grams (boiled). If you feel bloating issues, add more vegetables in your bowl. Avoid adding beetroot, potato and tubers in vegetable bowl. Add different varieties of vegetables in your bowl."
+  ],
+  "scheduleImage": "/api/diet-image/ef2b97e4aa7320bf.png",
+  "recipeGroups": [
+    {
+      "heading": "Recipes",
+      "recipes": [
+        {
+          "name": "Raw veg salad + Boiled black chana",
+          "ingredients": [
+            "Onion",
+            "Tomato",
+            "Cucumber",
+            "Boiled black chana",
+            "Coriander leaves",
+            "limited salt"
+          ],
+          "steps": [
+            "Thinly slice the cucumbers, tomato and red onion.",
+            "In a large mixing bowl, combine the sliced cucumbers, tomato and red onions.",
+            "Add boiled black chana in this mixture",
+            "Add limited salt as per your taste.",
+            "Add coriander leaves for garnishing",
+            "Finally add any one salad dressing for tasting(see recipe notes)"
+          ],
+          "image": "/api/diet-image/0fd2d491b91147d0.jpg",
+          "recipe_id": "3bbb00835eab76a3"
+        },
+        {
+          "name": "Boiled Cauliflower and peas salad + Sprouted green gram",
+          "ingredients": [
+            "Boiled cauliflower",
+            "Boiled peas",
+            "Raw onion",
+            "Sprouted green gram",
+            "limited salt"
+          ],
+          "steps": [
+            "Boil the cauliflower and peas and add limited salt in it.",
+            "Sprout the green gram (see recipe notes below)",
+            "Chop the red onion",
+            "Take 1 mixing bowl, add boiled cauliflower, peas,red onion and sprouted green grams",
+            "Add limited salt as per your taste.",
+            "Toss gently once all ingredients get mixed."
+          ],
+          "image": "/api/diet-image/bdeaf8e8a80dc065.jpg",
+          "recipe_id": "e2b3ef8276ef6172"
+        },
+        {
+          "name": "Raw veg salad + Boiled white chana",
+          "ingredients": [
+            "Raddish",
+            "Carrot",
+            "Cabbage",
+            "Boiled white chana",
+            "Coriander leaves",
+            "limited salt"
+          ],
+          "steps": [
+            "Thinly slice the Radish, carrots and Cabbage.",
+            "In a large mixing bowl, combine the sliced Radish, carrots and Cabbage .",
+            "Add boiled white chana in this mixture",
+            "Add coriander leaves for garnishing",
+            "Add limited salt as per your taste.",
+            "Finally add any one salad dressing for tasting(see recipe notes)"
+          ],
+          "image": "/api/diet-image/433353cd42dbbb96.jpg",
+          "recipe_id": "f160a7f7ffe997fe"
+        },
+        {
+          "name": "Boiled Beans and Broccoli salad + Sprouted Fenugreek",
+          "ingredients": [
+            "Boiled Broccoli",
+            "Boiled beans",
+            "Raw onion",
+            "Sprouted fenugreek",
+            "Tomato",
+            "limited salt"
+          ],
+          "steps": [
+            "Boil the beans and broccoli and add limited salt in it.",
+            "Sprout the fenugreek (see recipe notes below).",
+            "Chop the red onion and tomato.",
+            "Take 1 mixing bowl, add boiled cauliflower, peas, red onion, tomato and sprouted fenugreek.",
+            "Add limited salt as per your taste.",
+            "Toss gently once all ingredients get mixed."
+          ],
+          "image": "/api/diet-image/7465d312052c2090.jpg",
+          "recipe_id": "14acfb0b8a8da7ce"
+        },
+        {
+          "name": "Sprouted Legume",
+          "ingredients": [
+            "Green gram whole",
+            "Fenugreek seeds"
+          ],
+          "steps": [
+            "Rinse the legumes thoroughly under running water to remove any debris.",
+            "Add enough water to cover the legumes by a few inches. Allow the legumes to soak overnight or for 8-12 hours.",
+            "After soaking, drain the water from the bowl using a fine-mesh sieve or by carefully tipping the container over a sink. Be sure to keep the legumes inside the bowl.",
+            "Spread the cotton cloth on a clean surface, such as a countertop or table.",
+            "Transfer the rinsed legumes onto the center of the cloth, spreading them out evenly.",
+            "Fold the cloth over the legumes to cover them completely.",
+            "Secure the cloth in place by tying it with a rubber band or string. Make sure it's secure but not too tight, as the legumes need airflow for sprouting.",
+            "Place the bundled legumes in a warm, well-ventilated area, away from direct sunlight. A kitchen counter or shelf works well.",
+            "In 24 hr - 48 hrs . The Legumes will Sprout and its ready to eat.",
+            "Nuts:",
+            "Soaked almonds - 5 or walnut - 1",
+            "Seed Powder Recipe (store and use) :",
+            "Chia seeds - 25 gms",
+            "Flax seeds - 25 gms",
+            "Pumpkin seeds - 25 gms",
+            "Sunflower seeds - 25 gms",
+            "Take 25 gms of each - chia seeds, flax seeds, pumpkin seeds, sunflower seeds . Roast all the seed in a pan without oil for 2 - 3 minutes on low flame. After that, put in the mixer and grind it . Store the seeds powder in an airtight glass Jar and use it for 7 days. Prepare it every 7 days and use it."
+          ],
+          "image": "/api/diet-image/9877727666624e40.jpg",
+          "recipe_id": "0ad32727d0bfdf5f"
+        },
+        {
+          "name": "Salad dressings",
+          "ingredients": [
+            "Mint Chutney for Salad Dressing :",
+            "1 cup fresh mint leaves washed and stems removed",
+            "1/2 cup fresh coriander (cilantro) leaves, washed",
+            "1-2 green chilies (adjust to your spice preference)",
+            "1/2 inch ginger, peeled and chopped",
+            "few drops of tamarind juice for sour taste (Optional)",
+            "Water (as needed)"
+          ],
+          "steps": [
+            "Making the Vegetable Bowl",
+            "Take one mixing bowl for preparing vegetable bowl",
+            "Add any one boiled legumes as much as you want.",
+            "Add vegetables as much as you want.",
+            "Add 5 soaking almonds or 1 walnut.",
+            "Add 1 tablespoon (15gms) seed powder",
+            "Add Mint chutney for dressing.",
+            "Add 2 - 3 tablespoons of sprouted legume.",
+            "Add some limited salt for your taste",
+            "Mix everything and toss well.",
+            "Vegetable bowl is ready to eat."
+          ],
+          "image": "/api/diet-image/7826ed3bed562c73.png",
+          "recipe_id": "987b9e90e6f397c7"
+        },
+        {
+          "name": "Red Rice Puttu",
+          "ingredients": [
+            "Red Rice Flour 1 cup",
+            "limited salt 1/4 tsp",
+            "Shredded coconut 1/3 cup",
+            "Water 1/4 cup"
+          ],
+          "steps": [
+            "Take red rice flour in a wide vessel, mix it with limited salt.",
+            "Sprinkle Hot water little by little on red rice flour and mix well.",
+            "use your hand to sprinkle water and mixing.",
+            "U should not add more water, just sprinkle little by little and mix all the flour and make everything wet, make it like crumbled texture.",
+            "Once u finished mixing, take a wet clean towel or any cotton cloth keep the rice powder in the cloth tie it gently or cover it lightly.",
+            "Place this cloth in a idly plate and steam it for 15 minutes in idly vessel or any available vessel.",
+            "After steaming, gently open the cloth and put the steamed red rice puttu in a bowl.",
+            "Add shredded coconut mix well using a spatula or spoon.",
+            "Now the puttu is ready to serve."
+          ],
+          "image": "/api/diet-image/3d6311544ec4d038.png",
+          "recipe_id": "435bdb37b463c642"
+        },
+        {
+          "name": "Green Moong Dal And Vegetable Idli",
+          "ingredients": [
+            "1 cup Yellow Moong Dal (Split)",
+            "1/4 cup White Urad Dal (Split)",
+            "1/4 teaspoon Methi Seeds (Fenugreek Seeds)",
+            "1/2 cup Carrot (Gajjar) , grated",
+            "1/4 cup Green Capsicum , finely chopped",
+            "1/4 cup Dill leaves , finely chopped",
+            "4 tablespoon Coriander (Dhania) Leaves , finely chopped",
+            "1/2 inch Ginger , peeled and chopped",
+            "4 Green Chillies",
+            "limited salt , to taste"
+          ],
+          "steps": [
+            "To begin making the Green Moong Dal And Vegetable Idli, first wash the moong dal and soak in 4 cups of water for 2 hours.",
+            "Wash urad dal and fenugreek seeds and soak them in sufficient water for 2 hours.",
+            "After 2 hours, drain and grind them separately by adding little water in a mixer grinder.",
+            "After grinding, add the dals to a large mixing bowl and mix both moong dal and urad dal mixture together using a spatula. Cover and let it ferment overnight or for 6 hours.",
+            "After 6 hours, add grated carrot, chopped capsicum and dill leaves and mix well. Add water if needed keeping in mind that the mixture should be thick like idli batter.",
+            "Grind coriander, ginger and green chillies by adding 2 tablespoon water to make a thick paste.",
+            "Mix this coriander paste into the prepared idli batter. Add limited salt and mix well.",
+            "The green moong and vegetable idli batter is ready. Let us now make the healthy idlis.",
+            "Grease the idli moulds and pour some the prepared batter into it.",
+            "Steam the idlis in an idli steamer and steam for 20 minutes.",
+            "After 20 Minutes, turn off the heat and let them be in the steamer for 5 more minutes.",
+            "After sometime, open the idli steamer, de-mould the idlis and serve hot.",
+            "Serve Green Moong Dal And Vegetable Idli along with Tomato Onion Chutney and Keerai Sambar for a healthy breakfast ."
+          ],
+          "image": "/api/diet-image/7b361f47d64b9bf1.png",
+          "recipe_id": "6fddf601daac9589"
+        }
+      ]
+    },
+    {
+      "heading": "Salad Law",
+      "image": "/api/diet-image/2313cd97e6d6de5e.jpg",
+      "freeText": [
+        "SALAD LAWS",
+        "Daily intake for legumes should be 50 - 100 grams (boiled).",
+        "If you feel bloating issues, add more vegetables in your bowl.",
+        "Avoid adding beetroot, potato and tubers in vegetable bowl.",
+        "Add different varieties of vegetables in your bowl."
+      ]
+    },
+    {
+      "heading": "Fruits",
+      "recipes": [
+        {
+          "name": "Fruits",
+          "ingredients": [
+            "Apple",
+            "Guava (Less Ripened)",
+            "Papaya (Less Ripened)",
+            "Pears"
+          ],
+          "note": "Whole fruit Take Any 1 Fruit before 45 minutes of breakfast . Remove skin, cut and eat.",
+          "recipe_id": "8bacfab8ddce3182"
+        }
+      ]
+    },
+    {
+      "heading": "Herbal Tea",
+      "recipes": [
+        {
+          "name": "Option 1: Hibiscus Tea",
+          "ingredients": [
+            "1 cup water",
+            "5–6 fresh hibiscus petals (or 1 tbsp dried hibiscus petals)"
+          ],
+          "steps": [
+            "Boil 1 cup of water.",
+            "Add the hibiscus petals.",
+            "Simmer for 3–5 minutes.",
+            "Switch off the heat and strain the tea."
+          ],
+          "image": "/api/diet-image/32e33dfa52e82d0d.png",
+          "recipe_id": "551453674b5e6b2b"
+        },
+        {
+          "name": "Option 2: Jeera Tea (Cumin Tea)",
+          "ingredients": [
+            "1 cup water (200 ml)",
+            "1 teaspoon cumin seeds"
+          ],
+          "steps": [
+            "Bring 1 cup of water to a boil.",
+            "Add 1 teaspoon of cumin seeds to the boiling water.",
+            "Simmer on low heat for 5 minutes.",
+            "Strain the tea and serve hot."
+          ],
+          "image": "/api/diet-image/59ef9dc7e0a06f89.png",
+          "recipe_id": "92540653e47c9eea"
+        },
+        {
+          "name": "Option 3: Tulsi Tea",
+          "ingredients": [
+            "Fresh Tulsi (Holy Basil) leaves or dried Tulsi leaves",
+            "Water",
+            "Optional: Cinnamon, Ginger for added flavor (if desired)"
+          ],
+          "steps": [
+            "Bring water to a boil in a pot.",
+            "If using fresh Tulsi leaves, wash them thoroughly. If using dried leaves, measure out the desired amount.",
+            "Add the Tulsi leaves to the boiling water.",
+            "Optionally, add cinnamon or ginger for extra flavor.",
+            "Simmer the mixture for 5–10 minutes to allow the flavors to infuse.",
+            "Strain and Serve:",
+            "Once the tea has infused, strain out the Tulsi leaves (and any other added ingredients).",
+            "Pour the tea into a cup.",
+            "Drink the Tulsi tea hot.",
+            "Tulsi contains compounds such as eugenol, which help regulate blood sugar levels by increasing insulin secretion and sensitivity. Consuming Tulsi tea regularly can help stabilize blood glucose levels.",
+            "To prepare Tulsi tea, plant a Tulsi (Holy Basil) plant at home. Plant it in a sunny area with well-drained soil.",
+            "Keep the soil moist, regularly prune the stems to encourage new leaf growth,",
+            "and water the plant consistently; once the leaves mature, harvest them for brewing.",
+            "(Herbal tea should be consumed in the evening.)",
+            "“Take care of your body. It’s the only place you have to live.” — Jim Rohn",
+            "Disclaimer:As a nutritionist and part of my health practice, I provide dietary recommendations and suggestions aimed at improving your health—particularly for individuals with specific medical conditions. However, it is essential to understand that these dietary recommendations are not intended to serve as a substitute or replacement for your prescribed medications or medical treatments. My recommendations are designed to complement your current medical care and to enhance your overall health and well-being. I strongly advise against discontinuing any prescribed medications or medical treatments without consulting your primary medical practitioner. If you are considering making any changes to your medical treatment plan, please always seek the guidance of a qualified healthcare professional."
+          ],
+          "image": "/api/diet-image/5ec45348a9ac3f8b.jpg",
+          "recipe_id": "07933384f3149221"
+        }
+      ]
+    }
+  ],
+  "closingQuote": "“Take care of your body. It’s the only place you have to live.” — Jim Rohn",
+  "disclaimer": "As a nutritionist and part of my health practice, I provide dietary recommendations and suggestions aimed at improving your health—particularly for individuals with specific medical conditions. However, it is essential to understand that these dietary recommendations are not intended to serve as a substitute or replacement for your prescribed medications or medical treatments. My recommendations are designed to complement your current medical care and to enhance your overall health and well-being. I strongly advise against discontinuing any prescribed medications or medical treatments without consulting your primary medical practitioner. If you are considering making any changes to your medical treatment plan, please always seek the guidance of a qualified healthcare professional."
+}

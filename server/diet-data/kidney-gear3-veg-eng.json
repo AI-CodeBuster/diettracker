@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "condition": "KIDNEY",
+    "gear": 3,
+    "dietType": "VEG",
+    "language": "ENG",
+    "title": "Gear 3 Diet Chart",
+    "tagline": "\"Don't focus on how much you eat. Focus on what you eat.\"",
+    "recipesReviewed": false
+  },
+  "mealPlans": [
+    {
+      "title": "Lunch",
+      "columns": [
+        "DAY",
+        "Salad (TYPE 1)",
+        "Vegetable (Type 2)",
+        "Rice + protein (Type 3)"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Cucumber and onion salad",
+            "Cabbage Poriyal",
+            "Unpolished Brown rice + Vegetable sambar"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "CCC chop salad (Cucumber Capsicum Cabbage)",
+            "Broad Beans poriyal",
+            "Unpolished Red rice + Paruppu rasam"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "cells": [
+            "Radish and cucumber slice salad",
+            "Cluster Beans poriyal",
+            "Unpolished Mappillai Samba Rice+Sigappu karamani kuzhambu"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Cucumber and onion salad",
+            "Ladies Finger Poriyal",
+            "Unpolished Thooyamalli Rice + mor kulambu"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Mixed vegetable salad",
+            "Plantain stem poriyal",
+            "Unpolished Karunguruvai Rice +Vellai Pattani kurma"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Radish and capsicum salad",
+            "Bitter gourd poriyal",
+            "Unpolished Thooyamalli Rice + Vegetable sambar"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Capsicum and cucumber salad",
+            "Broad Beans poriyal",
+            "Unpolished Kattuyanam Rice+ Keerai Kadaiyal"
+          ]
+        }
+      ]
+    }
+  ],
+  "infoTables": [
+    {
+      "title": "Other combinations of Salads",
+      "columns": [
+        "S. No",
+        "Vegetable 1",
+        "Vegetable 2",
+        "Combinations"
+      ],
+      "rows": [
+        [
+          "1",
+          "Cucumber",
+          "Onion",
+          "Cucumber and Onion slice salad"
+        ],
+        [
+          "2",
+          "Capsicum",
+          "Cucumber",
+          "Capsicum and cucumber slice salad"
+        ],
+        [
+          "3",
+          "Cabbage",
+          "Capsicum",
+          "Cabbage and Capsicum chop salad"
+        ],
+        [
+          "4",
+          "Raddish",
+          "Capsicum",
+          "Radish and capsicum slice salad"
+        ]
+      ]
+    }
+  ],
+  "notes": [
+    "Leaching Method: Wash the vegetables thoroughly and peel off the skin. Cut the vegetables into small pieces. Soak them in a large amount of water for 2–4 hours. Completely drain and discard the soaking water. Rinse the vegetables again with fresh water. Cook the vegetables in plenty of fresh water. After cooking, drain and discard the cooking water. If needed, prepare the final dish using fresh water.",
+    "Important Note: Strictly avoid Raw Tomato and carrot",
+    "Important Note : Strictly avoid Green leafy vegetables"
+  ],
+  "recipeGroups": [
+    {
+      "heading": "Category 1",
+      "recipes": [
+        {
+          "name": "Option 1: Cucumber and Onion salad",
+          "ingredients": [
+            "1 cucumber, thinly sliced",
+            "1/2 red onion, thinly sliced",
+            "Salt and pepper, to taste"
+          ],
+          "steps": [
+            "Thinly slice the cucumbers and red onion.",
+            "In a large mixing bowl, combine the sliced cucumbers and red onions.",
+            "You can add a splash of lemon juice over the cucumber and onion mixture.",
+            "Add salt and pepper as per your taste."
+          ],
+          "image": "/api/diet-image/730ab808deeb1ad4.jpg",
+          "recipe_id": "5acfd8a054f35547"
+        },
+        {
+          "name": "Option 2: Radish and cucumber slice salad",
+          "ingredients": [
+            "1 radish, thinly sliced",
+            "½ cucumber, thinly sliced",
+            "1 tablespoon lemon juice",
+            "Salt and pepper, to taste"
+          ],
+          "steps": [
+            "Wash the radish thoroughly. Trim off the ends of the radishes and thinly slice them. Peel the onion,wash thoroughly and slice them.",
+            "In a large mixing bowl, combine the sliced radishes and onion.",
+            "You can add a splash of lemon juice. Season with salt and pepper to taste.",
+            "Gently toss the vegetables evenly ."
+          ],
+          "image": "/api/diet-image/560f272c061f05bc.jpg",
+          "recipe_id": "cba1266f70e4aa77"
+        },
+        {
+          "name": "Option 3: CCC chop salad (Cucumber Capsicum Cabbage)",
+          "ingredients": [
+            "1 cucumber, thinly chopped",
+            "½ red bell pepper (capsicum), thinly chopped",
+            "¼ small cabbage, thinly chopped",
+            "1 tablespoon lemon juice",
+            "Salt and pepper, to taste"
+          ],
+          "steps": [
+            "Wash the cucumber, red bell pepper, and cabbage thoroughly. Trim off the ends of the cucumber and chop it. Remove the seeds and membranes from the red bell pepper and thinly slice it. Thinly slice the cabbage.",
+            "In a large mixing bowl, combine the sliced cucumber, red bell pepper, and cabbage.",
+            "You can add a splash of lemon juice. Season with salt and pepper to taste.",
+            "Gently toss the vegetables evenly."
+          ],
+          "image": "/api/diet-image/69ff30e2a37551d8.jpg",
+          "recipe_id": "c755aea41c3ea15b"
+        },
+        {
+          "name": "Option 4: Mixed vegetable salad",
+          "ingredients": [
+            "1 cucumber, diced",
+            "1 bell pepper (capsicum), diced (any color you prefer)",
+            "1/4 red onion, thinly sliced",
+            "1 cup mixed salad greens (such as Cabbage), torn into bite-sized pieces",
+            "Salt and pepper, to taste",
+            "1 tablespoon lemon juice"
+          ],
+          "steps": [
+            "Wash and dice the cucumber, and bell pepper. Thinly slice the red onion. Tear the salad greens into bite-sized pieces.",
+            "In a large mixing bowl, combine the diced cucumber, bell pepper,, sliced red onion, and torn salad greens.",
+            "You can add a splash of lemon juice. Season with salt and pepper to taste.",
+            "Gently toss to coat the vegetables evenly with the dressing.",
+            "Other combinations of Salads"
+          ],
+          "image": "/api/diet-image/b21dd66ba45384ba.jpg",
+          "recipe_id": "33302cebe903ea45"
+        }
+      ],
+      "freeText": [
+        "Category 1: Vitamins & Minerals - Salads"
+      ]
+    },
+    {
+      "heading": "Category 2",
+      "freeText": [
+        "Category 2: Fibre - Veggies (Poriyal, Kootu, Veg Kuzhambu options)",
+        "Poriyal Options: Cluster Beans poriyal, Cabbage Poriyal, Bitter gourd Poriyal, Ladies Finger Poriyal, Plantain stem poriyal, Broad Beans poriyal",
+        "Veg Option: Vegetable sambar, Paruppu rasam, Sigappu karamani kuzhambu, Moth beans Kuzhambu, Vellai Pattani kurma, Any other choice also"
+      ],
+      "image": "/api/diet-image/c6b3f19dd8d608a0.jpg"
+    },
+    {
+      "heading": "Category 3",
+      "freeText": [
+        "Category 3 - Complex carbohydrates + Healthy protein + Healthy fats - Unpolished Rice + Non Veg + Fat",
+        "Rice Options: Unpolished Brown Rice, Unpolished Red Rice, Unpolished Black Kavuni Rice, Unpolished Kattuyanam Rice, Unpolished Karunguruvai Rice, Unpolished Poongar Rice, Unpolished Thooyamalli Rice, Unpolished Mappillai Samba Rice, Unpolished Thanga Samba Rice, Unpolished Mappillai Samba Rice",
+        "Healthy Fats: Wood pressed coconut oil - 100%, Wood pressed groundnut oil, Wood pressed sesame oil"
+      ],
+      "image": "/api/diet-image/678e104436f27830.jpg"
+    },
+    {
+      "heading": "Cutting Types",
+      "freeText": [
+        "Cutting types",
+        "Slice Chop"
+      ],
+      "image": "/api/diet-image/4366c31c21edf82a.jpg"
+    },
+    {
+      "heading": "Shop Organic Products",
+      "freeText": [
+        "Buy Organic Food products in our own True Food Store:",
+        "https://forms.gle/2Tda2LCVCu9nHs4t9"
+      ],
+      "image": "/api/diet-image/5083c56f4391e217.png"
+    },
+    {
+      "heading": "Salad Law",
+      "freeText": [
+        "SALAD LAWS",
+        "Daily intake for legumes should be 50 - 100 grams (boiled).",
+        "If you feel bloating issues, add more vegetables in your bowl.",
+        "Avoid adding beetroot, potato and tubers in vegetable bowls.",
+        "Add different varieties of vegetables in your bowl."
+      ],
+      "image": "/api/diet-image/8c6c125d6ee26e3c.png"
+    },
+    {
+      "heading": "Water Law",
+      "freeText": [
+        "Water Law",
+        "As per your doctor's advice, take water consumption per day.",
+        "If any water restriction is there for you, kindly inform the health coach.",
+        "Take only 200 ml detox tea in your daily routine."
+      ],
+      "image": "/api/diet-image/7286fea555942eec.jpg"
+    }
+  ],
+  "closingQuote": "“Take care of your body. It’s the only place you have to live.” – Jim Rohn",
+  "disclaimer": "As a dietician and part of My health School, I offer dietary recommendations and suggestions to improve your health, especially for individuals with specific medical conditions. However, it is important to understand that these dietary suggestions are not intended to replace or serve as an alternative to your prescribed medications or medical treatments. My recommendations are meant to complement your existing medical care and enhance your overall health and well-being. I strongly advise against discontinuing any prescribed medications or medical treatments without consulting your primary medical practitioner. Always seek the guidance of a qualified healthcare professional if you are considering making any changes to your medical treatment plan."
+}

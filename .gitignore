@@ -1,0 +1,8 @@
+node_modules/
+client/dist/
+*.log
+server/data/
+
+.vercel
+.env*
+server/diet-images-staging/

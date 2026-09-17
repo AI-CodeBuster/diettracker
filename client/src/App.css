@@ -1,0 +1,3245 @@
+/* ---------- app shell: sidebar + section content ---------- */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+.app-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- sidebar ---------- */
+.sidebar {
+  flex-shrink: 0;
+  width: 250px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  padding: 16px 12px;
+  gap: 18px;
+}
+.sidebar-collapsed { width: 72px; }
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 4px;
+}
+.sidebar-brand-mark {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 1px;
+}
+.sidebar-brand-title { font-weight: 700; font-size: 14.5px; color: var(--text); }
+.sidebar-brand-subtitle {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sidebar-collapse-btn {
+  margin-left: auto;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  border-radius: 6px;
+  width: 22px;
+  height: 22px;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-collapse-btn:hover { color: var(--text); border-color: var(--accent); }
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  background: transparent;
+  color: var(--sidebar-text);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+}
+.sidebar-nav-item:hover { background: var(--sidebar-hover-bg); }
+.sidebar-nav-item-active { background: var(--accent); color: white; }
+.sidebar-nav-item-active:hover { background: var(--accent); }
+.sidebar-nav-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-nav-icon svg { width: 18px; height: 18px; }
+.sidebar-nav-label { overflow: hidden; text-overflow: ellipsis; }
+
+.sidebar-source {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 4px;
+  border-top: 1px solid var(--border);
+}
+.sidebar-source-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sidebar-switch-sheet-btn, .sidebar-reset-sheet-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 7px;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+.sidebar-switch-sheet-btn:hover { border-color: var(--accent); color: var(--accent-strong); }
+.sidebar-reset-sheet-btn { color: var(--text-muted); border-style: dashed; }
+.sidebar-reset-sheet-btn:hover { border-color: var(--danger); color: var(--danger); }
+
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 4px 0;
+  border-top: 1px solid var(--border);
+}
+.sidebar-user-email {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sidebar-logout-btn {
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 7px;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.sidebar-logout-btn:hover { border-color: var(--danger); color: var(--danger); }
+
+@media (max-width: 720px) {
+  .app-shell { flex-direction: column; }
+  .sidebar {
+    width: 100%;
+    min-height: 0;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 12px;
+    overflow-x: auto;
+  }
+  .sidebar-collapsed { width: 100%; }
+  .sidebar-nav { flex-direction: row; }
+  .sidebar-source { margin-top: 0; margin-left: auto; flex-direction: row; align-items: center; border-top: none; padding: 0; }
+  .sidebar-source-label { display: none; }
+  .sidebar-footer { margin-top: 0; border-top: none; padding: 0; }
+  .sidebar-user-email { display: none; }
+  .sidebar-collapse-btn { display: none; }
+}
+
+/* ---------- auth ---------- */
+.auth-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-card h1 {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.auth-subtitle {
+  margin: -8px 0 4px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.auth-field input {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 10px;
+  background: var(--surface-alt);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 400;
+}
+.auth-field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.auth-error {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  margin: 0;
+}
+
+.auth-info {
+  background: var(--accent-bg);
+  color: var(--accent-strong);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  margin: 0;
+}
+
+.auth-submit {
+  border: none;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.auth-submit:hover:not(:disabled) { opacity: 0.92; }
+.auth-submit:disabled { opacity: 0.6; cursor: default; }
+
+.auth-switch {
+  border: none;
+  background: none;
+  color: var(--accent-strong);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+.auth-switch:hover { text-decoration: underline; }
+
+/* ---------- header ---------- */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.app-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+}
+
+.app-title-row h1 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.refresh-btn {
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 7px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.refresh-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent-strong); }
+.refresh-btn:disabled { opacity: 0.6; cursor: default; }
+
+.app-title-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.sheet-tabs-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.sheet-tabs-dropdown-icon { font-size: 13px; }
+.sheet-tabs-dropdown select {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* On: one sheet tab at a time (SheetTabs shows next to this). Off: every
+   person-sheet combined into one list, filtered by Health Coach instead —
+   see PersonTable's own header dropdown. */
+.sheet-filter-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.sheet-filter-toggle-btn-on { color: var(--text); border-color: var(--accent); }
+.sheet-filter-toggle-track {
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+  border-radius: 999px;
+  background: var(--border);
+  position: relative;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+}
+.sheet-filter-toggle-btn-on .sheet-filter-toggle-track { background: var(--accent); }
+.sheet-filter-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--surface);
+  transition: transform 0.15s ease;
+}
+.sheet-filter-toggle-btn-on .sheet-filter-toggle-thumb { transform: translateX(13px); }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  max-width: 520px;
+  flex: 1;
+  min-width: 240px;
+}
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--text);
+  font-size: 14.5px;
+  padding: 4px 0;
+}
+.search-clear {
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 2px;
+}
+.search-count {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.sync-info {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ---------- main content: the list/table, full width — the diet-plan
+   viewer and patient profile open as centered modal overlays instead of a
+   docked side panel (see .viewer-modal-overlay / .profile-modal-overlay
+   below), so nothing is ever reserved for them when neither is open. ---------- */
+.app-main {
+  flex: 1;
+  padding: 18px 24px 40px;
+  display: flex;
+}
+
+.list-pane, .list-pane-full {
+  width: 100%;
+}
+
+.error-banner {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+.loading-banner, .empty-state {
+  color: var(--text-muted);
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* ---------- person cards ---------- */
+.person-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.person-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+.person-card-active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), var(--shadow);
+}
+
+.person-avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-bg);
+  color: var(--accent-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.person-info { flex: 1 1 260px; min-width: 260px; }
+
+.person-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.person-name { font-weight: 600; font-size: 16px; }
+.person-id { font-size: 13px; font-weight: 500; color: var(--text-muted); }
+
+.person-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 7px;
+}
+
+.tag {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.tag-muted { color: var(--text-muted); }
+.tag-diet { background: var(--accent-bg); border-color: transparent; color: var(--accent-strong); }
+.tag-lang { background: var(--surface-alt); color: var(--text-muted); }
+.tag-condition {
+  background: var(--condition-bg);
+  border-color: transparent;
+  color: var(--condition-strong);
+  font-weight: 600;
+}
+.tag-condition-guess {
+  background: transparent;
+  border: 1px dashed var(--border);
+  color: var(--text-muted);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.person-condition {
+  margin-top: 7px;
+  font-size: 13px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Always its own full-width row below the name/status/tags, rather than
+   sitting beside them — .list-pane caps the card at 680px, which isn't
+   enough to fit a long blocked-gear reason ("Yet to be Prepared (started
+   21-Jul-2026)") next to the name AND leave the tags room to read as a
+   horizontal row; they'd get squeezed into a single narrow column and wrap
+   one tag per line instead. Giving this row 100% width (same idea the
+   <640px rule below used to apply only on mobile, now applied everywhere)
+   keeps the tag row's width — and this layout — consistent across every
+   sheet regardless of how long any one gear's status text happens to be. */
+.gear-buttons {
+  flex: 1 1 100%;
+  width: 100%;
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.gear-btn, .gear-blocked {
+  width: 128px;
+}
+
+.gear-btn {
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent-strong);
+  border-radius: 7px;
+  padding: 6px 12px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.gear-btn:hover { background: var(--accent-bg); }
+.gear-btn-active { background: var(--accent); color: white; }
+.gear-btn-active:hover { background: var(--accent); }
+
+.gear-due-badge {
+  display: block;
+  margin-top: 2px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.gear-due-upcoming { color: var(--text-muted); }
+.gear-btn-active .gear-due-upcoming { color: rgba(255, 255, 255, 0.85); }
+.gear-due-overdue { color: var(--danger); }
+.gear-btn-active .gear-due-overdue { color: #fecaca; }
+.gear-due-done { color: var(--success); }
+.gear-btn-active .gear-due-done { color: #bbf7d0; }
+
+.gear-blocked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dashed var(--border);
+  background: var(--surface-alt);
+  color: var(--text-muted);
+  border-radius: 7px;
+  padding: 5px 12px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: default;
+  text-align: center;
+}
+.gear-blocked-reason {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--warn);
+  margin-top: 2px;
+}
+
+/* BatchCard's per-gear stat box — same shape as .gear-blocked (a batch has
+   nothing to click into, just a date/efficiency readout) but not dashed,
+   since there's nothing pending about it. */
+.batch-gear-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  border-radius: 7px;
+  padding: 5px 12px;
+  width: 128px;
+  text-align: center;
+}
+.batch-gear-stat-label { font-size: 13.5px; font-weight: 700; color: var(--text); }
+.batch-gear-stat-date { font-size: 11px; font-weight: 600; color: var(--text-muted); }
+.batch-gear-stat-muted { font-style: italic; }
+.batch-gear-stat-empty { opacity: 0.6; }
+
+/* ---------- generic table ---------- */
+.generic-table-wrap {
+  overflow: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-height: calc(100vh - var(--header-h, 140px) - 38px);
+}
+.generic-table { width: 100%; font-size: 13.5px; border-collapse: separate; border-spacing: 0; }
+.generic-table th, .generic-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+}
+.generic-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--surface-alt);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border);
+}
+.generic-table tbody tr:nth-child(even) td { background: var(--surface-alt); }
+.generic-table tr:hover td { background: var(--accent-bg); }
+.generic-table td.generic-table-pin, .generic-table th.generic-table-pin {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  font-weight: 600;
+  background: var(--surface);
+  box-shadow: 1px 0 0 var(--border);
+}
+.generic-table th.generic-table-pin { z-index: 3; background: var(--surface-alt); }
+.generic-table tbody tr:nth-child(even) td.generic-table-pin { background: var(--surface-alt); }
+.generic-table tr:hover td.generic-table-pin { background: var(--accent-bg); }
+
+/* ---------- person table ---------- */
+.person-table-wrap {
+  overflow: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-height: calc(100vh - var(--header-h, 140px) - 38px);
+}
+.person-table { width: 100%; font-size: 13.5px; border-collapse: separate; border-spacing: 0; }
+.person-table th, .person-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+.person-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--surface-alt);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.person-table tbody tr:nth-child(even) td { background: var(--surface-alt); }
+.person-table tr:hover td { background: var(--accent-bg); }
+
+.person-table-th-filter { display: inline-flex; align-items: center; gap: 4px; }
+.person-table-th-select {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: normal;
+  cursor: pointer;
+  max-width: 90px;
+}
+
+.person-table-lead { display: flex; align-items: center; gap: 10px; }
+.person-table-avatar { width: 32px; height: 32px; font-size: 12px; }
+.person-table-lead-id {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.table-gear-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.table-gear-cell { display: inline-flex; align-items: center; gap: 4px; }
+.gear-status-chip-btn { border: none; cursor: pointer; font-family: inherit; }
+.gear-status-chip-btn:hover { filter: brightness(1.15); }
+.gear-status-chip-active { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* ---------- diet plan side panel (docked, not an overlay — the list stays visible) ---------- */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Full screen mode: breaks out of the docked side panel entirely, covering
+   the whole viewport so the controls, flagged-item review list, and the
+   document itself all get maximum room instead of sharing the sticky
+   side-panel's constrained height. */
+.panel-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  height: 100vh;
+  width: 100vw;
+  max-height: none;
+  border-radius: 0;
+  border: none;
+}
+
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.panel-header h2 { font-size: 17px; }
+.panel-subtitle { color: var(--text-muted); font-size: 13.5px; margin-top: 4px; }
+.panel-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.panel-fullscreen-btn {
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text);
+  border-radius: 7px;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.panel-fullscreen-btn:hover { background: var(--accent-bg); border-color: var(--accent); color: var(--accent-strong); }
+.panel-close {
+  border: none;
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 2px 6px;
+}
+.panel-close:hover { color: var(--text); }
+
+.panel-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-alt);
+  font-size: 13px;
+}
+.panel-controls label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text);
+  font-weight: 600;
+}
+.panel-controls select {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 4px 6px;
+  max-width: 140px;
+}
+.panel-hint {
+  color: var(--text-muted);
+  font-style: italic;
+  width: 100%;
+}
+
+/* ---------- allergy / dislike flag review ---------- */
+.flagged-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--warn-bg);
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.flagged-bar-clear { background: var(--success-bg); }
+.flagged-bar-warning { background: var(--danger-bg); color: var(--danger); }
+.flagged-bar-toggle {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 6px;
+  text-decoration: underline;
+}
+.flagged-panel {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  padding: 10px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 260px;
+  overflow-y: auto;
+  /* .panel is a fixed-height flex column, and this has overflow-y set,
+     which per the flexbox spec makes its automatic min-height resolve to 0
+     (instead of its content size) — without flex-shrink:0 it gets crushed
+     to a sliver when .panel-body's content pushes past the panel's fixed
+     height, instead of showing its own content up to max-height and
+     letting .panel-body (which is meant to yield first) shrink instead. */
+  flex-shrink: 0;
+}
+.flagged-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  font-size: 13px;
+}
+.flagged-item-source {
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+.flagged-item-source-allergy { background: var(--danger-bg); color: var(--danger); }
+.flagged-item-source-dislike { background: var(--warn-bg); color: var(--warn); }
+.flagged-item-term { font-weight: 600; }
+.flagged-item-context { color: var(--text-muted); font-style: italic; flex: 1; min-width: 140px; }
+.flagged-item-input {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 13px;
+  min-width: 160px;
+}
+.flagged-item-btn {
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent-strong);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.flagged-item-btn:hover { background: var(--accent-bg); }
+.flagged-item-btn:disabled { opacity: 0.5; cursor: default; }
+.flagged-item-btn-revert { border-color: var(--danger); color: var(--danger); }
+.flagged-item-btn-revert:hover { background: var(--danger-bg); }
+.flagged-item-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent-bg);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+.flagged-item-suggestions-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.flagged-item-suggestions-loading {
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--text-muted);
+}
+.flagged-item-suggestion-chip {
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--accent-strong);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.flagged-item-suggestion-chip:hover { background: var(--accent); color: white; }
+.flagged-item-done { color: var(--success); font-weight: 600; font-size: 12.5px; }
+
+/* .panel-body-wrap holds two siblings: .panel-body (the actual scrolling
+   element, laid out exactly as it always was — a normal flex:1 child, not
+   absolutely positioned) and .nav-arrows overlaid on top of it via
+   position:absolute. A position:absolute descendant still scrolls along
+   with an overflow:auto ancestor's content, so the only way to keep
+   .nav-arrows fixed on screen while .panel-body scrolls beneath it is for
+   them to be siblings rather than nested, each positioned against this
+   shared, non-scrolling wrapper. */
+.panel-body-wrap {
+  flex: 1;
+  min-height: 0; /* lets this flex child actually shrink instead of being sized by its (scrolling) content */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.panel-body {
+  flex: 1;
+  overflow: auto;
+  background: var(--surface-alt);
+  padding: 16px;
+}
+
+/* Positioned relative to .panel-body-wrap (not .panel-body, which scrolls)
+   so it stays pinned to the bottom-right corner of the visible document
+   viewport rather than scrolling away with the chart content. */
+.nav-arrows {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 6px;
+  box-shadow: var(--shadow-lg);
+  z-index: 5;
+}
+.nav-arrows-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.nav-arrow-btn {
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text);
+  border-radius: 6px;
+  width: 32px;
+  height: 28px;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-arrow-btn:hover:not(:disabled) { background: var(--accent-bg); border-color: var(--accent); color: var(--accent-strong); }
+.nav-arrow-btn:disabled { opacity: 0.4; cursor: default; }
+.panel-status {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 60px 20px;
+}
+.panel-error {
+  color: var(--danger);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.docx-container { display: flex; justify-content: center; }
+.docx-container .docx-wrapper { background: transparent; }
+
+/* docx-preview renders floated (text-wrapped) images with zero margin,
+   ignoring the source document's own wrap-distance settings -- so text can
+   graze or slightly overlap a float's edge on long lines (browsers don't
+   add any spacing around a float by default). Restoring a small gap here
+   is a pure rendering nicety, safe to do purely in CSS since it doesn't
+   change the underlying document. */
+.docx-container div[style*="float: left"] { margin: 0 14px 10px 0; }
+.docx-container div[style*="float: right"] { margin: 0 0 10px 14px; }
+
+/* ---------- appended gear sections (Gear 3 view also shows Gear 4, etc.) ---------- */
+.appended-gear-section {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 2px dashed var(--border);
+}
+.appended-gear-label {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-strong);
+  background: var(--accent-bg);
+  border-radius: 999px;
+  padding: 5px 14px;
+  width: fit-content;
+  margin: -32px auto 16px;
+}
+
+.food-flag {
+  border-radius: 3px;
+  padding: 0 2px;
+  cursor: default;
+}
+.food-flag-allergy, .food-flag-dislike {
+  background: var(--flag-highlight-bg);
+  box-shadow: inset 0 -2px 0 0 var(--flag-highlight-border);
+}
+.food-replaced {
+  background: var(--replaced-highlight-bg);
+  border-radius: 3px;
+  padding: 0 2px;
+  box-shadow: inset 0 -2px 0 0 var(--replaced-highlight-border);
+}
+/* Briefly rings whichever mark the up/down nav buttons just scrolled to,
+   so it's identifiable at a glance among the other highlighted words that
+   may already be visible in the same viewport. */
+.food-nav-current {
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 18px;
+  border-top: 1px solid var(--border);
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+.panel-filename {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.panel-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  margin-left: auto; /* stay right-aligned even when .panel-filename isn't rendered (full screen) */
+}
+.panel-download {
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  cursor: pointer;
+}
+.panel-download:hover { text-decoration: underline; }
+.panel-download-primary {
+  background: var(--accent);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 7px;
+}
+.panel-download-primary:hover { text-decoration: none; opacity: 0.9; }
+.panel-file-error { color: var(--danger); }
+
+@media (max-width: 640px) {
+  /* Fixed-width buttons would overflow a narrow phone screen — share the
+     row equally instead (.person-card/.gear-buttons are already full-width
+     unconditionally now, see above). */
+  .gear-btn, .gear-blocked, .batch-gear-stat { width: auto; flex: 1; }
+
+  .app-header { padding: 12px 14px 10px; }
+  .app-main { padding: 14px 14px 32px; }
+  .app-title-row h1 { font-size: 17px; }
+
+  .panel-header { padding: 10px 12px 8px; }
+  .panel-controls { padding: 8px 12px; }
+  .panel-body { padding: 12px; }
+  .panel-footer { padding: 8px 12px; flex-wrap: wrap; }
+  .flagged-panel { padding: 8px 12px; }
+  .flagged-bar { padding: 6px 12px; flex-wrap: wrap; }
+
+  .nav-arrows { right: 10px; bottom: 10px; }
+}
+
+/* ---------- Bugs & Enhancements page ---------- */
+.issues-page {
+  flex: 1;
+  padding: 24px 28px 40px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.issues-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.issues-header h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.3px; }
+.issues-subtitle { margin-top: 6px; color: var(--text-muted); font-size: 14px; max-width: 620px; }
+
+.issues-raise-btn {
+  flex-shrink: 0;
+  border: none;
+  background: var(--accent);
+  color: white;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.issues-raise-btn:hover { opacity: 0.92; }
+.issues-raise-btn:disabled { opacity: 0.5; cursor: default; }
+
+/* ---------- Patient Details Edit (sidebar page) ---------- */
+.patient-fields-section { margin-bottom: 28px; max-width: 480px; }
+.patient-fields-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.patient-fields-section-header h2 { font-size: 16px; font-weight: 700; }
+.patient-fields-add-wrap { position: relative; }
+.patient-fields-add-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent-strong);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.patient-fields-add-btn:hover { background: var(--accent-bg); }
+.patient-fields-backdrop { position: fixed; inset: 0; z-index: 20; background: transparent; }
+.patient-fields-add-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 21;
+  min-width: 220px;
+  max-height: 260px;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 4px;
+}
+.patient-fields-add-menu-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 13.5px;
+  cursor: pointer;
+}
+.patient-fields-add-menu-item:hover { background: var(--accent-bg); color: var(--accent-strong); }
+.patient-fields-add-menu-empty { padding: 8px 10px; color: var(--text-muted); font-size: 13px; }
+.patient-fields-active-list { display: flex; flex-direction: column; gap: 8px; }
+.patient-fields-active-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  cursor: grab;
+}
+.patient-fields-active-item-dragging { opacity: 0.45; border-style: dashed; border-color: var(--accent); }
+.patient-fields-drag-handle { color: var(--text-muted); font-size: 14px; user-select: none; }
+.patient-fields-active-label { flex: 1; font-size: 14px; }
+.patient-fields-remove-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.patient-fields-remove-btn:hover { border-color: #e5484d; color: #e5484d; background: rgba(229, 72, 77, 0.08); }
+.patient-fields-empty {
+  padding: 12px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-style: italic;
+}
+.patient-fields-actions { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+.patient-fields-saved { color: var(--accent-strong); font-size: 13px; font-weight: 600; }
+
+.issues-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.issues-search {
+  flex: 1 1 260px;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 12px;
+}
+.issues-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.issues-select-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.issues-select-field select {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  min-width: 170px;
+}
+
+.issues-view-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  overflow: hidden;
+  align-self: flex-end;
+}
+.issues-view-toggle button {
+  border: none;
+  background: var(--surface);
+  color: var(--text-muted);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.issues-view-toggle button + button { border-left: 1px solid var(--border); }
+.issues-view-toggle button.active { background: var(--accent); color: white; }
+
+.issues-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.issues-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.issues-pill:hover { border-color: var(--accent); }
+.issues-pill-active { background: var(--accent); border-color: var(--accent); color: white; }
+.issues-pill-count {
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+.issues-pill-active .issues-pill-count { background: rgba(255, 255, 255, 0.25); }
+
+.issues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ---------- issue card ---------- */
+.issue-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+
+.issue-card-icon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--accent-bg);
+  color: var(--accent-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.issue-card-icon svg { width: 17px; height: 17px; }
+
+.issue-card-body { flex: 1; min-width: 0; }
+.issue-card-top {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.issue-card-code { font-size: 12px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.02em; }
+.issue-card-title { font-size: 15.5px; font-weight: 700; }
+
+.issue-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.issue-card-reporter { font-size: 13px; color: var(--text-muted); }
+
+.issue-badge {
+  border: none;
+  border-radius: 999px;
+  padding: 4px 11px;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+select.issue-badge { cursor: pointer; appearance: none; padding-right: 22px; background-repeat: no-repeat; background-position: right 8px center; background-size: 9px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+
+.issue-status-open { background: var(--warn-bg); color: var(--warn); }
+.issue-status-in_progress { background: var(--accent-bg); color: var(--accent-strong); }
+.issue-status-fixed { background: var(--success-bg); color: var(--success); }
+.issue-status-wont_do { background: var(--surface-alt); color: var(--text-muted); }
+
+.issue-urgency-low { background: var(--surface-alt); color: var(--text-muted); }
+.issue-urgency-medium { background: var(--accent-bg); color: var(--accent-strong); }
+.issue-urgency-high { background: var(--warn-bg); color: var(--warn); }
+.issue-urgency-critical { background: var(--danger-bg); color: var(--danger); }
+
+.issue-screen-tag { background: var(--condition-bg); color: var(--condition-strong); }
+
+.issue-card-chevron {
+  flex-shrink: 0;
+  font-size: 20px;
+  color: var(--text-muted);
+  line-height: 1;
+  margin-top: 4px;
+}
+
+/* ---------- board view ---------- */
+.issues-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  gap: 14px;
+  overflow-x: auto;
+}
+.issues-board-column {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.issues-board-column-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 2px 4px 8px;
+}
+.issues-board-column-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.issues-board-column-body .issue-card { padding: 10px 12px; }
+.issues-board-column-body .issue-card-title { font-size: 14px; }
+
+@media (max-width: 960px) {
+  .issues-board { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .issues-page { padding: 16px 14px 32px; }
+  .issues-header { flex-direction: column; }
+  .issues-select-field select { min-width: 0; width: 100%; }
+}
+
+/* ---------- raise a bug/enhancement modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(15, 17, 23, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Patient profile and diet-plan viewer both render their own .panel (see
+   PatientProfile.jsx / DietViewerPanel.jsx) — reused as-is here, just given
+   a concrete height instead of the height:100% it used to inherit from the
+   old docked .detail-pane, so .panel-body-wrap's flex:1/min-height:0 chain
+   still has something definite to shrink against and scroll internally. */
+.profile-modal-overlay .panel,
+.viewer-modal-overlay .panel:not(.panel-fullscreen) {
+  width: 100%;
+  height: calc(100vh - 48px);
+  max-height: calc(100vh - 48px);
+}
+.profile-modal-overlay .panel { max-width: 760px; }
+.viewer-modal-overlay .panel:not(.panel-fullscreen) { max-width: 1080px; }
+
+/* DietTemplateView renders .diet-template, not .panel — it has no internal
+   .panel-body scroll child of its own, so (unlike .panel above) it needs to
+   be the scrolling element itself, not just height-capped. Missing this was
+   why the diet template modal had no scrollbar and just overflowed off both
+   edges of the screen with no way to reach the rest of it. */
+.viewer-modal-overlay .diet-template {
+  width: 100%;
+  max-width: 1080px;
+  height: calc(100vh - 48px);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+@media (max-width: 720px) {
+  .profile-modal-overlay, .viewer-modal-overlay { padding: 0; }
+  .profile-modal-overlay .panel,
+  .viewer-modal-overlay .panel:not(.panel-fullscreen),
+  .viewer-modal-overlay .diet-template {
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  /* The plan panel goes edge-to-edge here (right above) -- no backdrop
+     space left beside it for the finder to float in without covering the
+     plan itself. */
+  .diet-food-finder { display: none; }
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100vh - 48px);
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 22px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.modal-header h2 { font-size: 18px; font-weight: 700; }
+.modal-subtitle { margin-top: 5px; font-size: 13px; color: var(--text-muted); }
+.modal-close {
+  flex-shrink: 0;
+  border: none;
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 2px 4px;
+}
+.modal-close:hover { color: var(--text); }
+
+.modal-body {
+  flex: 1;
+  min-height: 0; /* lets this flex child actually shrink and scroll instead of pushing the footer past modal-card's clipped max-height */
+  padding: 18px 22px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.modal-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.modal-label { font-size: 13px; font-weight: 700; color: var(--text); }
+.modal-required { color: var(--danger); }
+.modal-hint { font-size: 12px; color: var(--text-muted); }
+.modal-field input,
+.modal-field select,
+.modal-field textarea {
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+}
+.modal-field input:focus,
+.modal-field select:focus,
+.modal-field textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 22px;
+  border-top: 1px solid var(--border);
+}
+
+.switch-sheet-found {
+  margin-top: 14px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.switch-sheet-found-title { font-weight: 700; font-size: 14.5px; }
+.switch-sheet-found-meta { font-size: 12.5px; color: var(--text-muted); margin: 0; }
+.switch-sheet-tab-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.modal-cancel-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.modal-cancel-btn:hover { border-color: var(--text-muted); }
+.modal-submit-btn {
+  border: none;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.modal-submit-btn:hover:not(:disabled) { opacity: 0.92; }
+.modal-submit-btn:disabled { opacity: 0.6; cursor: default; }
+
+@media (max-width: 560px) {
+  .modal-row { grid-template-columns: 1fr; }
+  .modal-body { padding: 14px 16px; }
+  .modal-header { padding: 16px 16px 12px; }
+  .modal-footer { padding: 12px 16px; }
+}
+
+/* ---------- print / save-as-PDF ---------- */
+
+/* The merged document is built on demand into #print-root (see
+   lib/printDoc.js). It's parked off-screen rather than display:none so
+   docx-preview still lays tables and images out against a real width —
+   a zero-size container gives it nothing to lay out against. */
+#print-root {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  width: 816px; /* Letter width at 96dpi, the page size docx-preview targets */
+}
+
+@media print {
+  /* Only the generated document reaches paper — not the app shell,
+     sidebar, panel chrome, nav arrows or the buttons around it. This is
+     the OLD docx-preview print path (lib/printDoc.js's #print-root); the
+     NEWER data-driven DietTemplateView (see the second @media print block
+     below, ".diet-template") never populates #print-root at all — it
+     prints ".diet-template" in place, still inside #root. Without the
+     :not(:has(.diet-template)) guard, this rule slapped display:none
+     !important on #root (the only other body child) for THAT flow too,
+     which no visibility:visible override on a descendant can ever undo —
+     display:none on an ancestor removes it from layout entirely. That was
+     why "Download as PDF" on the data-driven view produced a single
+     blank page: #root, and everything in it including .diet-template,
+     was never rendered into the print job in the first place. */
+  body > *:not(#print-root):not(:has(.diet-template)) { display: none !important; }
+
+  #print-root {
+    position: static !important;
+    left: auto !important;
+    width: auto !important;
+    /* No padding here on purpose — @page below now supplies the real
+       per-page margin (every physical page, all four sides). Doubling up
+       padding on top of that would over-indent left/right and, on the
+       first/last page only, top/bottom too. */
+    padding: 0 !important;
+  }
+
+  /* 1.5cm on every side of every physical page — @page margin is the only
+     CSS mechanism that reaches each page's own top/bottom individually
+     (a block's own padding, tried previously, only wraps the first/last
+     physical page of the whole flow, not each page in between: see the
+     git history on this rule if that trade-off needs revisiting).
+     Known trade-off, re-confirm before touching: a nonzero @page margin
+     was tried twice before (flat 10mm, then 10mm everywhere but page 1)
+     and both times brought the browser's own print header/footer (title,
+     print date/time, the "…_gear2_diet-plan" filename) back on a real
+     test, even with page 1 specifically denied margin room — only
+     @page { margin: 0 } was ever confirmed, by an actual coach printing
+     an actual PDF, to keep that text off every page. This 1.5cm margin is
+     a deliberate reversal of that finding per an explicit request for a
+     uniform margin on every page — if the header/footer text reappears,
+     it's that same regression, and the fix is unchecking "Headers and
+     footers" in the browser's print dialog (there is no CSS way to force
+     that setting off from the page). */
+  @page { margin: 1.5cm; }
+
+  html, body {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Each gear starts on a fresh sheet, so Lunch never begins halfway down
+     the last page of Breakfast. */
+  .print-gear { break-before: page; }
+  .print-gear:first-child { break-before: auto; }
+
+  .print-meal-heading {
+    font-size: 20pt;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 8mm;
+    break-after: avoid; /* never strand the heading alone at a page foot */
+  }
+
+  /* docx-preview renders every Word page as a fixed-size section: a
+     min-height of the whole sheet plus its own page chrome. That's what
+     produces the large blank bands — a Word page holding just a heading and
+     one line still reserves a full sheet, and the browser then paginates on
+     top of that, so the emptiness compounds. Letting the sections collapse
+     to their real content height removes the dead space and lets the
+     browser paginate the content continuously instead. */
+  #print-root .docx-wrapper {
+    display: block !important;
+    background: none !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+  #print-root section.docx {
+    width: auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+    overflow: visible !important;
+  }
+
+  /* Keep rows and images whole across sheet boundaries instead of slicing
+     a row's text in half. table-layout:fixed (rather than docx-preview's
+     own default of auto for some tables) is what makes column widths
+     actually binding: under auto layout, a column's content can force the
+     whole table wider than the page no matter what width is declared here
+     — confirmed against a real template, where one table's Tamil content
+     forced it to 718px on a page with ~300px to spare. Fixed layout still
+     isn't sufficient by itself, though: printDoc.js's makeTablesResponsive
+     converts each table's <col> widths to percentages of that table's own
+     total before this ever runs, because a fixed-layout table's rendered
+     width is MAX(this width, the sum of its column widths) per spec — so
+     without that conversion, a table whose original columns summed to more
+     than the page width would still overflow it regardless of this rule. */
+  #print-root table { break-inside: auto; width: 100% !important; table-layout: fixed !important; }
+  #print-root tr,
+  #print-root img { break-inside: avoid; }
+  #print-root thead { display: table-header-group; }
+  #print-root img { max-width: 100% !important; height: auto !important; }
+  /* Defensive: a single genuinely unbreakable token (no internal spaces —
+     not the failure mode fixed above, but plausible in some other
+     template) could still force its own cell wider than its fixed-layout
+     share. This breaks it at any character rather than let it overflow. */
+  #print-root td, #print-root th { overflow-wrap: anywhere !important; word-break: break-word !important; }
+
+  /* Replacements print as plain text: the yellow review highlight is a
+     screen affordance for the coach, not part of the patient's plan. */
+  #print-root mark.food-replaced,
+  #print-root mark.food-flag {
+    background: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+  }
+}
+
+.panel-print-busy {
+  color: var(--text-muted);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.panel-print-ready-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.panel-print-ready {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--success);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.panel-print-ready .panel-download {
+  padding: 5px 10px;
+  font-size: 12.5px;
+}
+
+.panel-print-tip {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ---------- gear status chips (Pending/Call Done/Prepared/Verified/Completed) ---------- */
+.person-avatar-btn, .person-name-btn {
+  border: none;
+  background: var(--accent-bg);
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.person-name-btn { background: none; color: inherit; }
+.person-name-btn:hover, .person-avatar-btn:hover { text-decoration: underline; }
+.person-avatar-btn:hover { box-shadow: 0 0 0 2px var(--accent); text-decoration: none; }
+
+.person-status-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+.person-last-updated {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.gear-status-chip {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.gear-status-pending { background: var(--surface-alt); color: var(--text-muted); border-color: var(--border); }
+.gear-status-call-done { background: var(--warn-bg); color: var(--warn); }
+.gear-status-prepared { background: var(--accent-bg); color: var(--accent-strong); }
+.gear-status-verified { background: var(--success-bg); color: var(--success); }
+.gear-status-completed { background: var(--success); color: white; }
+
+.gear-status-with-tl { display: inline-flex; align-items: center; gap: 4px; }
+.tl-verify-btn {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent-strong);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tl-verify-btn:hover { background: var(--accent-bg); }
+.tl-verify-btn-done { border-color: var(--success); color: var(--success); }
+.tl-verify-btn-done:hover { background: var(--success-bg); }
+
+.gear-urgency-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.gear-urgency-overdue { background: var(--danger); color: white; }
+.gear-urgency-soon { background: var(--warn-bg); color: var(--warn); }
+
+.modal-field-checkbox { flex-direction: row; align-items: center; gap: 8px; }
+.modal-field-checkbox input { width: auto; }
+
+.team-table-wrap { overflow-x: auto; margin-top: 16px; }
+.team-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.team-table th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.team-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+
+.diet-remarks-table { font-size: 13px; }
+.diet-remarks-table-snippet { max-width: 260px; white-space: pre-wrap; }
+.diet-remarks-patient-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--accent-strong);
+  cursor: pointer;
+  text-align: left;
+}
+.diet-remarks-patient-link:hover { text-decoration: underline; }
+.diet-remarks-patient-link:disabled { color: var(--text-muted); cursor: default; text-decoration: none; }
+.diet-remarks-jump-error { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.diet-remarks-jump-error button { background: none; border: none; color: inherit; font-size: 16px; cursor: pointer; line-height: 1; flex-shrink: 0; }
+.diet-remarks-status-pending {
+  display: inline-block;
+  background: var(--warn-bg);
+  color: var(--warn);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 999px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+.diet-remarks-status-resolved {
+  display: inline-block;
+  color: var(--text-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.team-table select { padding: 4px 8px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); }
+
+.tag-bmi { font-weight: 600; }
+.tag-bmi-underweight { background: var(--warn-bg); border-color: transparent; color: var(--warn); }
+.tag-bmi-normal { background: var(--success-bg); border-color: transparent; color: var(--success); }
+.tag-bmi-overweight { background: var(--warn-bg); border-color: transparent; color: var(--warn); }
+.tag-bmi-obese { background: var(--danger-bg); border-color: transparent; color: var(--danger); }
+
+/* ---------- status filter (gear + lifecycle pills, above the tracker list) ---------- */
+.status-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+.status-filter-gears {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.status-filter-gear-btn {
+  border: none;
+  background: var(--surface);
+  color: var(--text-muted);
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.status-filter-gear-btn + .status-filter-gear-btn { border-left: 1px solid var(--border); }
+.status-filter-gear-btn-active { background: var(--accent); color: white; }
+
+.status-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.status-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.status-pill:hover { border-color: var(--accent); }
+.status-pill-active { background: var(--accent); border-color: var(--accent); color: white; }
+.status-pill-count {
+  font-size: 11.5px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+.status-pill-active .status-pill-count { background: rgba(255, 255, 255, 0.25); }
+
+/* "Unverified" spans several statuses rather than naming one, so it gets a
+   warn-tinted outline of its own instead of borrowing any single
+   .gear-status-* colour. */
+.status-pill-unverified { border-color: var(--warn); color: var(--warn); }
+.status-pill-unverified.status-pill-active { background: var(--warn); border-color: var(--warn); color: white; }
+
+/* ---------- Dashboard ---------- */
+.dashboard {
+  flex: 1;
+  padding: 24px 28px 40px;
+  max-width: 1100px;
+  width: 100%;
+}
+.dashboard-header h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.3px; }
+.dashboard-section { margin-top: 28px; }
+.dashboard-section h2 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+.dashboard-reminder-heading { font-size: 13.5px; font-weight: 700; color: var(--text-muted); margin: 0 0 8px; }
+.dashboard-reminder-heading-overdue { color: var(--danger); }
+.dashboard-reminder-group + .dashboard-reminder-group { margin-top: 18px; }
+
+.dashboard-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px;
+}
+.dashboard-tile {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.dashboard-tile.gear-status-pending { border-left-color: var(--text-muted); }
+.dashboard-tile.gear-status-call-done { border-left-color: var(--warn); }
+.dashboard-tile.gear-status-prepared { border-left-color: var(--accent); }
+.dashboard-tile.gear-status-verified { border-left-color: var(--success); }
+.dashboard-tile.gear-status-completed { border-left-color: var(--success); }
+
+.dashboard-tile-head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  border: none;
+  background: none;
+  padding: 12px 14px;
+  cursor: pointer;
+  text-align: left;
+}
+.dashboard-tile-head:disabled { cursor: default; opacity: 0.55; }
+.dashboard-tile-head:not(:disabled):hover { background: var(--surface-alt); }
+.dashboard-tile-count { font-size: 24px; font-weight: 700; line-height: 1; }
+.dashboard-tile-label { font-size: 12.5px; font-weight: 600; color: var(--text-muted); }
+
+.dashboard-tile-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 10px 10px;
+  max-height: 220px;
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+}
+.dashboard-tile-list li { border-bottom: 1px solid var(--border); }
+.dashboard-tile-list li:last-child { border-bottom: none; }
+.dashboard-tile-list button {
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+  padding: 8px 4px;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+}
+.dashboard-tile-list button:hover { color: var(--accent-strong); text-decoration: underline; }
+
+.effort-goal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px;
+}
+.effort-goal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.effort-goal-name { font-size: 13px; font-weight: 700; }
+.effort-goal-stat { font-size: 12.5px; color: var(--text-muted); }
+.effort-goal-stat-met { color: var(--success); font-weight: 600; }
+
+.team-performance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+.team-performance-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+}
+.team-performance-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.team-performance-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 3px 0;
+}
+.team-performance-row + .team-performance-row { border-top: 1px solid var(--border); }
+
+.dashboard-reminder-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.dashboard-reminder-list button {
+  border: none;
+  background: none;
+  padding: 6px 0;
+  font-size: 13.5px;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+.dashboard-reminder-list button:hover { color: var(--accent-strong); text-decoration: underline; }
+
+@media (max-width: 720px) {
+  .dashboard { padding: 16px 14px 32px; }
+}
+
+/* ---------- patient profile panel ---------- */
+.profile-body { display: flex; flex-direction: column; gap: 22px; }
+
+.profile-section h3 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.profile-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+.profile-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 8px 11px;
+}
+.profile-info-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; }
+.profile-info-value { font-size: 13.5px; color: var(--text); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+.profile-gear-row {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.profile-gear-row-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.profile-gear-label { font-weight: 700; font-size: 13.5px; }
+.profile-gear-due { font-size: 11.5px; font-weight: 600; color: var(--text-muted); }
+.profile-gear-due-overdue { color: var(--danger); }
+.profile-gear-due-soon { color: var(--warn); }
+.profile-gear-row-meta { margin-top: 4px; }
+.profile-gear-row-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+
+.profile-gear-facts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.profile-gear-fact {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+.profile-gear-fact-done { color: var(--success); border-color: var(--success); }
+.blood-status-tag.blood-status-done { color: var(--success); border-color: var(--success); }
+.blood-status-tag.blood-status-pending { color: var(--warn); border-color: var(--warn); }
+.blood-status-tag.blood-status-missing { color: var(--danger); border-color: var(--danger); }
+
+.profile-gear-remarks {
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: var(--text);
+  background: var(--surface-alt);
+  border-radius: 7px;
+  padding: 6px 10px;
+}
+.profile-gear-remarks .profile-info-label { margin-right: 4px; }
+
+.profile-urgent-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--warn-bg);
+  color: var(--warn);
+  border: 1px solid var(--warn);
+  border-radius: 9px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.profile-urgent-item { font-weight: 600; }
+.profile-urgent-item + .profile-urgent-item::before { content: '·'; margin-right: 12px; color: var(--warn); }
+
+.profile-activity-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.profile-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 4px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.profile-activity-item:last-child { border-bottom: none; }
+.profile-activity-icon { flex-shrink: 0; width: 18px; text-align: center; }
+.profile-activity-text { flex: 1; color: var(--text); }
+.profile-activity-time { flex-shrink: 0; font-size: 11.5px; color: var(--text-muted); }
+
+.profile-action-btn {
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text);
+  border-radius: 7px;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.profile-action-btn:hover { border-color: var(--accent); }
+.profile-action-btn:disabled { opacity: 0.55; cursor: default; }
+.profile-action-btn-primary { background: var(--accent); border-color: var(--accent); color: white; }
+.profile-action-btn-primary:hover { opacity: 0.92; }
+
+.profile-findings-block { margin-bottom: 14px; }
+.profile-findings-block .profile-gear-label { display: block; margin-bottom: 6px; }
+.profile-gear-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.profile-empty-note { color: var(--text-muted); font-size: 13.5px; }
+
+.weight-trend { font-size: 12px; font-weight: 600; }
+.weight-trend-up { color: var(--warn); }
+.weight-trend-down { color: var(--success); }
+.weight-trend-flat { color: var(--text-muted); font-weight: 500; font-style: italic; }
+
+/* ---------- data-driven diet template (app UI, not a document page) ---------- */
+.diet-template { display: flex; flex-direction: column; gap: 16px; max-width: 1040px; margin: 0 auto; }
+
+.diet-template-toolbar { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.diet-template-title { font-size: 20px; font-weight: 700; }
+.diet-template-tagline { margin-top: 4px; font-style: italic; color: var(--text-muted); font-size: 13.5px; }
+.diet-template-pdf-btn {
+  flex-shrink: 0;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.diet-template-pdf-btn:hover { opacity: 0.92; }
+.diet-template-toolbar-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.diet-template-revert-all-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.diet-template-revert-all-btn:hover { color: var(--text); border-color: var(--text-muted); }
+.diet-template-revert-all-btn:disabled { opacity: 0.6; cursor: default; }
+.diet-template-close-btn {
+  border: none;
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 2px 4px;
+}
+.diet-template-close-btn:hover { color: var(--text); }
+
+/* ---------- cover intro + cover card (patient summary — matches the
+   management team's own "FRONT PAGE - ENGLISH.docx": branded hero graphic
+   as its own intro page, then "Diet Preference Questionnaire" and its three
+   tables starting fresh on the next page) ---------- */
+.diet-cover-intro {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 18px;
+}
+.diet-cover-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 18px;
+}
+/* The source template's own poster graphic — logo, tagline, hero food-bowl
+   photo, benefit icons — embedded once as a picture in that .docx, not
+   individually recreated in CSS. object-fit: contain (not cover) because,
+   unlike every recipe/group photo elsewhere in this view, this graphic's
+   OWN baked-in text is the content — cropping it would cut off real words,
+   the same reason .diet-schedule-image below uses contain instead of cover.
+   No bottom margin here (unlike before) — it's the only thing on its own
+   .diet-cover-intro card now, not sharing a card with content below it. */
+.diet-cover-hero { width: 100%; max-width: 480px; height: auto; object-fit: contain; border-radius: 8px; display: block; margin: 0 auto; }
+.diet-cover-header-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.diet-cover-heading { font-size: 16px; font-weight: 700; color: var(--accent-strong); }
+.diet-cover-date { font-size: 11.5px; color: var(--text-muted); white-space: nowrap; }
+
+.diet-cover-table-block { margin-bottom: 16px; }
+.diet-cover-table-block:last-child { margin-bottom: 0; }
+.diet-cover-table-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 6px; }
+/* A label/value form, not a data grid — the left column names the field
+   (matching the source template's own row labels: "Name", "BMI", "Diet
+   Name", ...) the same way .diet-table's <th> heads a data COLUMN
+   elsewhere in this view, just turned sideways onto each row instead. */
+.diet-cover-table th { width: 38%; background: var(--surface-alt); font-weight: 700; font-size: 12px; text-transform: none; letter-spacing: normal; }
+.diet-cover-table td { font-size: 13px; }
+.diet-cover-empty { color: var(--text-muted); }
+.diet-cover-inline-tag { display: inline-block; }
+
+/* Moderate/borderline = yellow, high/abnormal = red — the management
+   document's own instruction, not a design choice. Nested inside the
+   Clinical Details table's own "Blood Report Findings" row, so no title of
+   its own here (the row label already says what this is). */
+.diet-cover-blood-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.diet-cover-blood-row td { padding: 4px 8px; border-radius: 4px; }
+.diet-cover-blood-row-moderate td { background: var(--warn-bg); color: var(--warn); }
+.diet-cover-blood-row-high td { background: var(--danger-bg); color: var(--danger); }
+.diet-cover-blood-cat { font-weight: 700; text-align: right; white-space: nowrap; }
+.diet-cover-blood-other { margin-top: 6px; font-size: 12px; color: var(--text-muted); }
+
+/* ---------- tabs ---------- */
+.diet-template-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.diet-tab-btn {
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 7px 15px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.diet-tab-btn:hover { color: var(--text); }
+.diet-tab-btn-active { background: var(--accent); border-color: var(--accent); color: white; }
+
+/* Sits at the end of a meal's own tab row (see MealSection) rather than
+   among the tabs themselves — it opens a modal, not a panel, so it should
+   never look selectable/active the way a real tab does. */
+.diet-add-recipe-btn { margin-left: auto; background: var(--accent-bg); color: var(--accent-strong); border-color: var(--accent); }
+.diet-add-recipe-btn:hover { opacity: 0.85; }
+
+.diet-tab-panel { display: none; }
+.diet-tab-panel[data-active="true"] { display: block; }
+
+/* ---------- table of contents ---------- */
+.diet-toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+}
+.diet-toc-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 8px; }
+.diet-toc-list { list-style: none; padding: 0; margin: 0; }
+.diet-toc-item { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 5px 0; }
+.diet-toc-link { background: none; border: none; padding: 0; text-align: left; font-size: 13.5px; color: var(--text); cursor: pointer; }
+.diet-toc-link:hover { color: var(--accent); text-decoration: underline; }
+.diet-toc-link-active { color: var(--accent-strong); font-weight: 700; }
+/* No pages exist on screen to number — this anchor exists purely for print's
+   target-counter() below; the button above it already handles the jump. */
+.diet-toc-pageno { display: none; }
+
+/* Meals are the outer level (Breakfast / Lunch / Dinner), so they read as
+   bigger, squarer tabs than the pill-shaped section tabs nested inside. */
+.diet-template-mealtabs { gap: 8px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+.diet-meal-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.diet-meal-btn:hover { color: var(--text); }
+.diet-meal-btn-active { background: var(--accent); border-color: var(--accent); color: white; }
+.diet-template-subtabs { margin-bottom: 4px; }
+
+.diet-meal-panel { display: none; }
+.diet-meal-panel[data-active="true"] { display: flex; flex-direction: column; gap: 14px; }
+
+/* Deliberately loud, and it prints: an unreviewed recipe draft reaching a
+   patient unmarked is the failure this is here to prevent. */
+.diet-draft-banner {
+  background: var(--warn-bg);
+  color: var(--warn);
+  border: 1px solid currentColor;
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+/* Same "heads-up for whoever's reviewing on screen" convention as
+   .diet-draft-banner above, colored to match the food-flag marks it's
+   pointing at (App.css's .food-flag-allergy/.food-flag-dislike, both
+   --flag-highlight-bg/border) rather than the generic --warn used elsewhere,
+   so the banner and what it's warning about read as the same thing. */
+.diet-food-warning-banner {
+  background: var(--flag-highlight-bg);
+  color: #713f12;
+  border: 1px solid var(--flag-highlight-border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  margin-top: 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+/* Floating ↑/↓ match navigator (DietTemplateView.jsx) -- fixed to the
+   VIEWPORT, not .diet-template's own scroll container, and deliberately
+   placed outside the plan panel entirely (beside it, in the modal
+   backdrop) so it stays reachable no matter how far the coach has scrolled
+   into a long plan, the same reason a browser's own find-in-page toolbar
+   floats free of the page instead of scrolling away with it. Sits above
+   .viewer-modal-overlay's own z-index (1100, see the modal-overlay rule) so
+   it's never covered by the plan panel or its backdrop; hidden on narrow
+   viewports (see the media query at the bottom of this file) where there's
+   no backdrop space beside the panel to float in anyway. */
+.diet-food-finder {
+  position: fixed;
+  top: 96px;
+  right: 24px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--flag-highlight-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 10px 12px;
+}
+.diet-food-finder-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.diet-food-finder-controls { display: flex; align-items: center; gap: 6px; }
+.diet-food-finder-controls button {
+  background: var(--flag-highlight-bg);
+  border: 1px solid var(--flag-highlight-border);
+  border-radius: 4px;
+  color: #713f12;
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+.diet-food-finder-controls button:hover { filter: brightness(0.95); }
+.diet-food-finder-count { min-width: 3.5em; text-align: center; font-size: 12.5px; font-weight: 600; color: var(--text); }
+/* Brief highlight ring on whichever <mark> ↑/↓ (or the finder's ▲/▼) just
+   scrolled to — every match already shares the same plain yellow
+   food-flag-allergy/dislike color, so without this there'd be no way to
+   tell navigation actually moved to a different one. Same animation shape
+   as .diet-remark-jump-flash elsewhere in this file. */
+.food-flag-current { animation: diet-food-flag-jump-flash 1.5s ease-out; }
+@keyframes diet-food-flag-jump-flash {
+  0% { box-shadow: 0 0 0 3px var(--flag-highlight-border); }
+  100% { box-shadow: 0 0 0 3px transparent; }
+}
+/* Diet Schedule cell editing (Team Member accounts only — see
+   DietTemplateView.jsx's ScheduleCell). A dashed underline is enough of a
+   "this is editable" affordance without visually competing with the actual
+   remark/allergy <mark> highlighting a cell may also be showing. */
+.diet-schedule-cell-editable {
+  cursor: text;
+  border-bottom: 1px dashed transparent;
+}
+.diet-schedule-cell-editable:hover {
+  border-bottom-color: var(--accent);
+}
+.diet-schedule-cell-editing { display: inline-flex; align-items: center; gap: 4px; width: 100%; }
+.diet-schedule-cell-input {
+  width: 100%;
+  min-width: 60px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font: inherit;
+  color: inherit;
+  background: var(--surface);
+}
+.diet-schedule-cell-error { color: var(--danger); cursor: help; }
+/* Only print needs the meal named in the body — on screen the active tab says it. */
+.diet-meal-print-heading { display: none; }
+
+/* ---------- meal-plan tables ---------- */
+.diet-mealplan {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.diet-mealplan-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--accent-strong); }
+.diet-table-wrap { overflow-x: auto; }
+.diet-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.diet-table th, .diet-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.diet-table th { background: var(--surface-alt); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; }
+.diet-table-day { font-weight: 700; white-space: nowrap; }
+
+.diet-notes { background: var(--warn-bg); color: var(--warn); border-radius: var(--radius); padding: 10px 14px; font-size: 13px; }
+.diet-notes p:not(:last-child) { margin-bottom: 6px; }
+
+/* ---------- recipe cards ---------- */
+.diet-recipe-group-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-strong);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+.diet-recipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+/* Print-only pairing wrapper (see the @media print block below) — on screen
+   it must stay invisible to .diet-recipe-grid's own layout so cards keep
+   auto-fitting exactly as they did before pairing existed; `display:
+   contents` drops the wrapper from layout entirely while its <Recipe>
+   children still participate in the grid directly. */
+.diet-recipe-page { display: contents; }
+
+/* A group like "Dinner Recipe" holds no recipes directly — Kanji / Thuvaiyal
+   Recipes for Kanji / Millet Recipe render as labeled subsections within its
+   one tab instead of three more top-level tabs, matching how the source
+   document itself nests them. */
+.diet-recipe-subgroup:not(:first-child) { margin-top: 22px; }
+.diet-recipe-subgroup-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.diet-recipe { position: relative; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); border-radius: var(--radius); padding: 14px 16px; break-inside: avoid; }
+/* height: auto (not a fixed box + object-fit: cover) so the whole food
+   photo shows uncropped — max-height only guards against an unusually
+   tall/narrow source image dominating the card; object-fit: contain then
+   letterboxes that rare case instead of cropping it. */
+.diet-recipe-image { width: 100%; height: auto; max-height: 320px; object-fit: contain; border-radius: 8px; margin-bottom: 10px; display: block; background: var(--surface-alt); }
+/* The loading placeholder has no image yet to size itself by, so it keeps
+   the old fixed box until AuthedImage swaps it for the real <img> above. */
+.diet-recipe-image-loading { height: 140px; background: var(--surface-alt); }
+
+/* A freeText-only group's own illustrative photo (Category 2/3, Cutting
+   Types, Shop Organic Products, Salad Law, Water Law) — capped narrower and
+   shorter than a recipe card's image since it's one photo for a whole tab
+   of text, not a specific dish. */
+.diet-group-image { width: 100%; max-width: 320px; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; display: block; }
+
+/* The schedule's own diagram (Gear 2's "BMW BREAKFAST" plate chart). Every
+   other image here is a photo of food, where cropping to a fixed-height box
+   only ever loses background — but this one is an infographic whose labels
+   and percentages ARE the content, so `height: auto` + `contain` keeps its
+   real aspect ratio and shows all of it. Capped at its own natural width so
+   it doesn't blow up past legibility on a wide screen. */
+.diet-schedule-image {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 14px auto;
+  display: block;
+}
+.diet-recipe-name { font-size: 14.5px; font-weight: 700; margin-bottom: 8px; }
+.diet-recipe-block { margin-bottom: 8px; }
+.diet-recipe-block:last-child { margin-bottom: 0; }
+.diet-recipe-label { display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 4px; }
+/* Highlight-mode-only reminder that a line here is flagged by SELECTING its
+   text, not by clicking a button — there's no button to discover otherwise. */
+.diet-recipe-select-hint { text-transform: none; font-weight: 500; font-style: italic; color: var(--accent-strong); letter-spacing: normal; }
+/* A pending line remark's own badge, inline at the START of its <li> —
+   smaller than the card-level badge so a dense ingredient list doesn't turn
+   into a wall of circles. */
+.diet-remark-line-badge { width: 16px; height: 16px; font-size: 9px; margin-right: 5px; vertical-align: middle; }
+.diet-recipe-block ul, .diet-recipe-block ol { padding-left: 18px; font-size: 13px; }
+.diet-recipe-block li { margin-bottom: 3px; }
+.diet-recipe-note { font-size: 12.5px; color: var(--text-muted); font-style: italic; margin-top: 8px; }
+
+/* Only ever meaningful on screen — swapping a recipe from a printed page
+   makes no sense. Hidden in print below, alongside the rest of the
+   screen-only chrome (.diet-template-pdf-btn etc). */
+.diet-recipe-replace-btn {
+  margin-top: 10px;
+  width: 100%;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-strong);
+  cursor: pointer;
+}
+.diet-recipe-replace-btn:hover { background: var(--accent-bg); border-color: var(--accent); }
+
+/* Offered on EVERY card (original, replaced, or added) — unlike Replace/
+   Revert, which only apply to real slots — so it gets its own neutral
+   styling rather than borrowing Replace's accent color, keeping "swap the
+   whole dish" and "tweak this one" visually distinct at a glance. */
+.diet-recipe-edit-btn {
+  width: 100%;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+}
+.diet-recipe-edit-btn:hover { border-color: var(--text-muted); }
+
+.diet-recipe-actions { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.diet-recipe-actions .diet-recipe-replace-btn { margin-top: 0; }
+
+/* A replaced card gets a visible accent border so it's obvious at a glance,
+   scanning a whole meal's worth of cards, which ones a dietitian already
+   changed for this patient — the "Replaced" tag alone is easy to miss in a
+   dense grid. Print keeps the border (a real record of what was changed)
+   but drops the Revert button below, same as Replace. */
+.diet-recipe-replaced { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.diet-recipe-replaced-tag {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--accent-bg);
+  color: var(--accent-strong);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+}
+.diet-recipe-revert-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.diet-recipe-revert-btn:hover { color: var(--text); border-color: var(--text-muted); }
+.diet-recipe-revert-btn:disabled { opacity: 0.6; cursor: default; }
+
+.diet-recipe-remove-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--danger);
+  border-radius: 6px;
+  padding: 7px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--danger);
+  cursor: pointer;
+}
+.diet-recipe-remove-btn:hover { background: var(--danger-bg); }
+.diet-recipe-remove-btn:disabled { opacity: 0.6; cursor: default; }
+
+/* ---------- Diet Remarks (TL highlight + comment) ---------- */
+/* The 🖍 flag (raise) and 💬 badge (view existing) share one small circular
+   footprint everywhere they appear, so a TL scanning the plan in highlight
+   mode sees the same shape whether it's on a recipe card, a table row, or a
+   freeText line — only the color differs (accent = "flag this", warn =
+   "something's already flagged here"). */
+.diet-remark-flag-btn, .diet-remark-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.diet-remark-flag-btn { color: var(--accent-strong); border-color: var(--accent); }
+.diet-remark-flag-btn:hover { background: var(--accent-bg); }
+.diet-remark-badge { color: var(--warn); border-color: var(--warn); background: var(--warn-bg); animation: diet-remark-pulse 2s ease-in-out infinite; }
+@keyframes diet-remark-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+
+/* Positioned in the recipe card's own top-right corner (see .diet-recipe's
+   position:relative above) rather than inline with the title, so it never
+   pushes the dish name over regardless of how long that name runs. */
+.diet-recipe > .diet-remark-flag-btn, .diet-recipe > .diet-remark-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.diet-recipe-remark-highlighted { border-color: var(--warn); box-shadow: 0 0 0 2px var(--warn); background: var(--warn-bg); }
+
+/* Briefly rings whichever block a "Diet Remarks" page click just scrolled
+   to — distinct (accent color, fades out once) from the permanent warn-
+   colored pending-remark highlight above, so a plan with several open
+   remarks still makes clear which ONE was just jumped to. */
+.diet-remark-jump-flash { animation: diet-remark-jump-flash 2s ease-out; border-radius: 8px; }
+@keyframes diet-remark-jump-flash {
+  0% { box-shadow: 0 0 0 4px var(--accent); }
+  100% { box-shadow: 0 0 0 4px transparent; }
+}
+
+/* Table rows and freeText/note lines put the flag/badge INLINE instead
+   (leading the day cell, or leading the line) — a table row has no sane
+   place to absolutely-position anything against, and a freeText paragraph
+   reads better with the flag as part of its own line than floating over it. */
+.diet-table-day .diet-remark-flag-btn, .diet-table-day .diet-remark-badge { margin-right: 6px; vertical-align: middle; }
+.diet-remark-row-highlighted { background: var(--warn-bg); }
+/* InfoTable's leading flag column (no day column to piggyback on, unlike
+   MealPlanTable) — as narrow as the badge itself so it doesn't visually
+   compete with the table's own data columns. */
+.diet-table-flag-col { width: 30px; padding: 4px 4px 4px 8px !important; }
+.diet-table-flag-col .diet-remark-flag-btn, .diet-table-flag-col .diet-remark-badge { margin: 0; }
+.diet-freetext p, .diet-notes p { display: flex; align-items: flex-start; gap: 6px; }
+.diet-remark-line-highlighted { background: var(--warn-bg); border-radius: 6px; padding: 2px 6px; margin: -2px -6px; }
+
+.diet-remark-snapshot {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.diet-remark-comment { font-size: 13.5px; line-height: 1.5; white-space: pre-wrap; }
+.diet-remark-retract-btn {
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.diet-remark-retract-btn:hover { background: var(--danger-bg); }
+.diet-remark-retract-btn:disabled { opacity: 0.6; cursor: default; }
+
+.diet-template-highlight-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent-strong);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.diet-template-highlight-btn:hover { background: var(--accent-bg); }
+.diet-template-highlight-btn-active { background: var(--accent); color: white; }
+
+/* Team Member-only Diet Schedule edit-mode toggle (see DietTemplateView.jsx's
+   MealSection) -- same active-state convention as .diet-template-highlight-btn
+   above, just scoped to the Diet Schedule tab's own row instead of the global
+   toolbar. */
+.diet-schedule-edit-btn-active { background: var(--accent); color: white; }
+
+.diet-revert-error-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--danger-bg);
+  color: var(--danger);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-top: 12px;
+}
+.diet-revert-error-banner button { background: none; border: none; color: inherit; font-size: 16px; cursor: pointer; line-height: 1; }
+
+/* ---------- replace-recipe modal ---------- */
+.diet-replace-modal { max-width: 760px; width: 100%; max-height: 85vh; }
+.diet-replace-tabs { display: flex; gap: 6px; padding: 0 20px; border-bottom: 1px solid var(--border); }
+.diet-replace-tabs .diet-tab-btn { border-radius: 8px 8px 0 0; border-bottom: none; }
+
+/* [Add Recipe]'s "From Library" tab — search box + condition/gear selects,
+   one row on a wide modal, stacked on a narrow one. Unlike [Replace], which
+   derives its filters silently from the one slot being swapped, adding a
+   recipe has no such slot to narrow against, so these are real controls. */
+.diet-add-filters { display: flex; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+.diet-add-filters .modal-field { flex: 1; min-width: 160px; }
+
+.diet-recipe-alt { display: flex; flex-direction: column; }
+.diet-recipe-unreviewed-tag {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--warn-bg);
+  color: var(--warn);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-bottom: 6px;
+}
+/* The AI tab shows exactly one suggestion at a time — full grid width
+   rather than the usual multi-column card layout, matching the size of a
+   real card everywhere else in the app instead of stretching one card thin
+   across several grid columns. */
+.diet-recipe-grid-single { grid-template-columns: minmax(260px, 420px); }
+.diet-ai-retry-btn { margin-top: 10px; }
+.diet-manual-image-preview { display: block; width: 100%; max-width: 240px; height: 140px; object-fit: cover; border-radius: 8px; margin-top: 8px; }
+
+.diet-recipe-select-btn {
+  margin-top: auto;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.diet-recipe-select-btn:hover { background: var(--accent-strong); }
+.diet-recipe-select-btn:disabled { opacity: 0.6; cursor: default; }
+
+.diet-freetext {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.diet-freetext p { font-size: 13.5px; margin-bottom: 6px; }
+.diet-freetext p:last-child { margin-bottom: 0; }
+
+/* Same card as .diet-freetext, but closing a section rather than opening
+   one — spaced away from the recipe grid above it so it reads as a footer
+   to the group, and kept whole across a page break in print since a split
+   Salad Law list would be worse than a shorter page. */
+.diet-group-footnotes { margin-top: 16px; break-inside: avoid; }
+
+.diet-template-footer { text-align: center; padding: 8px 0; }
+.diet-template-quote { font-style: italic; font-size: 13.5px; color: var(--text-muted); margin-bottom: 12px; }
+.diet-template-disclaimer { font-size: 11px; color: var(--text-muted); text-align: left; border-top: 1px solid var(--border); padding-top: 12px; }
+
+/* Screen shows one tab; print always shows every section (this is where
+   the app-UI/document split lands: a person browsing on screen wants one
+   section at a time, but a printed diet chart needs every day and every
+   recipe present regardless of which tab happened to be open last). */
+@media print {
+  body * { visibility: hidden; }
+  .diet-template, .diet-template * { visibility: visible; }
+  /* DietTemplateView opens inside .viewer-modal-overlay, which is
+     `position: fixed; inset: 0` for on-screen centering — Chromium's print
+     engine caps position:fixed content to a single page regardless of how
+     tall it actually is, and that overlay's own `.diet-template` sizing
+     rule (.viewer-modal-overlay .diet-template — two classes, App.css
+     above) additionally caps it to `height: calc(100vh - 48px);
+     overflow-y: auto` for on-screen scrolling. Neither is reset by a plain
+     `.diet-template { }` selector below: same specificity loses outright to
+     the two-class one, so the overflow/height cap silently survived into
+     print. Together this is why "Download as PDF" produced a single blank
+     page — the print engine only had one fixed-size, scroll-clipped
+     viewport to work with, not the full document. Freeing the modal from
+     `position: fixed` first lets `.diet-template`'s own `position: absolute`
+     below resolve against the real page instead of that viewport box, and
+     `!important` is required on the .diet-template overrides because the
+     modal's own sizing rule outranks a same-page plain `.diet-template`
+     selector on specificity, print media or not — including width and
+     max-width themselves, missed here originally: .viewer-modal-overlay
+     .diet-template's own `max-width: 1080px` (App.css above) is 2 classes
+     of specificity against this rule's 1, so it silently kept winning
+     even in print — confirmed directly (computed max-width stayed
+     "1080px" with this rule's `max-width: none` in place, no !important)
+     — leaving .diet-template capped/positioned against the wrong width
+     reference for every child's own percentage-based sizing to inherit,
+     the most likely real explanation for content overflowing the page on
+     the right regardless of which element's own CSS was checked. */
+  .modal-overlay {
+    position: static !important;
+    inset: auto !important;
+    background: none !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+  .diet-template {
+    position: absolute !important; left: 0 !important; top: 0 !important; width: 100% !important; max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+  }
+  .diet-template-pdf-btn, .diet-template-close-btn, .diet-template-tabs,
+  .diet-template-revert-all-btn, .diet-template-highlight-btn, .diet-recipe-actions, .diet-revert-error-banner { display: none; }
+  /* The toolbar (title + action buttons) is screen-only chrome — hiding the
+     whole bar, not just its buttons, means nothing precedes .diet-cover-card
+     in the print flow, so the Diet Preference Questionnaire cover page is
+     the true, clean start of printed page 1 rather than sharing a page with
+     a leftover title bar above it. */
+  .diet-template-toolbar { display: none; }
+  /* TL remarks are an internal review tool, not something to hand a
+     patient — every flag/badge button is screen-only chrome, and any
+     pending highlight's background/border is stripped rather than just
+     hiding the button, so the printed page looks identical whether or not
+     something on it happens to be flagged right now. */
+  .diet-remark-flag-btn, .diet-remark-badge, .diet-table-flag-col { display: none; }
+  .diet-recipe-remark-highlighted, .diet-remark-row-highlighted, .diet-remark-line-highlighted,
+  .diet-remark-jump-flash {
+    background: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+  }
+  /* "Unreviewed draft" is a heads-up for whoever is EDITING the plan on
+     screen — meaningless (and unprofessional-looking) on the copy actually
+     handed to a patient. */
+  .diet-draft-banner { display: none; }
+  /* Same reasoning as .diet-draft-banner: an internal review heads-up, not
+     something that belongs on a copy handed to a patient — and its own
+     highlighted <mark> items are stripped back to plain text below (this
+     view's marks live under .diet-template, never under the OLD viewer's
+     #print-root, so they need their own rule rather than reusing that
+     one), so the banner would be pointing at nothing anyway. The
+     editable-cell affordance is likewise a screen-only, TL/coach-facing
+     thing. */
+  .diet-food-warning-banner, .diet-food-finder { display: none; }
+  /* An allergy/dislike highlight is a screen-only review aid for whoever's
+     preparing the plan — a patient's own printed copy shouldn't carry a
+     yellow flag over their own dietary restrictions (or a mid-flash ring
+     left over from ↑/↓ navigation, stripped via the animation:none below
+     the same way .diet-remark-jump-flash's is above). */
+  mark.food-flag, mark.food-flag-current {
+    background: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+    animation: none !important;
+  }
+  .diet-schedule-cell-editable { border-bottom: none !important; cursor: default; }
+  /* The plate-composition diagram (e.g. "BMW BREAKFAST") explains the whole
+     schedule table above it, so it starts its own fresh page rather than
+     sharing space with the tail end of that table — break-before only,
+     not break-after: whatever follows (the "Important Note" paragraph) is
+     about the meal the diagram just explained, so it belongs directly
+     below it on that same page, not pushed off onto a page of its own. */
+  .diet-schedule-image { break-before: page; break-inside: avoid; }
+  /* The "Generated <date>" stamp is useful while browsing on screen (which
+     copy is this?) but not wanted in the PDF a coach hands to a patient —
+     print-only hide keeps it showing on screen. */
+  .diet-cover-date { display: none; }
+  /* The hero graphic is its own standalone intro page (page 1) — break
+     right after it so the questionnaire never shares that page, and fill
+     the whole PHYSICAL page with it edge to edge, not just the printable
+     area inside the document's normal 1.5cm @page margin (set further up
+     in the OLDER, docx-preview print block). @page :first zeroes that
+     margin for page 1 only (every later page, including this document's
+     own questionnaire page 2 onward, keeps the normal 1.5cm) — a CSS named
+     page (`page: diet-cover` + `@page diet-cover { margin: 0 }`) would
+     scope this more tightly to just THIS pipeline's page 1 without
+     touching the old docx viewer's, but Chromium's actual print output did
+     not honor a named page's margin override when this was tried and
+     verified with a real print-to-PDF — `:first` is the well-supported
+     fallback, and the old viewer's cover page (rare now that every diet
+     document is migrated to this data-driven pipeline) just loses its
+     margin on page 1 too as a result. 100vh is that zero-margin page's own
+     height in Chromium (the browser this app's PDF export already depends
+     on via window.print()), not the screen viewport — object-fit: cover
+     crops to fill rather than letterboxing, safe here since the graphic's
+     real content (logo, tagline) sits centered with decorative produce
+     filling the edges. */
+  @page :first { margin: 0; }
+  .diet-cover-intro {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    width: 100%;
+    height: 100vh;
+    break-after: page;
+    break-inside: avoid;
+  }
+  .diet-cover-hero { width: 100%; height: 100%; max-width: none; object-fit: cover; border-radius: 0; margin: 0; }
+  /* The questionnaire (heading + all three tables) starts fresh on the next
+     page and stays together as one unit rather than spilling onto a third
+     page — it comfortably fits one page on its own now that the hero image
+     isn't sharing it. break-after keeps whatever comes next (Table of
+     Contents is gone from print — see below — so this is Diet Schedule/
+     Recipes) starting on its own page too. */
+  .diet-cover-card { break-after: page; break-inside: avoid; }
+  /* .diet-cover-blood-table (nested inside Clinical Details' "Blood Report
+     Findings" row, itself only ~60% of the page's width) is a DIFFERENT
+     class from .diet-table above — none of that table's fixes reach it.
+     It renders with table-layout: auto and a white-space: nowrap category
+     column ("Moderate / Borderline" is the longer of its two possible
+     values), so on a real "Download as PDF" export it sized itself by
+     content instead of by its container and ran off the right edge of the
+     page — confirmed by rendering an actual exported PDF, not just a
+     screen/preview approximation. table-layout: fixed plus explicit
+     column shares stop it growing past 100% of its (already narrower)
+     container; letting the category wrap removes the one column that
+     couldn't shrink at all. */
+  .diet-cover-blood-table { table-layout: fixed; }
+  .diet-cover-blood-table td:nth-child(1) { width: 50%; }
+  .diet-cover-blood-table td:nth-child(2) { width: 12%; }
+  .diet-cover-blood-cat { width: 38%; white-space: normal; overflow-wrap: anywhere; }
+  .diet-cover-blood-other { overflow-wrap: anywhere; }
+  /* The Table of Contents is a screen-only navigation aid for browsing the
+     app — not wanted as its own page in the printed/downloaded PDF. */
+  .diet-toc { display: none; }
+  /* Every meal and every section prints, whichever pair was open on screen. */
+  .diet-meal-panel { display: block !important; }
+  .diet-meal-print-heading {
+    display: block;
+    break-before: page;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .diet-meal-panel:first-child .diet-meal-print-heading { break-before: avoid; }
+  .diet-tab-panel { display: block !important; break-before: page; }
+  .diet-tab-panel:first-of-type { break-before: avoid; }
+  /* Noticeably narrower than the page's own margin, not just flush with it
+     — covers both the Diet Schedule (MealPlanTable) and General Guidelines
+     (InfoTable: Do's/Don'ts, Restrict/Reduce/Replace, daily routine) cards,
+     which share this same wrapper class — belt-and-suspenders clearance for
+     the card's own border on top of whatever table-layout: fixed +
+     overflow-wrap already guarantee below. */
+  .diet-mealplan { break-inside: avoid; box-shadow: none; width: calc(100% - 24px); margin: 0 12px 16px; }
+  /* .diet-table's screen layout (table-layout: auto, .diet-table-wrap's
+     overflow-x: auto for whatever doesn't fit) sizes each column by its own
+     content — fine on screen, where a wide row just scrolls, but print has
+     no scrollbar: a long cell (e.g. a multi-dish breakfast description)
+     could size its column wide enough to push the table past the page's
+     right edge, silently clipping whatever column is now hanging over —
+     the last column's text (e.g. "Lemongrass Tea") cut off mid-word.
+     table-layout: fixed forces every column into an equal share of the
+     table's own 100% width instead, so content wraps within its cell
+     rather than growing the column — same fix already proven for the
+     older docx-preview print pipeline's tables, see #print-root table
+     above. */
+  .diet-table { table-layout: fixed; width: 100%; }
+  /* table-layout: fixed pins each COLUMN's width, but a single unbroken
+     run of characters inside a cell (a long compound word, a URL, a run
+     of digits) can still be wider than its column and push past the
+     table's — and the page's — right edge, since normal word-wrap only
+     breaks at spaces. overflow-wrap: anywhere allows a break anywhere a
+     cell's content actually needs one, as a last resort, so the column
+     width from above is never overrun regardless of what's in the cell. */
+  .diet-table th, .diet-table td { overflow-wrap: anywhere; }
+  /* table-layout: fixed alone splits every column equally, which wastes
+     space on the short "Day 7" column and cramps the long breakfast
+     description — first/last get a sized share, whatever's in between
+     (the actual meal description) gets the rest. Scoped to :has(.diet-
+     table-day) — i.e. an actual day-by-day meal schedule — rather than
+     every .diet-table: that class is also shared by the 2-column label/
+     value tables on the cover page (Personal Details, Diet & Other
+     Preference, Clinical Details) and by InfoTable's non-day tables
+     (Gear 4/5's Do's and Don'ts etc.), where an 11%/23% split on a 2-
+     column row would leave roughly two-thirds of the table blank instead
+     of used — verified against real data, not just this file's schedule
+     tables, before this rule shipped.
+
+     The last-column override is further scoped to :has(a 3rd cell in some
+     row) — a day schedule can be as narrow as 2 columns (e.g. Gear 4's
+     "Days | Dinner"), and giving BOTH first and last child an explicit %
+     on a 2-column row is the same blank-space bug all over again, just
+     from a different table shape (day column here would be first AND
+     the meal column would be last, with nothing in between to absorb the
+     rest). With no explicit width, table-layout: fixed hands an
+     unconstrained column the entire remaining share on its own — exactly
+     right for a 2-column table's second column. */
+  .diet-table:has(.diet-table-day) th:first-child, .diet-table:has(.diet-table-day) td:first-child { width: 11%; }
+  .diet-table:has(.diet-table-day):has(tr > :nth-child(3)) th:last-child,
+  .diet-table:has(.diet-table-day):has(tr > :nth-child(3)) td:last-child { width: 23%; }
+  /* Recipe cards print 2 per page when they're short enough, fewer when
+     they're not — never split across a page. Three earlier attempts at
+     "2 per page" were tried and abandoned before this one, all built on
+     GRID or an explicitly-forced pair:
+     - CSS Grid: `break-inside: avoid`/`break-before: page` on a grid item is
+       unreliable in Chromium's print engine — grid row-fragmentation
+       overrides the item's own break request, so a card could still get
+       sliced across two pages.
+     - An inline-block pair forced to "share one page as a unit" (via CSS
+       alone): Tamil text wraps to noticeably more lines than English, so a
+       jointly-too-tall pair sent the browser searching for a page where
+       the WHOLE pair fits, sometimes skipping a page forward with nothing
+       on it, or rendering a short card at full width once its tall
+       sibling's continuation pushed it onto its own fragment.
+     - JS-measured pairing (real rendered heights decided in advance which
+       pairs fit, so no atomic-pair search was ever asked of the browser),
+       tried with both inline-block and float for the side-by-side layout:
+       real "Download as PDF" output still cut the second card's content
+       off at the page edge, moving break-before/break-inside off the card
+       and onto its plain-block wrapper made no difference.
+     - CSS multicol (2-column, column-fill: auto under fragmentation, no
+       forced break of any kind): verified with zero overflow against every
+       real recipe card in a live plan on screen — and STILL came back from
+       a real "Download as PDF" with the right-hand card's content cut off
+       at the page edge.
+     All four attempts share exactly one thing: a card sharing a page with
+     another card SIDE BY SIDE. On-screen verification (this file's own
+     screen rule, or a forced print-media simulation) never reproduces the
+     failure, because only real print/PDF fragmentation exercises whatever
+     is actually miscomputing the second column's box — and there is no way
+     to inspect that programmatically from here. One full-width card per
+     row removes side-by-side placement from the equation entirely: a card
+     only ever has to fit inside the page's own margin, the one geometry
+     every element in this file (tables, images, the cover page) already
+     handles correctly. Natural document flow still puts 2 short cards on
+     one page and taller ones alone — just without anything forcing it. */
+  .diet-recipe-group-title, .diet-recipe-subgroup-title { break-after: avoid; }
+  .diet-recipe-grid { display: block; }
+  .diet-recipe-page { display: block; }
+  .diet-recipe {
+    display: block;
+    width: 100%;
+    margin: 0 0 14px;
+    font-size: 14px;
+    break-inside: avoid;
+    box-shadow: none;
+  }
+  /* The on-screen rule below (height: auto + max-height: 320 + contain)
+     keeps the WHOLE photo visible uncropped, which is right for interactive
+     browsing but produces wildly inconsistent card heights in a printed
+     page — a square or portrait source (many of this library's real photos
+     are) letterboxes with big white bars top/bottom or side/side instead of
+     filling the card, exactly the look a real "Download as PDF" output was
+     found to have. A real reference PDF's own recipe cards were measured
+     instead: EVERY card, whatever its source photo's orientation, shows the
+     same ~2.14:1 landscape crop filling the card's full content width (300px
+     at this column's own 332px width minus the card's 16px side padding) —
+     15/7 reduces to that same ratio. object-fit: cover crops to fill rather
+     than letterboxing — losing a food photo's edges is the norm for a
+     printed recipe card, the same tradeoff the source management document's
+     own cards make. */
+  .diet-recipe-image { height: auto; aspect-ratio: 15 / 7; object-fit: cover; max-height: none; }
+}

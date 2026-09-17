@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "condition": "DIABETES",
+    "comorbid": "GASTRIC",
+    "gear": 3,
+    "dietType": "VEG",
+    "language": "ENG",
+    "title": "Gear 3 Diet Chart",
+    "tagline": "\"Don't focus on how much you eat. Focus on what you eat.\"",
+    "recipesReviewed": false
+  },
+  "mealPlans": [
+    {
+      "title": "Lunch",
+      "columns": [
+        "DAY",
+        "SALAD (TYPE 1)",
+        "VEGETABLE (TYPE 2)",
+        "Rice + Protein(Type 3)"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Tomato+cucumber salad",
+            "Cabbage Poriyal",
+            "Unpolished Brown rice + Vegetable sambar"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "CCC chop salad (Cucumber Capsicum Cabbage)",
+            "Bitter gourd Poriyal",
+            "Unpolished Red rice + Paruppu rasam"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "cells": [
+            "Radish and cucumber slice salad",
+            "Cluster Beans poriyal",
+            "Unpolished Karunguruvai rice + Sigappu karamani kuzhambu"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Onion and Tomato slice salad",
+            "Ladies Finger Poriyal",
+            "Unpolished Kattuyanam rice + mor kulambu"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Mixed vegetable salad",
+            "Plantain stem poriyal",
+            "Unpolished Karunguruvai rice +Vellai Pattani kurma"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Radish and capsicum salad",
+            "Keerai poriyal",
+            "Unpolished Red rice + Vegetable sambar"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Capsicum and cucumber salad",
+            "Broad Beans poriyal",
+            "Unpolished Brown rice + Vellai Pattani kurma"
+          ]
+        }
+      ]
+    }
+  ],
+  "infoTables": [
+    {
+      "title": "Other combinations of Salads",
+      "columns": [
+        "S. No",
+        "Vegetable 1",
+        "Vegetable 2",
+        "Combinations"
+      ],
+      "rows": [
+        [
+          "1",
+          "Cucumber",
+          "Carrot",
+          "Cucumber and carrot salad"
+        ],
+        [
+          "2",
+          "Capsicum",
+          "Cucumber",
+          "Capsicum and cucumber salad"
+        ],
+        [
+          "3",
+          "Cabbage",
+          "Carrot",
+          "Cabbage and carrot chop salad"
+        ],
+        [
+          "4",
+          "Raddish",
+          "Capsicum",
+          "Radish and capsicum slice salad"
+        ]
+      ]
+    }
+  ],
+  "notes": [
+    "Important Note Those with ulcers/ Stomach issues should follow this. Avoid very spicy foods, pickles, oily dishes, and fried foods. Cut down on tomatoes and tomato sauce. Avoid highly acidic foods like lemons and oranges. Eat your meals on time; do not stay on an empty stomach for long periods."
+  ],
+  "recipeGroups": [
+    {
+      "heading": "Category 1",
+      "recipes": [
+        {
+          "name": "Option 1: Onion and Tomato slice salad",
+          "ingredients": [
+            "1 large tomatoes, sliced",
+            "½ onion, thinly sliced (red onion works well for its mild flavor)",
+            "Salt, to taste"
+          ],
+          "steps": [
+            "Slice the tomatoes thinly and place them in a serving bowl. Peel and thinly slice the onion and add it to the bowl with the tomatoes.",
+            "Add salt as per your taste",
+            "Toss gently to coat the vegetables evenly."
+          ],
+          "image": "/api/diet-image/9355e5ca4773b17b.jpg",
+          "recipe_id": "4c3ad269f50afba0"
+        },
+        {
+          "name": "Option 2: Cucumber and Onion salad",
+          "ingredients": [
+            "1 cucumber, thinly sliced",
+            "1/2 red onion, thinly sliced",
+            "Salt to taste"
+          ],
+          "steps": [
+            "Thinly slice the cucumbers and red onion.",
+            "In a large mixing bowl, combine the sliced cucumbers and red onions.",
+            "Add salt as per your taste."
+          ],
+          "image": "/api/diet-image/a4bc9054338fa4ef.jpg",
+          "recipe_id": "1a6818b23f3e3d2a"
+        },
+        {
+          "name": "Option 3: Radish and cucumber slice salad",
+          "ingredients": [
+            "1 radish, thinly sliced",
+            "½ cucumber, thinly sliced",
+            "½ bunch coriander leaves, chopped",
+            "Salt to taste"
+          ],
+          "steps": [
+            "Wash the radish thoroughly. Trim off the ends of the radishes and thinly slice them. Peel the onion,wash thoroughly and slice them.",
+            "In a large mixing bowl, combine the sliced radishes and onion. Add the chopped fresh coriander leaves.",
+            "Season with salt to taste.",
+            "Gently toss the vegetables evenly ."
+          ],
+          "image": "/api/diet-image/a1d02b60e4371aa6.jpg",
+          "recipe_id": "78490213fa7c9a98"
+        },
+        {
+          "name": "Option 4: Tomato and cucumber slice salad",
+          "ingredients": [
+            "1 Tomato, thinly sliced",
+            "½ cucumber, thinly sliced",
+            "½ bunch coriander leaves, chopped",
+            "Salt to taste"
+          ],
+          "steps": [
+            "Wash the Tomato and cucumber thoroughly. Slice the tomato.Peel the onion,wash thoroughly and slice them.",
+            "In a large mixing bowl, combine the sliced tomato and sliced cucumber. Add the chopped fresh coriander leaves.",
+            "Season with salt to taste.",
+            "Gently toss the vegetables evenly ."
+          ],
+          "image": "/api/diet-image/e25d1c60b716ef0f.jpg",
+          "recipe_id": "b7ef322d548fcb88"
+        },
+        {
+          "name": "Option 5: CCC chop salad (Cucumber Capsicum Cabbage)",
+          "ingredients": [
+            "1 cucumber, thinly chopped",
+            "½ red bell pepper (capsicum), thinly chopped",
+            "¼ small cabbage, thinly chopped",
+            "2 tablespoons fresh Coriander leaves, chopped",
+            "Salt to taste"
+          ],
+          "steps": [
+            "Wash the cucumber, red bell pepper, and cabbage thoroughly. Trim off the ends of the cucumber and chop it. Remove the seeds and membranes from the red bell pepper and thinly slice it. Thinly slice the cabbage.",
+            "In a large mixing bowl, combine the sliced cucumber, red bell pepper, and cabbage. Add the chopped fresh coriander leaves.",
+            "Season with salt to taste.",
+            "Gently toss the vegetables evenly."
+          ],
+          "image": "/api/diet-image/d97f63def34700fa.jpg",
+          "recipe_id": "b82400fc505721cb"
+        },
+        {
+          "name": "Option 6: Mixed vegetable salad",
+          "ingredients": [
+            "1 cucumber, diced",
+            "1 tomato, diced",
+            "1 bell pepper (capsicum), diced (any color you prefer)",
+            "1 carrot, grated",
+            "1/4 red onion, thinly sliced",
+            "1 cup mixed salad greens (such as lettuce, Cabbage), torn into bite-sized pieces",
+            "2 tablespoons fresh coriander leaves, chopped (optional, for garnish)",
+            "Salt to taste"
+          ],
+          "steps": [
+            "Wash and dice the cucumber, tomato, and bell pepper. Grate the carrot. Thinly slice the red onion. Tear the salad greens into bite-sized pieces.",
+            "In a large mixing bowl, combine the diced cucumber, tomato, bell pepper, grated carrot, sliced red onion, and torn salad greens.",
+            "Season with salt to taste.",
+            "Gently toss to coat the vegetables evenly with the dressing.",
+            "If desired, sprinkle chopped fresh coriander leaves over the salad for garnish.",
+            "Other combinations of Salads"
+          ],
+          "image": "/api/diet-image/bd5e0ae594126af5.jpg",
+          "recipe_id": "c92da7f6f77379a4"
+        }
+      ],
+      "freeText": [
+        "Category 1: Vitamins & Minerals - Salads"
+      ]
+    },
+    {
+      "heading": "Category 2",
+      "freeText": [
+        "Category 2: Fibre - Veggies (Poriyal, Kootu, Veg Kuzhambu options)",
+        "Poriyal Options: Cluster Beans poriyal, Cabbage Poriyal, Keerai poriyal (Arakeera/MurungaiKeerai/Ponnanganni keerai), Bitter gourd Poriyal, Ladies Finger Poriyal, Plantain stem poriyal, Broad Beans poriyal",
+        "Veg Option: Vegetable sambar, Paruppu rasam, Sigappu karamani kuzhambu, Moth beans Kuzhambu, Vellai Pattani kurma, Keerai Kadaiyal (Vendhaya keerai/ Pasalai keerai/ Sirukeerai), Any other choice also"
+      ],
+      "image": "/api/diet-image/55b001875cd6e04a.jpg"
+    },
+    {
+      "heading": "Category 3",
+      "freeText": [
+        "Category 3 - Complex carbohydrates + Healthy protein + Healthy fats - Unpolished Rice + Fat -",
+        "Rice Options: Unpolished Brown rice, Unpolished Red rice, Unpolished Mapillai Samba rice, Unpolished Kattuyanam rice, Unpolished Karunguruvai rice",
+        "Healthy Fats: Wood pressed coconut oil - 100%, Wood pressed groundnut oil, Wood pressed sesame oil"
+      ],
+      "image": "/api/diet-image/e5d0315e407e056d.jpg"
+    },
+    {
+      "heading": "Cutting Types",
+      "freeText": [
+        "Cutting types",
+        "Slice Chop"
+      ],
+      "image": "/api/diet-image/6bd7e6ff3a0c902a.jpg"
+    },
+    {
+      "heading": "Shop Organic Products",
+      "freeText": [
+        "Buy Organic Food products in our own True Food Store:",
+        "https://forms.gle/2Tda2LCVCu9nHs4t9"
+      ],
+      "image": "/api/diet-image/c4ec4c1b0142c8fb.jpg"
+    },
+    {
+      "heading": "Salad Law",
+      "freeText": [
+        "SALAD LAWS",
+        "Daily intake for legumes should be 50 - 100 grams (boiled).",
+        "If you feel bloating issues, add more vegetables in your bowl.",
+        "Avoid adding beetroot, potato and tubers in vegetable bowls.",
+        "Add different varieties of vegetables in your bowl."
+      ],
+      "image": "/api/diet-image/8c6c125d6ee26e3c.png"
+    },
+    {
+      "heading": "Water Law",
+      "freeText": [
+        "Water Law",
+        "As per your doctor's advice, take water consumption per day.",
+        "If any water restriction is there for you, kindly inform the health coach.",
+        "Take only 200 ml detox tea in your daily routine."
+      ],
+      "image": "/api/diet-image/7286fea555942eec.jpg"
+    }
+  ],
+  "closingQuote": "“Take care of your body. It’s the only place you have to live.” – Jim Rohn",
+  "disclaimer": "As a dietician and part of My health School, I offer dietary recommendations and suggestions to improve your health, especially for individuals with specific medical conditions. However, it is important to understand that these dietary suggestions are not intended to replace or serve as an alternative to your prescribed medications or medical treatments. My recommendations are meant to complement your existing medical care and enhance your overall health and well-being. I strongly advise against discontinuing any prescribed medications or medical treatments without consulting your primary medical practitioner. Always seek the guidance of a qualified healthcare professional if you are considering making any changes to your medical treatment plan."
+}

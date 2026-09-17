@@ -1,0 +1,856 @@
+{
+  "meta": {
+    "condition": "BP",
+    "comorbid": "GASTRIC",
+    "gear": 4,
+    "dietType": "EGG",
+    "language": "ENG",
+    "title": "Gear 4 Diet Chart",
+    "tagline": "\"Don't focus on how much you eat. Focus on what you eat.\"",
+    "recipesReviewed": false
+  },
+  "mealPlans": [
+    {
+      "title": "Weekly chart",
+      "columns": [
+        "Days",
+        "Kashayam (Compulsory) Timing : 7 - 8 am",
+        "Herbal tea/Snacks (Optional) Timing : 4pm"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Drumstick leaves kashayam",
+            "Boiled green gram sundal/Hibiscus tea"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "Tulasi leaves kashayam",
+            "Boiled black chana"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "cells": [
+            "Corianader leaves kashayam",
+            "chickpea chat/ Tulsi tea"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Drumstick leaves kashayam",
+            "Boiled green gram sundal"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Tulasi leaves kashayam",
+            "Boiled black chana/Tulsi tea"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Corianader leaves kashayam",
+            "Makhana chat"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Drumstick leaves kashayam",
+            "Boiled groundnut/Hibiscus tea"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Weekly chart for weight gain (Non - veg)",
+      "columns": [
+        "Days",
+        "Dinner"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Millet idli with Egg kulambu + soup"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "Kanchi recipe with thuvaiyal + salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "cells": [
+            "Millet dosa with tomato chutney or soup"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Kanchi recipe with thuvaiyal + salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Millet chapathi with veg kurma + soup"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Kanchi recipe with thuvaiyal + salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Millet idli with Egg kulambu + soup"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Weekly chart - weight loss (Non - Vegetarian)",
+      "columns": [
+        "Days",
+        "Dinner"
+      ],
+      "rows": [
+        {
+          "day": "Day 1",
+          "cells": [
+            "Kanchi recipe with thuvaiyal + salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "cells": [
+            "Millet idli with Egg kulambu or soup"
+          ]
+        },
+        {
+          "day": "Day3",
+          "cells": [
+            "Kanchi recipe with thuvaiyal+ salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "cells": [
+            "Millet chapathi with veg kurma or soup"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "cells": [
+            "Kanchi recipe with thuvaiyal + salad/veg poriyal"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "cells": [
+            "Mixed millet idli with Egg kulambu or soup"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "cells": [
+            "Kanchi recipe with thuvaiyal + salad/veg poriyal"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Note: Those with high blood pressure (BP) should avoid: • Foods with high salt content • Pickles • Papad, sun-dried vegetable crisps (*vathal*), and dried fish • Chips and packaged snacks • Canned and processed foods • Fast food and junk food • Deep-fried foods • Soft drinks",
+    "Important Note Those with ulcers/ Stomach issues should follow this. Avoid very spicy foods, pickles, oily dishes, and fried foods. Cut down on tomatoes and tomato sauce. Avoid highly acidic foods like lemons and oranges. Eat your meals on time; do not stay on an empty stomach for long periods.",
+    "Important Note: If any dizziness or fatigue during the interval of meal time.Kindly let us know about the condition.According to that we will change your meal plan.",
+    "Important note: To prepare Tulsi tea and plant a Tulsi plant at home, just sow Tulsi seeds in a sunny spot with well-draining soil, water regularly, and pluck the leaves for brewing when they're mature.",
+    "Important Note: Eat until you reach satiety, ensuring you consume enough food to satisfy your hunger and nutritional needs."
+  ],
+  "recipeGroups": [
+    {
+      "heading": "Kashayas",
+      "recipes": [
+        {
+          "name": "Option 1 : Drumstick leaves Kashayam",
+          "steps": [
+            "Take ½ fistful of drumstick leaves",
+            "and wash well.",
+            "Then take 200 ml of water and let it boil.",
+            "Add the washed drumstick leaves",
+            "in the boiling water and wait for 5 minutes.",
+            "Then filter and have it empty stomach"
+          ],
+          "image": "/api/diet-image/f3004ead458df7a2.png",
+          "recipe_id": "fab27780bdabd049"
+        },
+        {
+          "name": "Option 2: Tulsi (Holy Basil) Leaf Kashayam",
+          "steps": [
+            "Take a handful of Tulsi (Holy Basil) leaves and wash them thoroughly.",
+            "Boil 200 ml of water.",
+            "Add the washed Tulsi leaves to the boiling water.",
+            "Let it boil/steep for 3–4 minutes.",
+            "Strain and drink it on an empty stomach."
+          ],
+          "image": "/api/diet-image/d7b8f4553f6fab81.png",
+          "recipe_id": "cd19164e5931d7df"
+        },
+        {
+          "name": "Option 3: Coriander Leaf Kashayam",
+          "steps": [
+            "Take a handful of coriander leaves and wash them thoroughly.",
+            "Boil 200 ml of water.",
+            "Add the washed coriander leaves to the boiling water.",
+            "Let it boil/steep for 3–4 minutes.",
+            "Strain the decoction and drink it on an empty stomach."
+          ],
+          "image": "/api/diet-image/38ef25da20cafbe2.png",
+          "recipe_id": "38e21edc0135099e"
+        }
+      ]
+    },
+    {
+      "heading": "Snacks",
+      "recipes": [
+        {
+          "name": "Option 1- Makhana Chat",
+          "ingredients": [
+            "Makhana (lotus seed)- 20 gms",
+            "Onion",
+            "Tomato",
+            "Cucumber",
+            "Roasted groundnut"
+          ],
+          "steps": [
+            "Dry roast makhana in pan",
+            "Then transfer it to a bowl, now add chopped onion, tomato, cucumber roasted groundnut to it.",
+            "Mix well and serve"
+          ],
+          "image": "/api/diet-image/3cbc80918a4f40aa.png",
+          "recipe_id": "e2b0acb2782fb536"
+        },
+        {
+          "name": "Option 2- Chickpea chat",
+          "ingredients": [
+            "Boiled Chickpea ½ cup",
+            "Onion",
+            "Tomato",
+            "Cucumber",
+            "Grated raw mango",
+            "Jeera powder"
+          ],
+          "steps": [
+            "Add the boiled chickpea to a bowl",
+            "Now add chopped onion, tomato, cucumber, grated raw mango, jeera powder to it.",
+            "Mix well and serve",
+            "Option 3- Boiled green gram",
+            "Option 4- Boiled Black channa",
+            "Option 5 - Boiled groundnut"
+          ],
+          "image": "/api/diet-image/547b10fec1729d56.png",
+          "recipe_id": "8e528aeaff7c5eff"
+        }
+      ]
+    },
+    {
+      "heading": "Herbal Tea",
+      "recipes": [
+        {
+          "name": "Option 1: Hibiscus Tea",
+          "ingredients": [
+            "1 cup water",
+            "5–6 fresh hibiscus petals (or 1 tbsp dried hibiscus petals)"
+          ],
+          "steps": [
+            "Boil 1 cup of water.",
+            "Add the hibiscus petals.",
+            "Simmer for 3–5 minutes.",
+            "Switch off the heat and strain the tea."
+          ],
+          "image": "/api/diet-image/32e33dfa52e82d0d.png",
+          "recipe_id": "551453674b5e6b2b"
+        },
+        {
+          "name": "Option 2 : Tulsi Tea",
+          "ingredients": [
+            "Fresh Tulsi (holy basil) leaves or dried Tulsi leaves",
+            "Water",
+            "Optional: Cinnamon, ginger for",
+            "added flavor (if desired) Preparation:",
+            "Boil water in a pot.",
+            "If using fresh Tulsi leaves, wash them thoroughly. If using dried leaves, measure out the desired amount.",
+            "Add the Tulsi leaves to the boiling water.",
+            "Optionally, add cinnamon or ginger for additional flavor.",
+            "Let the mixture simmer for 5-10 minutes to allow the flavors to infuse.",
+            "Strain and Serve:",
+            "Once the tea has infused, strain out the Tulsi leaves (and any other added ingredients).",
+            "Pour the tea into a cup.",
+            "Drink the Tulsi tea warm.",
+            "Tulsi contains compounds like eugenol, which may help regulate blood sugar levels by enhancing insulin secretion and sensitivity. Consuming Tulsi tea regularly may help stabilize blood glucose levels."
+          ],
+          "image": "/api/diet-image/f0cac749ddee7224.png",
+          "recipe_id": "f44cacf3139b152d"
+        }
+      ]
+    },
+    {
+      "heading": "Dinner Recipe",
+      "subGroups": [
+        {
+          "heading": "Kanji",
+          "recipes": [
+            {
+              "name": "Little Millet / Kodo Millet / Barnyard / Foxtail ( Everyday take 1 millet )",
+              "steps": [
+                "Coarsely grind Any 1 Millet in a mixer jar in pulse mode just for 2 sec.",
+                "Wash it with water and drain the water using the filter.",
+                "For 1 glass of Millet add 10 glasses of water and let it soak for 8 hours .",
+                "Then in the morning take a mud pot, fill it with the same millet soaked water and let it boil.",
+                "Once the water starts boiling add the soaked millet and stir well.",
+                "Cook till it gets thicker and soft consistency",
+                "Switch Off the flame and let it cool for half an hour.",
+                "Then cover the entire mud pot with cotton cloth.",
+                "Let it ferment for 8 hours",
+                "You can add limited salt after fermentation",
+                "Then you can take that kanji for dinner."
+              ],
+              "image": "/api/diet-image/01b0499d39a9325a.jpg",
+              "recipe_id": "8265145acc02d835"
+            }
+          ]
+        },
+        {
+          "heading": "Thuvaiyal Recipes for Kanji",
+          "recipes": [
+            {
+              "name": "Option 1 : Mixed Paruppu thuvaiyal",
+              "ingredients": [
+                "Bengal gram dal",
+                "Toor dal",
+                "Urad dal",
+                "Coconut",
+                "Dry chilli",
+                "Garlic cloves",
+                "Tamarind",
+                "limited salt"
+              ],
+              "steps": [
+                "Dry roast all dal in pan till golden brown",
+                "Then add in the mixy jar add grated coconut, dry chilli, garlic, tamarind and limited salt",
+                "Grind well into a thick paste with little water."
+              ],
+              "image": "/api/diet-image/db307da6dd53171b.jpg",
+              "recipe_id": "856cf616d1a2fd68"
+            },
+            {
+              "name": "Option 2 : Ridge gourd thuvaiyal",
+              "ingredients": [
+                "Ridge ground",
+                "Urad dal",
+                "Coconut",
+                "Red chilli",
+                "Tamarind",
+                "limited salt"
+              ],
+              "steps": [
+                "Chop the ridge gourd without peeling it.",
+                "Add little coconut oil and saute the chopped ridge gourd, grated coconut, dry chilli",
+                "Then transfer the sauted ingredients into the mixie jar and some tamarind limited salt and grind it."
+              ],
+              "image": "/api/diet-image/2ce2a1f5c1c43ddb.png",
+              "recipe_id": "78ec493cf8f70fb0"
+            },
+            {
+              "name": "Option 3 : Groundnut thuvaiyal",
+              "ingredients": [
+                "Groundnut",
+                "Red chilli",
+                "Tamarind",
+                "Garlic cloves",
+                "limited salt"
+              ],
+              "steps": [
+                "Dry roast the groundnut and peel out the skin",
+                "Dry roast the red chilli and garlic for 30 seconds",
+                "Add all the dry roasted ingredients into the mixie jar.",
+                "Then add some tamarind and limited salt and grind well."
+              ],
+              "image": "/api/diet-image/e98c99546f4731aa.jpg",
+              "recipe_id": "4ce2d045716bd7a0"
+            },
+            {
+              "name": "Option 4: Vazhaipoo thuvaiyal",
+              "ingredients": [
+                "Vazhaipoo",
+                "Tamarind",
+                "Coconut",
+                "Urad dal",
+                "Red chilli",
+                "limited salt"
+              ],
+              "steps": [
+                "Add some water and boil the chopped vazhai poo for 5 mints",
+                "Then add little coconut oil and saute coconut, urad dal, red chilli and boiled vazhaipoo just for 30 sec.",
+                "Then transfer it to a mixie jar",
+                "Add some tamarind & limited salt grind well"
+              ],
+              "image": "/api/diet-image/7c188ae0062c1c2e.jpg",
+              "recipe_id": "a3687c4872a18640"
+            },
+            {
+              "name": "Option 5 : Pirandai thuvaiyal",
+              "ingredients": [
+                "Pirandai",
+                "Onion",
+                "Bengal gram dal",
+                "Coconut",
+                "Dry chillies",
+                "Tamarind",
+                "Asafoetida",
+                "limited salt"
+              ],
+              "steps": [
+                "Clean and chop pirandai into small pieces. Remove the outer skin layer.",
+                "Then add some coconut oil and saute dry chilli, onion, bengal gram dal, asafoetida and onion.",
+                "Then transfer it to mixy jar and add some tamarind & limited salt",
+                "Then grind well into a smooth paste."
+              ],
+              "image": "/api/diet-image/4082bad2523c74c3.jpg",
+              "recipe_id": "59479fa0318c8319"
+            }
+          ]
+        },
+        {
+          "heading": "Millet Recipe",
+          "recipes": [
+            {
+              "name": "Option - 1: VARAGU IDLI DOSA",
+              "steps": [
+                "1 cup = 250ml",
+                "Varagu/Kodo millet - 1 cup",
+                "Round urad dal - 1/4 cup",
+                "Methi seeds/Vendhayam - 1/4 tsp",
+                "limited salt and water - as needed",
+                "Take all the ingredients given above except limited salt and wash them twice in water to remove the debris. Soak it together for 4 hours.",
+                "Grind them and add enough limited salt & water. Please do not add more water because they can be easily ground in less water. So use water only when needed. The consistency of batter should be like our regular idli batter.If the batter is too watery, you cannot make idlis. Idli will be flat and sticky. If you add very little water, idli will be hard. So take care while adding water.",
+                "Ferment it overnight or minimum 16 hours ( if it is winter). The next morning, the batter would have risen in volume but not doubled.",
+                "Stir the batter well with a ladle and make idlis. Steam it in an idli pot for 10 minutes. Check with a back of spoon or using fingers dipped in water. If it comes out clean, idli is cooked. Remove with a spoon and serve hot !",
+                "Note",
+                "No need to add rice in this recipe.",
+                "Do not add more water while grinding.",
+                "Idlis come out soft for varagu and dal in 5 :1 ratio. If you want even more softness, use a 4:1 ratio based on the quality of dal.",
+                "Adding methi seeds is for softness. Don’t skip it.",
+                "Ferment the batter for a minimum of 12 hours. During summer 8 hours is enough.",
+                "Use the same cup for measuring all the ingredients."
+              ],
+              "image": "/api/diet-image/d718b4969e4c79a9.jpg",
+              "recipe_id": "949ea88d9e0e7622"
+            },
+            {
+              "name": "Option - 2: Kambu/ Bajra/ Pearl millet idli recipe",
+              "ingredients": [
+                "1 cup - 240ml",
+                "Pearl millet / Kambu / Bajra - 2 cups",
+                "White,round urad dal - 1/2 cup",
+                "Methi seeds / Fenugreek seeds - 1/2 tsp (Optional)",
+                "limited salt & Water - As needed"
+              ],
+              "steps": [
+                "1. Wash and soak pearl millet, methi seeds together for 5 hours.",
+                "2. Wash and soak urad dal separately in another bowl for 2 hours.",
+                "3. Grind urad dal to a smooth paste adding the soaked water.",
+                "4. Collect in a bowl and then grind millet, adding enough water.",
+                "5. Mix both the batter with your hands and let it ferment overnight. The next day, mix the batter well and make idli.",
+                "6. Enjoy with tomato chutney"
+              ],
+              "recipe_id": "614fe752cd01f932"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Dinner Soups Recipe",
+      "recipes": [
+        {
+          "name": "Egg Drop Soup",
+          "ingredients": [
+            "2 cups of plain water",
+            "1 large egg",
+            "A pinch of salt",
+            "A pinch of ground black or white pepper",
+            "Finely chopped coriander or spring onions (optional, for garnish)"
+          ],
+          "steps": [
+            "Pour 2 cups of plain water into a saucepan and bring it to a boil over medium heat.",
+            "In a small bowl, crack the egg and beat it thoroughly until well mixed.",
+            "Once the water begins to boil, reduce the heat to low to avoid rapid bubbling.",
+            "Stir the hot water gently in one direction to create a swirl.",
+            "Slowly drizzle the beaten egg into the water while continuing to stir.",
+            "The egg will cook instantly, forming delicate strands.",
+            "Add salt and pepper to taste.",
+            "Optionally, garnish with chopped coriander or spring onions and serve hot.",
+            "Veg Soup Options"
+          ],
+          "image": "/api/diet-image/4a7043f53396686c.png",
+          "recipe_id": "9e6672a2f3521899"
+        },
+        {
+          "name": "Option 1 :Turmeric Lentil Soup",
+          "ingredients": [
+            "- 1 cup toor dal, rinsed and drained",
+            "- 1 onion, chopped",
+            "- 2 carrots, chopped",
+            "- 3 cloves of garlic, minced",
+            "- 1 teaspoon ground turmeric",
+            "- 1 teaspoon ground cumin",
+            "- 1/2 teaspoon ground coriander",
+            "- 1/4 teaspoon ground cinnamon",
+            "- 1/2 cup diced tomatoes",
+            "- limited salt to taste"
+          ],
+          "steps": [
+            "1. Add the chopped onions, carrots tomatoes in a pot and add water, make it to boil",
+            "2. While boiling,add the minced garlic, ground turmeric, ground cumin, ground coriander, and ground cinnamon.",
+            "3. Add the red lentils to the pot and stir to combine with the vegetables and spices.",
+            "4. Reduce the heat to a simmer and let the soup cook for about 20-25 minutes, or until the lentils are tender and cooked through.",
+            "5.Season the soup with limited salt to taste..",
+            "6. Serve the turmeric lentil soup hot, garnished with chopped fresh coriander ."
+          ],
+          "image": "/api/diet-image/ed32b942b36fc281.png",
+          "recipe_id": "a06e0b9dd8dcc66b"
+        },
+        {
+          "name": "Option 2 : Tomato and Bell Pepper Soup",
+          "ingredients": [
+            "- 2 large tomatoes, chopped",
+            "- 1 red bell pepper, chopped",
+            "- 1 small onion, chopped",
+            "- 2 cloves garlic, minced",
+            "- 1/2 tsp cumin seeds",
+            "- 1/4 tsp turmeric powder",
+            "- limited salt to taste",
+            "- Water or vegetable broth"
+          ],
+          "steps": [
+            "1. In a pot add chopped onion,tomatoes and red bell pepper.",
+            "2. Add enough water to cover the ingredients. Bring to a boil and then simmer for a few minutes.",
+            "3. Then add paprika turmeric powder, limited salt. Mix well",
+            "4. Blend the soup to your desired consistency using an immersion blender or regular blender."
+          ],
+          "image": "/api/diet-image/89ddf654464cec4b.png",
+          "recipe_id": "9de4f6e5e6113307"
+        },
+        {
+          "name": "Option 3 : Mixed Vegetable Clear Soup",
+          "ingredients": [
+            "- Assorted vegetables (carrots, beans, peas, corn, etc.), chopped",
+            "- 1 small onion, finely chopped",
+            "- 2-3 garlic cloves, minced",
+            "- 1-inch piece of ginger, grated",
+            "- 1-2 green chilies, finely chopped",
+            "- Few curry leaves",
+            "- limited salt to taste",
+            "- Water"
+          ],
+          "steps": [
+            "1. In a pot, add the chopped vegetables, onion, garlic, ginger, green chilies, and curry leaves. Pour enough water to cover the vegetables and bring it to a boil.",
+            "2. Let the soup simmer until the vegetables are cooked but still retain their crunch.",
+            "3. Add limited salt to taste. Stir well and serve the clear vegetable soup piping hot. It's a nutritious and comforting option for any time of the day."
+          ],
+          "image": "/api/diet-image/f8da785e5b71d535.jpg",
+          "recipe_id": "c7052d33f39b7822"
+        },
+        {
+          "name": "Option 4 : Mushroom and Fenugreek soup",
+          "ingredients": [
+            "Mushroom",
+            "Fenugreek leaves",
+            "Garlic",
+            "Ginger",
+            "Cumin",
+            "Coconut milk"
+          ],
+          "steps": [
+            "Add sliced mushrooms and fenugreek leaves in a pot Add water and diced tomatoes.",
+            "Let it to boil",
+            "Then add ginger, garlic, cumin, and a touch of coconut milk.",
+            "Then serve in a bowl with chopped coriander leaves on the topping"
+          ],
+          "image": "/api/diet-image/0c180dd82ddaf6f4.jpg",
+          "recipe_id": "78a98f2886b9c89a"
+        },
+        {
+          "name": "Option 5 : Mint and Coriander Soup",
+          "ingredients": [
+            "- 1 cup fresh mint leaves",
+            "- 1 cup fresh coriander leaves",
+            "- 1 small onion, chopped",
+            "- 2 cloves garlic, minced",
+            "- 1 small potato, diced",
+            "- 1/2 tsp cumin seeds",
+            "- 1/2 tsp ground coriander",
+            "- 1/4 tsp turmeric powder",
+            "- limited salt to taste",
+            "- Water or vegetable broth"
+          ],
+          "steps": [
+            "In a pot add the chopped onion, garlic, diced potato, ground coriander, turmeric powder, limited salt,",
+            "Add enough water or vegetable broth to cover the ingredients. Bring to a boil and then simmer until the potato is cooked.",
+            "Add fresh mint leaves and coriander leaves. Simmer for a few more minutes.",
+            "Blend the soup to a smooth consistency using an immersion blender or regular blender."
+          ],
+          "image": "/api/diet-image/821e4cfbe8da7d75.jpg",
+          "recipe_id": "6c580f871b818d1c"
+        },
+        {
+          "name": "Option 6 : Banana stem soup",
+          "ingredients": [
+            "1 cup Banana stem chopped",
+            "2 garlic cloves",
+            "1 small piece ginger",
+            "½ green chilli",
+            "¼ teaspoon fennel seeds",
+            "2 teaspoon coconut oil",
+            "limited salt as needed"
+          ],
+          "steps": [
+            "Clean vazhaithandu by taking out the excess strips around it by peeling off the thick ones. Slice off the thin outer ring (it will be opaque comparatively). Chop roughly into cubes and measure 1 cup.",
+            "Gather other ingredients.",
+            "Heat a small pressure cooker with coconut oil.",
+            "Add fennel seeds, ginger, garlic, chilli and fry for a minute.",
+            "Banana stems and little limited salt. Cook for one more minute.",
+            "Add 1 cup water and pressure cook for 3 whistles.",
+            "Once done, take out ginger, green chilli. Strain the ingredients for cooling down. Reserve the cooked water.",
+            "Once cooled, blend smoothly with little saved water.",
+            "Filter through a metal strainer.",
+            "Adjust limited salt.",
+            "Heat until it boils and continue simmering for a minute."
+          ],
+          "image": "/api/diet-image/1371c4b1e041fad9.jpg",
+          "recipe_id": "019e35daf655c571"
+        },
+        {
+          "name": "Option 7:Broccoli soup",
+          "ingredients": [
+            "Broccoli",
+            "Tomatoes",
+            "Garlic",
+            "Ginger",
+            "Cumin",
+            "Coconut milk"
+          ],
+          "steps": [
+            "Add broccoli in a pot Add water and diced tomatoes.",
+            "Let it to boil",
+            "Then add ginger, garlic, cumin, and a touch of coconut milk.",
+            "Then serve in a bowl with chopped coriander leaves on the topping"
+          ],
+          "image": "/api/diet-image/4ef098b3a43a3f9d.jpg",
+          "recipe_id": "237f77dccecd78b2"
+        }
+      ]
+    },
+    {
+      "heading": "Fruits",
+      "freeText": [
+        "Do not mix fruits. It is always best to take 1 fruit at a time.",
+        "Morning time is best to take fruits . Avoid at night because it may lead to disturbed sleep or may increase cold and mucus formation.",
+        "Do not eat fruit along with other foods like rice or vegetables. It will lead to digestion issues.",
+        "Diabetes Patients - take fruits as advice by your Doctor or physicians.",
+        "In any situation you want to take fruits in between, always have a gap of 1 hr between your fruits and next meals."
+      ],
+      "image": "/api/diet-image/064d664e3167e3bb.jpg"
+    }
+  ],
+  "generalGuidelines": {
+    "title": "Gear 5 Diet Chart",
+    "tagline": "\"Don't focus on how much you eat. Focus on what you eat.\"",
+    "infoTables": [
+      {
+        "title": "My Health School",
+        "columns": [
+          "Morning",
+          "After Waking Up",
+          "After brushing, floss your tongue and Do Oil Pulling with Sesame Oil Have 2 Glasses of Lukewarm Water."
+        ],
+        "rows": [
+          [
+            "Morning Activities before 8 AM",
+            "After Waking Up",
+            "Walking / Yoga / Stretches Sunbathing and Sun Gazing (Before 7am) Have Kashaya (See Recipe Notes)"
+          ],
+          [
+            "Morning Breakfast",
+            "8 - 10am Based on your schedule and Fasting Regime.",
+            "Routine breakfast"
+          ],
+          [
+            "Mini Fasting",
+            "Till Lunch Time",
+            "4 Hrs Mini Fasting based on your schedule. In between the mini fasting detox tea and water is advisable."
+          ],
+          [
+            "Lunch",
+            "12 - 2 PM based on your schedule and Mini Fasting Range",
+            "Routine lunch After lunch start to take detox tea upto 6pm"
+          ],
+          [
+            "Evening Snacks (Optional)",
+            "4 PM Try to Avoid maximum. Eat only if very Hungry",
+            "After lunch start to take detox tea upto 6pm If you are hungry take any Herbal Tea (See Recipe Notes) Any Snacks (Eat rarely) (See Recipe Notes)"
+          ],
+          [
+            "Early Dinner",
+            "6 PM - 8PM After dinner take intermittent fasting (Eg: 8pm - next day 9am)",
+            "Kanji recipe with Thuvayal + Salads/ leftover veggies (See Recipe Notes) (or) Soups with salad. (See Recipe Notes) After dinner take intermittent fasting (Eg: 8pm - next day 9am) Millet Recipe"
+          ],
+          [
+            "Before bed",
+            "9- 10 PM",
+            "Digital Detox (No TV / Mobile /White Lights) Triphala 1gm in Half Glass warm water Eye wash Brushing the Teeth"
+          ]
+        ]
+      },
+      {
+        "title": "Routine schedules",
+        "columns": [
+          "Good Sleep",
+          "10 PM - 5 / 6am",
+          "Good Sleep"
+        ],
+        "rows": [
+          [
+            "Daily (Detox tea)",
+            "10 AM- 6 PM",
+            "Detox tea 500ml - 1 liter For kidney patients should take detox tea at least 200 ml/day"
+          ],
+          [
+            "Daily",
+            "4 - 6 PM",
+            "Walking / Exercise for 20 minutes"
+          ],
+          [
+            "Daily (Fasting)",
+            "Mini fasting",
+            "In between the meals 4 hours"
+          ],
+          [
+            "",
+            "Intermittent fasting",
+            "After dinner take 13 hours fasting"
+          ],
+          [
+            "Weekly Once",
+            "Morning",
+            "Oil bath with Sesame or Coconut Oil"
+          ],
+          [
+            "Skin Diet",
+            "",
+            "Cosmetics (No chemical cosmetics like face cream, Powders) Use natural face pack powders etc… Use Coconut oil soap or Herbal bathing Powder"
+          ]
+        ]
+      },
+      {
+        "title": "Fasting Rules",
+        "columns": [
+          "S.No",
+          "Do’s",
+          "Don'ts"
+        ],
+        "rows": [
+          [
+            "1",
+            "Can Drink water at the time of fasting",
+            "Don’t take milk tea,milk coffee,black coffee,black tea,green tea, juices and other solid foods"
+          ],
+          [
+            "2",
+            "Only do 4 hours in between the meals",
+            "Above 4 hours of min fasting may affect your sugar levels"
+          ],
+          [
+            "3",
+            "Only Do 13 Hours fasting. : Not more than that",
+            "Above 13 hours of fasting may affect your sugar levels"
+          ]
+        ]
+      },
+      {
+        "columns": [
+          "Restrict",
+          "Reduce",
+          "Replace"
+        ],
+        "rows": [
+          [
+            "Fruit Juice, Soda , Cool Drinks or any Energy drinks,More sweeten fruits",
+            "",
+            "Whole fruit - 1 per day,"
+          ],
+          [
+            "Any Protein, multivitamin Supplements, Cashew nuts,dates,dry grapes and figs",
+            "Roasted and limited salted almonds,pistachio,peanuts",
+            "Eat more of soaked nuts like almond, walnut, seeds and Healthy non veg (No red meats)"
+          ],
+          [
+            "White Sugar / Brown Sugar / Sugar free powders,Jaggery Powder , Wild honey , Palm Jaggery (Choose Unadulterated Option),Stevia(Thulasi sugar)",
+            "Nil",
+            "Take 1 whole fruit / Day"
+          ],
+          [
+            "Maida and Maida Products (Cakes , biscuits , puffs , Parotta , noodles,Pizza,Shawarma,Burger etc), Refined Wheat Products (Gluten can damage your intestinal Walls)",
+            "",
+            "Millets - Millet noodles , Millet pasta , millets snacks etc"
+          ],
+          [
+            "",
+            "Refined Table limited salt",
+            "Sea limited salt (Cheap and best) / pink crystal limited salt (By grinding it make it as a limited salt powder)"
+          ],
+          [
+            "",
+            "White Rice",
+            "Millets / Brown rice/Red rice / traditional unpolished Rice"
+          ],
+          [
+            "",
+            "Chillies (Red chillies,Mirchi chillies and Green chillies)",
+            ""
+          ],
+          [
+            "Packaged Foods (Biscuits , snacks, chips , bakery products, Packaged fruits)",
+            "",
+            "Green Salads , Whole fruits, homemade wheat or millet biscuits or snacks using jaggery powders etc…."
+          ],
+          [
+            "Processed Foods (Refined oil , Palm oil etc)",
+            "",
+            "Wood Pressed oils , Sea limited salt , jaggery powder, millets powder etc"
+          ],
+          [
+            "",
+            "Late night parties , cinema ,Tv . mobile phone.",
+            "Schedule early afternoons ."
+          ]
+        ]
+      }
+    ]
+  },
+  "closingQuote": "“Take care of your body. It’s the only place you have to live.” – Jim Rohn",
+  "disclaimer": "As a dietician and part of My health School, I offer dietary recommendations and suggestions to improve your health, especially for individuals with specific medical conditions. However, it is important to understand that these dietary suggestions are not intended to replace or serve as an alternative to your prescribed medications or medical treatments. My recommendations are meant to complement your existing medical care and enhance your overall health and well-being. I strongly advise against discontinuing any prescribed medications or medical treatments without consulting your primary medical practitioner. Always seek the guidance of a qualified healthcare professional if you are considering making any changes to your medical treatment plan,"
+}
