@@ -11,6 +11,17 @@ const NAV_ITEMS = [
     ),
   },
   {
+    key: 'students',
+    label: 'Register Student',
+    icon: (
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="8" cy="7" r="3" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M2.5 17c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        <path d="M15.5 4.5v4.4M13.3 6.7h4.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     key: 'tracker',
     label: 'Dietitian Department Tracker',
     icon: (

@@ -25,4 +25,17 @@ function parseCSV(text) {
   return rows;
 }
 
-module.exports = { parseCSV };
+// Inverse of parseCSV — quotes a field only when it needs it (contains a
+// comma, quote or newline), doubling any embedded quotes, RFC4180-style.
+function quoteField(value) {
+  const s = value == null ? '' : String(value);
+  if (/[",\r\n]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
+  return s;
+}
+
+function toCSV(headers, rows) {
+  const lines = [headers, ...rows].map((row) => row.map(quoteField).join(','));
+  return lines.join('\r\n');
+}
+
+module.exports = { parseCSV, toCSV };

@@ -304,3 +304,57 @@ alter table public.diet_patient_detail_fields add column if not exists clinical_
 -- Same RLS pattern as the tables above: service_role only, client always
 -- goes through /api/patient-detail-fields.
 alter table public.diet_patient_detail_fields enable row level security;
+
+-- Native, in-app student registry — the "Register Student" module's own
+-- store (see server/lib/studentsStore.js), built so day-to-day student
+-- intake, viewing and CSV export no longer depend on the external Google
+-- Sheet at all. Deliberately separate from, and does not replace, the
+-- existing sheet-backed Tracker/GearViewer flows — those are untouched.
+-- student_id defaults to an auto-generated "APPSTU-0001"-style code (same
+-- sequence-backed default pattern as diet_issues.code/diet_requirements.code
+-- above) whenever a coach leaves the Student ID field blank at registration.
+create sequence if not exists public.diet_students_code_seq;
+
+create table if not exists public.diet_students (
+  id uuid primary key default gen_random_uuid(),
+  student_id text unique default ('APPSTU-' || lpad(nextval('public.diet_students_code_seq')::text, 4, '0')),
+  name text not null,
+  contact text,
+  batch text,
+  hc_name text,
+  category text,
+  tl_name text,
+  batch_status text,
+  doh text,
+  doe text,
+  course_start_date text,
+  days_since_joined text,
+  total_handover text,
+  gender text,
+  age text,
+  height text,
+  weight text,
+  current_day text,
+  intro_call_status text,
+  blood_report_date text,
+  veg_preference text,
+  language text,
+  condition_raw text,
+  food_allergy text,
+  dislike_food text,
+  secondary_condition text,
+  past_history text,
+  supplement text,
+  gear2_diet_type text,
+  gear3_diet_type text,
+  gear4_diet_type text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  created_by_id uuid references auth.users (id) on delete set null,
+  created_by_name text,
+  updated_by_name text
+);
+create index if not exists diet_students_name_idx on public.diet_students (name);
+-- Same RLS pattern as the tables above: service_role only, client always
+-- goes through /api/students.
+alter table public.diet_students enable row level security;

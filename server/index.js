@@ -39,6 +39,16 @@ const { getPatientDetailFields, savePatientDetailFields, ALL_FIELD_KEYS: ALL_PAT
 const { suggestRecipeViaAI } = require('./lib/geminiRecipeSuggest');
 const { detectConditions } = require('./lib/conditionMatch');
 const { findBestImageMatch } = require('./lib/nameMatch');
+const { toCSV } = require('./lib/csv');
+const {
+  listStudents,
+  createStudent,
+  updateStudent,
+  deleteStudent,
+  exportHeaders,
+  exportRows,
+  bulkImportStudents,
+} = require('./lib/studentsStore');
 
 const CONTENT_BUCKET = 'diet-content';
 
@@ -1311,6 +1321,90 @@ app.put('/api/patient-detail-fields', requireTL, async (req, res) => {
   } catch (err) {
     console.error('Failed to save patient detail fields config:', err);
     res.status(500).json({ error: 'Could not save field configuration' });
+  }
+});
+
+// ---- Register Student module: the app's own native student registry,
+// replacing the need for an external sheet for new data entry (see
+// server/lib/studentsStore.js / supabase/schema.sql's diet_students table).
+// Open to any signed-in staff member for read/create/update — this is meant
+// to be filled in by an employee/health coach during intake, same trust
+// level as raising an issue or a requirement. Delete is TL-or-developer only,
+// same tier as the other destructive actions in this file.
+function actorFromReq(req) {
+  return {
+    id: req.user.id,
+    name: req.user.user_metadata?.full_name || req.user.email?.split('@')[0] || 'Someone',
+  };
+}
+
+app.get('/api/students', async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  try {
+    res.json({ students: await listStudents() });
+  } catch (err) {
+    console.error('Failed to list students:', err);
+    res.status(500).json({ error: 'Could not load students' });
+  }
+});
+
+// A specific literal path registered before '/api/students/:id' below, so
+// Express can never let ':id' swallow "export.csv" as an id param.
+app.get('/api/students/export.csv', async (req, res) => {
+  try {
+    const students = await listStudents();
+    const csv = toCSV(exportHeaders(), exportRows(students));
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader('Content-Disposition', 'attachment; filename="students.csv"');
+    res.send(csv);
+  } catch (err) {
+    console.error('Failed to export students:', err);
+    res.status(500).json({ error: 'Could not export students' });
+  }
+});
+
+app.post('/api/students', async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  try {
+    const student = await createStudent(req.body || {}, actorFromReq(req));
+    res.status(201).json(student);
+  } catch (err) {
+    res.status(400).json({ error: String(err.message || err) });
+  }
+});
+
+app.put('/api/students/:id', async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  try {
+    res.json(await updateStudent(req.params.id, req.body || {}, actorFromReq(req)));
+  } catch (err) {
+    res.status(400).json({ error: String(err.message || err) });
+  }
+});
+
+app.delete('/api/students/:id', requireTL, async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  try {
+    await deleteStudent(req.params.id);
+    res.status(204).end();
+  } catch (err) {
+    res.status(400).json({ error: String(err.message || err) });
+  }
+});
+
+// Bulk "Upload Sheet": body is the raw CSV text (read client-side via
+// FileReader, same pattern as this app's existing base64 image uploads) —
+// never deletes anything, a row naming an existing Student ID updates it,
+// everything else inserts fresh. See bulkImportStudents for the full
+// column-matching/upsert behavior.
+app.post('/api/students/import', async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  const { csvText } = req.body || {};
+  if (typeof csvText !== 'string' || !csvText.trim()) return res.status(400).json({ error: 'csvText is required' });
+  try {
+    res.json(await bulkImportStudents(csvText, actorFromReq(req)));
+  } catch (err) {
+    res.status(400).json({ error: String(err.message || err) });
   }
 });
 

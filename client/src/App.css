@@ -3243,3 +3243,110 @@ select.issue-badge { cursor: pointer; appearance: none; padding-right: 22px; bac
      own cards make. */
   .diet-recipe-image { height: auto; aspect-ratio: 15 / 7; object-fit: cover; max-height: none; }
 }
+
+/* ---------- Register Student module ---------- */
+.students-header-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.students-name-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--accent-strong);
+  cursor: pointer;
+  text-align: left;
+}
+.students-name-link:hover { text-decoration: underline; }
+.students-count { font-size: 13px; color: var(--text-muted); white-space: nowrap; }
+.students-row-actions { display: flex; gap: 6px; white-space: nowrap; }
+.students-edit-btn,
+.students-delete-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.students-edit-btn:hover { border-color: var(--accent); color: var(--accent-strong); }
+.students-delete-btn:hover { border-color: var(--danger); color: var(--danger); }
+
+.upload-result {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.upload-result-warn { color: var(--danger); }
+
+/* Register/Edit Student wizard */
+.modal-card-wide { max-width: 720px; }
+.wizard-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 14px 22px 0;
+}
+.wizard-step-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 5px 12px 5px 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.wizard-step-item:disabled { cursor: not-allowed; opacity: 0.55; }
+.wizard-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--text);
+  font-size: 11px;
+}
+.wizard-step-item-done .wizard-step-num { background: var(--accent); color: white; }
+.wizard-step-item-active {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  background: var(--accent-bg);
+}
+.wizard-step-item-active .wizard-step-num { background: var(--accent); color: white; }
+@media (max-width: 560px) {
+  .wizard-step-label { display: none; }
+  .wizard-step-item { padding: 5px; }
+}
+
+.wizard-review { display: flex; flex-direction: column; gap: 18px; }
+.wizard-review-group h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.wizard-review-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 20px;
+}
+.wizard-review-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13.5px;
+}
+.wizard-review-label { color: var(--text-muted); }
+.wizard-review-value { font-weight: 600; text-align: right; }
+@media (max-width: 560px) {
+  .wizard-review-grid { grid-template-columns: 1fr; }
+}
