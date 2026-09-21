@@ -6,3 +6,12 @@ server/data/
 .vercel
 .env*
 server/diet-images-staging/
+
+# Original .docx gear templates — one-time source material for the
+# diet-data JSON migration (server/diet-data/*.json), already run and
+# committed. Not read by the running server (it serves .docx content from
+# the "diet-content" Supabase Storage bucket instead) — see server/scripts/
+# migrate-all.js / sync-content-to-storage.js if this ever needs regenerating
+# from a restored backup.
+server/content/
+server/content-archive-2026-09-09/
