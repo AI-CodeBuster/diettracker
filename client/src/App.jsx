@@ -8,6 +8,7 @@ import GearViewer from './components/GearViewer';
 import Login from './components/Login';
 import Sidebar from './components/Sidebar';
 import IssuesPage from './components/IssuesPage';
+import LibraryPage from './components/LibraryPage';
 import StudentsPage from './components/StudentsPage';
 import RequirementsPage from './components/RequirementsPage';
 import DietRemarksPage from './components/DietRemarksPage';
@@ -42,7 +43,7 @@ function App() {
   const [foodRules, setFoodRules] = useState([]);
   const [viewer, setViewer] = useState(null); // { person, gear }
   const [fullscreen, setFullscreen] = useState(false);
-  const [section, setSection] = useState('tracker'); // 'tracker' | 'dashboard' | 'issues' | 'requirements' | 'diet-remarks' | 'students'
+  const [section, setSection] = useState('tracker'); // 'tracker' | 'dashboard' | 'issues' | 'requirements' | 'diet-remarks' | 'students' | 'library'
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [role, setRole] = useState(null);
   const [statuses, setStatuses] = useState([]); // bulk /api/patient-status, shared by chips/filter/dashboard
@@ -522,6 +523,8 @@ function App() {
       <div className="app-content">
         {section === 'students' ? (
           <StudentsPage isTL={role === 'tl'} isDeveloper={role === 'developer'} />
+        ) : section === 'library' ? (
+          <LibraryPage />
         ) : section === 'issues' ? (
           <IssuesPage currentUserEmail={session.user.email} isDeveloper={role === 'developer'} />
         ) : section === 'requirements' ? (

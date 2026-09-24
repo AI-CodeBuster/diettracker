@@ -31,13 +31,13 @@ const { writeTLVerification, DIET_ACCURACY_VALUES, DIET_QUALITY_VALUES } = requi
 const { writePrepStatus } = require('./lib/prepStatusWriter');
 const { logEffort, todaysCountsByPerson, latestPreparedAt } = require('./lib/effortLogStore');
 const { listPatientActivity } = require('./lib/patientActivityStore');
-const { findEligibleRecipes } = require('./lib/recipeEligibility');
+const { findEligibleRecipes, extractTerms, categoriesForTerms } = require('./lib/recipeEligibility');
 const { readRecipeOverrides, writeRecipeOverride } = require('./lib/recipeOverrideStore');
 const { readScheduleOverrides, writeScheduleOverride } = require('./lib/scheduleOverrideStore');
-const { listManualRecipes, saveManualRecipe } = require('./lib/manualRecipeStore');
+const { listManualRecipes, saveManualRecipe, listManualRecipesFull, addLibraryRecipe } = require('./lib/manualRecipeStore');
 const { getPatientDetailFields, savePatientDetailFields, ALL_FIELD_KEYS: ALL_PATIENT_DETAIL_FIELD_KEYS, CATEGORY_KEYS: PATIENT_DETAIL_FIELD_CATEGORIES } = require('./lib/patientDetailFieldsStore');
 const { suggestRecipeViaAI } = require('./lib/geminiRecipeSuggest');
-const { detectConditions } = require('./lib/conditionMatch');
+const { detectConditions, BASE_CONDITIONS } = require('./lib/conditionMatch');
 const { findBestImageMatch } = require('./lib/nameMatch');
 const { toCSV } = require('./lib/csv');
 const {
@@ -402,6 +402,101 @@ app.post('/api/manual-recipes', async (req, res) => {
   } catch (err) {
     console.error('Failed to save manual recipe to library:', err);
     res.status(500).json({ error: 'Could not save recipe to library' });
+  }
+});
+
+// GET /api/recipe-library-full — powers BOTH the standalone Library sidebar
+// section (client/src/components/LibraryPage.jsx) AND, embedded, the "From
+// Library" tab of DietTemplateView's own [+ Add Recipe] picker
+// (client/src/components/AddRecipeModal.jsx) — the two are now the SAME
+// RecipeLibraryBrowser component so they always show the same set of
+// recipes with the same filters, in both directions: a recipe added from a
+// patient's plan appears here in the sidebar, and a recipe added from the
+// sidebar is immediately pickable for any patient's plan. The WHOLE
+// cross-condition library (server/diet-data/recipe-library.json) plus every
+// recipe ever saved into diet_manual_recipes (via /api/manual-recipes OR
+// /api/recipe-library — same table, see manualRecipeStore.js), normalized
+// to one shape.
+//
+// Every recipe, regardless of which route saved it, gets the SAME gear/
+// category derivation: its own explicit gear/categories if it has them (set
+// directly by POST /api/recipe-library), otherwise derived from mealTypes
+// (breakfast/lunch/dinner) — every recipe-library.json entry has this, and
+// so does anything saved via the OLDER /api/manual-recipes route (e.g.
+// "Enter Manually" from inside a patient's plan), which never writes
+// gear/categories directly. Without this fallback, a recipe added from a
+// patient's plan would be listed here but silently excluded the instant a
+// coach picked a Gear or Category filter — the exact "doesn't show up"
+// gap this shared endpoint exists to close.
+//
+// Optional dietType/allergyText query params apply the SAME hard safety
+// filters findEligibleRecipes uses (diet type match + allergen exclusion) —
+// used only when this is called from INSIDE a patient's plan, never by the
+// standalone sidebar Library (which has no patient to be safe for). Kept
+// invisible/non-negotiable rather than exposed as a pill, same convention
+// AddRecipeModal.jsx's own top comment already documents for [Add]/
+// [Replace] Recipe.
+const MEAL_TYPE_TO_GEAR = { breakfast: 2, lunch: 3, dinner: 4 };
+app.get('/api/recipe-library-full', async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  const { dietType, allergyText } = req.query;
+  try {
+    const manualRecipes = await listManualRecipesFull();
+    const legacy = recipeLibrary.map((r) => ({ ...r, addedAt: null }));
+    let all = [...manualRecipes, ...legacy].map((r) => ({
+      ...r,
+      gear: (r.gear && r.gear.length) ? r.gear : (r.mealTypes || []).map((m) => MEAL_TYPE_TO_GEAR[m]).filter(Boolean),
+      categories: (r.categories && r.categories.length) ? r.categories : (r.mealTypes || []).map((m) => m.charAt(0).toUpperCase() + m.slice(1)),
+    }));
+    if (dietType) all = all.filter((r) => (r.dietTypes || []).includes(dietType));
+    if (allergyText) {
+      const allergyCats = categoriesForTerms(extractTerms(allergyText));
+      all = all.filter((r) => !(r.allergens || []).some((cat) => allergyCats.has(cat)));
+    }
+    res.json({ recipes: all });
+  } catch (err) {
+    console.error('Failed to load recipe library:', err);
+    res.status(500).json({ error: 'Could not load the recipe library — has supabase/schema.sql been re-run for the gear/categories columns?' });
+  }
+});
+
+const LIBRARY_CATEGORIES = new Set(['Breakfast', 'Lunch', 'Dinner', 'Snacks', 'Kashayam', 'Fruits', 'Nuts', 'Herbal Tea', 'Juice', 'Salad', 'Soup']);
+const LIBRARY_GEARS = new Set([2, 3, 4]);
+
+// POST /api/recipe-library — the Library's own [+ Add recipe], distinct from
+// /api/manual-recipes above: that route tags a recipe with whichever single
+// gear/meal a coach happened to have a patient's plan open to; this one asks
+// for the Library's own vocabulary directly (condition(s), gear(s),
+// categories, language), since there's no patient context to derive them
+// from here.
+app.post('/api/recipe-library', async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  const { recipe, conditions, gear, categories, language, dietTypes } = req.body || {};
+  const validConditions = Array.isArray(conditions) && conditions.length > 0 && conditions.every((c) => BASE_CONDITIONS.includes(c));
+  const validGear = Array.isArray(gear) && gear.length > 0 && gear.every((g) => LIBRARY_GEARS.has(Number(g)));
+  const validCategories = Array.isArray(categories) && categories.length > 0 && categories.every((c) => LIBRARY_CATEGORIES.has(c));
+  const validLanguage = language === 'ENG' || language === 'TAM';
+  const validDietTypes = dietTypes === undefined || (Array.isArray(dietTypes) && dietTypes.every((d) => DIET_TYPES.has(d)));
+  if (!isValidOverrideRecipe(recipe) || !validConditions || !validGear || !validCategories || !validLanguage || !validDietTypes) {
+    return res.status(400).json({ error: 'name, ingredients, steps, at least one condition, gear and category, and a language are required' });
+  }
+  try {
+    const recipeId = `manual-${Date.now().toString(36)}-${crypto.randomBytes(4).toString('hex')}`;
+    const allergens = categoriesMentionedIn([recipe.name, ...(recipe.ingredients || [])].join(' '));
+    const createdByName = req.user.user_metadata?.full_name || req.user.email?.split('@')[0] || 'Someone';
+    const saved = await addLibraryRecipe({
+      recipe: { ...recipe, recipe_id: recipeId, allergens },
+      conditions,
+      dietTypes: dietTypes && dietTypes.length ? dietTypes : ['VEG', 'NONVEG', 'EGG'],
+      language,
+      gear: gear.map(Number),
+      categories,
+      createdByName,
+    });
+    res.json(saved);
+  } catch (err) {
+    console.error('Failed to add library recipe:', err);
+    res.status(500).json({ error: 'Could not save recipe — has supabase/schema.sql been re-run for the gear/categories columns?' });
   }
 });
 

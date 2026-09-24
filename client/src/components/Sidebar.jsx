@@ -34,6 +34,17 @@ const NAV_ITEMS = [
     ),
   },
   {
+    key: 'library',
+    label: 'Recipe Library',
+    icon: (
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 3.5h5.5v13H4a1.5 1.5 0 0 1-1.5-1.5v-10A1.5 1.5 0 0 1 4 3.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+        <path d="M16 3.5h-5.5v13H16a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 16 3.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+        <path d="M5 6.5h2.5M5 9h2.5M12.5 6.5H15M12.5 9H15" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     key: 'issues',
     label: 'Bugs & Enhancements',
     icon: (

@@ -2915,6 +2915,23 @@ select.issue-badge { cursor: pointer; appearance: none; padding-right: 22px; bac
 .diet-ai-retry-btn { margin-top: 10px; }
 .diet-manual-image-preview { display: block; width: 100%; max-width: 240px; height: 140px; object-fit: cover; border-radius: 8px; margin-top: 8px; }
 
+/* Recipe Library (sidebar "Library" section) — condition/gear/category/
+   language/date-added filter rows above the results grid, and the tag chips
+   + added-on line on each card. */
+.library-filter-group { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+.library-filter-group-label { flex-shrink: 0; width: 76px; font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; }
+.library-filter-pills { margin: 0; }
+.library-toggle-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.library-toggle-pill { font-size: 12.5px; padding: 5px 12px; }
+
+.library-recipe-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.library-tag { display: inline-block; font-size: 11px; font-weight: 600; border-radius: 999px; padding: 2px 9px; background: var(--surface-alt); color: var(--text-muted); border: 1px solid var(--border); }
+.library-tag-condition { background: var(--surface-alt); color: var(--accent); border-color: transparent; }
+.library-tag-gear { background: var(--surface-alt); }
+.library-tag-category { background: var(--surface-alt); }
+.library-tag-language { background: var(--surface-alt); font-style: italic; }
+.library-recipe-added { margin-top: 10px; font-size: 11.5px; color: var(--text-muted); }
+
 .diet-recipe-select-btn {
   margin-top: auto;
   background: var(--accent);
@@ -2999,6 +3016,24 @@ select.issue-badge { cursor: pointer; appearance: none; padding-right: 22px; bac
     padding: 0 !important;
     background: none !important;
   }
+  /* Chromium drops any author background-color from a printed page unless
+     the page opts back in — .diet-mealplan already opts in below (its own
+     comment explains the root cause), but three more real, already-
+     declared backgrounds are silently invisible on paper for the same
+     reason: .diet-cover-table th's shaded label column (page 2), and —
+     more importantly — .diet-cover-blood-row-moderate/-high td's amber/red
+     tint on an out-of-range blood value (page 2's Clinical Details table)
+     and .diet-notes' amber guideline callout (prints under a meal's
+     schedule table). The blood-value tint in particular is clinically
+     meaningful, not decorative — losing it in print is a real loss of
+     information, not just a flatter look. print-color-adjust is inherited,
+     so setting it once here (this pipeline's own print root — see
+     ".diet-template, .diet-template *{ visibility: visible }" above)
+     reaches all of them with no new selector per element. Page 1 is
+     unaffected regardless: .diet-cover-intro below already forces its own
+     background/border/box-shadow to none !important, so there is nothing
+     left on that page for this to reveal. */
+  .diet-template { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   .diet-template-pdf-btn, .diet-template-close-btn, .diet-template-tabs,
   .diet-template-revert-all-btn, .diet-template-highlight-btn, .diet-recipe-actions, .diet-revert-error-banner { display: none; }
   /* The toolbar (title + action buttons) is screen-only chrome — hiding the
@@ -3052,6 +3087,13 @@ select.issue-badge { cursor: pointer; appearance: none; padding-right: 22px; bac
      about the meal the diagram just explained, so it belongs directly
      below it on that same page, not pushed off onto a page of its own. */
   .diet-schedule-image { break-before: page; break-inside: avoid; }
+  /* Every recipe photo is already protected as part of its own whole
+     break-inside: avoid card, and .diet-schedule-image guards itself the
+     same way just above — .diet-group-image (a freeText-only group's own
+     illustrative photo: Category 2/3, Salad Law, Water Law) is the one
+     image left sitting bare in a group's normal flow with nothing stopping
+     the print engine from slicing it across a page boundary. */
+  .diet-group-image { break-inside: avoid; }
   /* The "Generated <date>" stamp is useful while browsing on screen (which
      copy is this?) but not wanted in the PDF a coach hands to a patient —
      print-only hide keeps it showing on screen. */
@@ -3094,7 +3136,17 @@ select.issue-badge { cursor: pointer; appearance: none; padding-right: 22px; bac
      isn't sharing it. break-after keeps whatever comes next (Table of
      Contents is gone from print — see below — so this is Diet Schedule/
      Recipes) starting on its own page too. */
-  .diet-cover-card { break-after: page; break-inside: avoid; }
+  /* box-shadow: none is a necessary corollary of the print-color-adjust
+     opt-in above, not cosmetic on its own: .diet-cover-card's screen rule
+     declares box-shadow: var(--shadow) alongside its background, and
+     Chromium's default was dropping both for free. Un-suppressing
+     backgrounds without also re-zeroing this would put a soft drop-shadow
+     around page 2's questionnaire card that no other printed page in this
+     document has (.diet-mealplan/.diet-recipe already zero their own
+     box-shadow below, same convention). The background itself is left
+     alone — showing it is the same shaded-card look already restored for
+     .diet-mealplan, so it reads as consistent rather than a regression. */
+  .diet-cover-card { break-after: page; break-inside: avoid; box-shadow: none; }
   /* .diet-cover-blood-table (nested inside Clinical Details' "Blood Report
      Findings" row, itself only ~60% of the page's width) is a DIFFERENT
      class from .diet-table above — none of that table's fixes reach it.
@@ -3134,6 +3186,51 @@ select.issue-badge { cursor: pointer; appearance: none; padding-right: 22px; bac
      the card's own border on top of whatever table-layout: fixed +
      overflow-wrap already guarantee below. */
   .diet-mealplan { break-inside: avoid; box-shadow: none; width: calc(100% - 24px); margin: 0 12px 16px; }
+  /* Additive longhand override, same selector/specificity, later in source
+     order — only margin-bottom changes (16px -> 20px), the shorthand above
+     is left as-is rather than repeated. A Diet Schedule card and a General
+     Guidelines card (both .diet-mealplan) can stack back to back on one
+     printed page; 16px read as cramped for two visually distinct,
+     separately-titled cards directly on top of each other, more so now
+     that each has a visible fill/border of its own again (below). */
+  .diet-mealplan { margin-bottom: 20px; }
+  /* .diet-mealplan-title had no orphan protection or ruled-off styling of
+     its own, unlike .diet-recipe-group-title (16px + border-bottom,
+     further below). The parent .diet-mealplan's own break-inside: avoid
+     already keeps title and table together in the normal case;
+     break-after: avoid is belt-and-suspenders for the rare table taller
+     than a page that forces an internal break anyway, so the title is
+     never left stranded alone at a page foot. */
+  .diet-mealplan-title { break-after: avoid; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  /* Chromium drops any background-color (and box-shadow) from a printed
+     page unless the page opts back in — this is why a real "Download as
+     PDF" export currently shows the schedule/info card and its table
+     header with NO fill at all, even though .diet-mealplan's own
+     background: var(--surface) and .diet-table th's own
+     background: var(--surface-alt) (both screen rules above) are already
+     declared: a header row with no shading reads as identical to a body
+     row, and a "card" with no fill (this block already zeroes its
+     box-shadow too) reads as loose, unboxed content rather than a
+     bordered table — a real source of "no clarity in the data" on paper,
+     not just a cosmetic gap. print-color-adjust is inherited, so one
+     declaration on the card wrapper un-suppresses it and every
+     descendant's already-existing background rules together. Scoped to
+     .diet-mealplan, not every .diet-table site-wide, so this never
+     reaches page 1 or page 2's cover questionnaire tables (a separate DOM
+     subtree, untouched here). */
+  .diet-mealplan { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  /* Border-bottom-only (screen rule above) reads as a loose stack of
+     underlined rows at real paper size, not an unambiguous grid — exactly
+     the "content with no clarity" a table needs to avoid. A full 1px box
+     on every th/td frames each cell; a heavier border-bottom singles out
+     the header row as a real dividing line once its shading (above) is
+     switched back on. Reuses --border, the same token the screen rule
+     already uses, and never touches table-layout: fixed/overflow-wrap
+     below — only draws lines on top of that already-safe column model.
+     Scoped under .diet-mealplan to leave the cover page's own tables
+     exactly as they are. */
+  .diet-mealplan .diet-table th, .diet-mealplan .diet-table td { border: 1px solid var(--border); }
+  .diet-mealplan .diet-table th { border-bottom: 2px solid var(--border); vertical-align: middle; }
   /* .diet-table's screen layout (table-layout: auto, .diet-table-wrap's
      overflow-x: auto for whatever doesn't fit) sizes each column by its own
      content — fine on screen, where a wide row just scrolls, but print has
@@ -3155,6 +3252,25 @@ select.issue-badge { cursor: pointer; appearance: none; padding-right: 22px; bac
      cell's content actually needs one, as a last resort, so the column
      width from above is never overrun regardless of what's in the cell. */
   .diet-table th, .diet-table td { overflow-wrap: anywhere; }
+  /* .diet-table can legitimately span several printed pages (a long
+     day-by-day schedule) — that's fine — but nothing stops a single ROW
+     from being sliced in half across that page boundary today, which is
+     exactly the "content breaking with no clarity" failure this pass is
+     meant to close. The OLDER docx-preview pipeline already solved this
+     for its own tables (#print-root tr/thead above: "Keep rows ... whole
+     across sheet boundaries instead of slicing a row's text in half") —
+     .diet-table (this newer pipeline) simply never got the equivalent.
+     table-header-group repeats the Days/Breakfast/Lunch/... header row on
+     every continuation page instead of just the first, so a long
+     multi-page schedule still reads as one coherent table. Confirmed
+     harmless on page 2's .diet-cover-table (PatientCoverPage.jsx's
+     CoverTable renders only a <tbody>, no <thead>, so the thead rule
+     simply has nothing to match there) and on .diet-cover-blood-table
+     (a different class entirely, untouched). Neither line touches
+     table-layout: fixed or overflow-wrap: anywhere above — only row/header
+     fragmentation, never column sizing. */
+  .diet-table thead { display: table-header-group; }
+  .diet-table tr { break-inside: avoid; }
   /* table-layout: fixed alone splits every column equally, which wastes
      space on the short "Day 7" column and cramps the long breakfast
      description — first/last get a sized share, whatever's in between
@@ -3180,6 +3296,15 @@ select.issue-badge { cursor: pointer; appearance: none; padding-right: 22px; bac
   .diet-table:has(.diet-table-day) th:first-child, .diet-table:has(.diet-table-day) td:first-child { width: 11%; }
   .diet-table:has(.diet-table-day):has(tr > :nth-child(3)) th:last-child,
   .diet-table:has(.diet-table-day):has(tr > :nth-child(3)) td:last-child { width: 23%; }
+  /* A day value ("Day 1", "Day 2") is short and categorical, not a
+     sentence — centering it (and its header, "Days") in its own already-
+     narrow 11% column makes that read immediately, instead of sitting
+     flush left like the long meal-description columns beside it, which
+     correctly stay left/top-aligned for their wrapped text. Reuses the
+     exact existing :has(.diet-table-day) scoping above (same selector,
+     new declaration only) — already excludes the cover page's tables and
+     the day-less General Guidelines tables, so no further scoping needed. */
+  .diet-table:has(.diet-table-day) th:first-child, .diet-table:has(.diet-table-day) td:first-child { text-align: center; vertical-align: middle; }
   /* Recipe cards print 2 per page when they're short enough, fewer when
      they're not — never split across a page. Three earlier attempts at
      "2 per page" were tried and abandoned before this one, all built on
@@ -3227,6 +3352,58 @@ select.issue-badge { cursor: pointer; appearance: none; padding-right: 22px; bac
     break-inside: avoid;
     box-shadow: none;
   }
+  /* The on-screen border (var(--border), a pale #e4e1f5 lavender) reads
+     fine against the app's off-white screen UI but is nearly invisible
+     against plain printer paper, so a card reads as unboxed loose text —
+     no different from the table-without-a-border problem above. A solid,
+     non-alpha accent stripe on the top edge is a BORDER, not a
+     background — Chromium's print engine draws borders unconditionally
+     regardless of the "print backgrounds" setting, so the card gets a
+     real, always-visible boundary with no dependency on that toggle.
+     Scoped entirely to properties inside this single, already
+     non-fragmenting .diet-recipe block — nothing here touches
+     break-inside, display, width, or groups cards together, so it can
+     never re-trigger the four reverted side-by-side layouts above. */
+  .diet-recipe { border-top: 3px solid var(--accent-strong); padding: 16px 18px 18px; }
+  .diet-recipe-image { border: 1px solid var(--border); margin-bottom: 12px; }
+  /* Turns the recipe name into an actual card header (sized up, accent-
+     colored, ruled off) instead of a first line of body text no heavier
+     than the labels below it. overflow-wrap: anywhere is the same
+     defensive guarantee already proven necessary for table cells above —
+     a long, unbroken recipe name (no spaces to wrap at) could otherwise
+     push past the card's own padding and the page's right margin, the
+     exact "content breaking out of the margin" failure mode this whole
+     pass is guarding against. */
+  .diet-recipe-name { font-size: 16px; line-height: 1.3; color: var(--accent-strong); padding-bottom: 8px; margin-bottom: 10px; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
+  .diet-recipe-block { margin-bottom: 10px; }
+  /* "Ingredients"/"Preparation" were plain muted-gray caption text, no
+     different in weight from screen-only chrome. The accent color is a
+     foreground color (always prints); the chip background behind it is a
+     bonus once "print backgrounds" is on, so it needs its own
+     color-adjust rather than relying on Chromium's default (which
+     silently drops it, same root cause as the table header above). */
+  .diet-recipe-label { display: inline-block; color: var(--accent-strong); background: var(--accent-bg); padding: 2px 8px; border-radius: 4px; margin-bottom: 6px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  /* Ingredient/step text is the other place a long unbroken run (a
+     compound word, a bracketed measurement) could overflow the card's
+     content width — same overflow-wrap guarantee as the recipe name and
+     every table cell above, now covering every piece of text on the
+     printed page rather than just tables. A touch more indent and
+     line-height, plus a bold accent marker, also make the numbered steps
+     actually look numbered and aligned rather than cramped. ::marker only
+     restyles the bullet/number glyph — it doesn't touch how the card as a
+     whole fragments (still governed solely by .diet-recipe's own
+     break-inside: avoid above). */
+  .diet-recipe-block ul, .diet-recipe-block ol { padding-left: 20px; line-height: 1.5; }
+  .diet-recipe-block li { margin-bottom: 5px; overflow-wrap: anywhere; }
+  .diet-recipe-block ol li::marker { font-weight: 700; color: var(--accent-strong); }
+  .diet-recipe-block ul li::marker { color: var(--accent); }
+  /* The note was a bare italic line, nothing setting it apart from the
+     preparation steps right above it. A left rule (border, always prints)
+     plus a matching tint (background, needs the adjust property above)
+     turns it into a small callout, the way a printed recipe card usually
+     marks a chef's-tip aside — same overflow-wrap guarantee as the rest
+     of the card's text. */
+  .diet-recipe-note { margin-top: 10px; padding: 6px 10px; border-left: 3px solid var(--accent); background: var(--accent-bg); overflow-wrap: anywhere; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   /* The on-screen rule below (height: auto + max-height: 320 + contain)
      keeps the WHOLE photo visible uncropped, which is right for interactive
      browsing but produces wildly inconsistent card heights in a printed

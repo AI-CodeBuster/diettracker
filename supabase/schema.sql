@@ -142,6 +142,16 @@ create table if not exists public.diet_manual_recipes (
 );
 alter table public.diet_manual_recipes enable row level security;
 
+-- Added for the standalone recipe Library module (sidebar): a recipe added
+-- there is tagged with gear numbers and the Library's own free-form
+-- categories (Snacks, Kashayam, Fruits, Nuts, ...), neither of which
+-- meal_types/conditions above capture — meal_types stays breakfast/lunch/
+-- dinner only, for the existing [Replace]/[Add] pickers' gear-derived
+-- mealType matching. created_at (already on this table) doubles as the
+-- Library's "added on" timestamp, so no new column was needed for that.
+alter table public.diet_manual_recipes add column if not exists gear smallint[] not null default '{}'::smallint[];
+alter table public.diet_manual_recipes add column if not exists categories text[] not null default '{}'::text[];
+
 -- Bugs & enhancements raised from inside the app's own "Bugs & Enhancements"
 -- section. `code` is a short display id (DEV-0001, DEV-0002, ...) generated
 -- from a sequence rather than derived from `id`, so it stays stable and

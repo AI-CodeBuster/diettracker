@@ -215,6 +215,30 @@ ID, and an unrelated spreadsheet could reuse an ID that belongs to a real
 patient in the default tracker. Status chips still show, derived from that
 sheet's own Blood/Prep/TL-verification columns.
 
+## Recipe Library
+
+The sidebar's **Recipe Library** section browses the whole cross-condition
+recipe library in one place — every recipe from `server/diet-data/
+recipe-library.json` plus every recipe added straight from this page —
+filterable by condition, gear, category (Breakfast, Lunch, Dinner, Snacks,
+Kashayam, Fruits, Nuts, Herbal Tea, Juice, Salad, Soup) and language, with a
+date-added filter (Yesterday / Last 7 days / Last 15 days / Last 1 month).
+
+**+ Add recipe** asks for all four tags (condition, gear, category, language)
+plus the usual name/ingredients/steps/photo, and records who added it and
+when. Recipes migrated from the original source documents predate this
+feature, so they show "Not recorded" for added-on and never match a
+date-added filter (there's nothing to compare against) — their Category
+filter falls back to their breakfast/lunch/dinner meal type instead of the
+Library's fuller category list, since that's the only tag they were ever
+given.
+
+**One-time setup required**: run the updated `supabase/schema.sql` in the
+Supabase SQL Editor (safe to re-run the whole file) to add the `gear` and
+`categories` columns to `diet_manual_recipes`. Until you do, the Library page
+shows a clear error instead of a recipe list, and the rest of the app
+(including the existing [Replace Recipe]/[Add Recipe] pickers) is unaffected.
+
 ## How the diet-plan matching works
 
 Each gear button looks at the person's condition (preferring the coach's
