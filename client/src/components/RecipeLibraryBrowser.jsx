@@ -34,31 +34,26 @@ function baseConditions(recipe) {
   return (recipe.conditions || []).map((c) => c.split('+')[0]);
 }
 
-// Single-select per field, not multi — clicking a pill replaces whatever was
-// picked for that field rather than adding to it, and clicking the active
-// pill again clears it back to "any" (skipped for the Added row, which
-// always has a selection — "Any time" is itself one of its options, so
-// there's no separate "cleared" state to toggle back to).
-function FilterPills({ label, options, value, onChange, renderOption, allowDeselect = true }) {
+// One value per field, not multi — a plain <select>, so picking a new value
+// always replaces whatever was chosen before. `placeholder` renders as its
+// own leading "Any ..." option representing "no filter"; the Added row
+// omits it since DATE_RANGE_OPTIONS already starts with "Any time" as a
+// real option, not a separate cleared state. `parse` converts the always-
+// stringy DOM value back to whatever type the filter actually compares
+// against (Gear's options are numbers — see RecipeLibraryBrowser's own
+// `.includes(gearFilter)` checks below, which would silently never match
+// against a string "2").
+function FilterSelect({ label, options, value, onChange, renderOption, placeholder, parse = (v) => v }) {
   return (
-    <div className="library-filter-group">
-      <span className="library-filter-group-label">{label}</span>
-      <div className="issues-pills library-filter-pills">
-        {options.map((opt) => {
-          const active = value === opt;
-          return (
-            <button
-              key={opt}
-              type="button"
-              className={`issues-pill${active ? ' issues-pill-active' : ''}`}
-              onClick={() => onChange(active && allowDeselect ? '' : opt)}
-            >
-              {renderOption ? renderOption(opt) : opt}
-            </button>
-          );
-        })}
-      </div>
-    </div>
+    <label className="modal-field">
+      <span className="modal-label">{label}</span>
+      <select value={value} onChange={(e) => onChange(parse(e.target.value))}>
+        {placeholder !== undefined && <option value="">{placeholder}</option>}
+        {options.map((opt) => (
+          <option key={opt} value={opt}>{renderOption ? renderOption(opt) : opt}</option>
+        ))}
+      </select>
+    </label>
   );
 }
 
@@ -68,7 +63,11 @@ function FilterPills({ label, options, value, onChange, renderOption, allowDesel
 function LibraryRecipeCard({ recipe, onSelect, selecting }) {
   return (
     <div className="diet-recipe diet-recipe-alt">
-      {recipe.image && <AuthedImage className="diet-recipe-image" src={recipe.image} alt={recipe.name} />}
+      {/* lazy: the whole point of the grid this card sits in — see
+          AuthedImage's own comment on why this is opt-in and why THIS is
+          exactly the place it's needed (hundreds of cards can mount at
+          once here, unlike anywhere else AuthedImage is used). */}
+      {recipe.image && <AuthedImage className="diet-recipe-image" src={recipe.image} alt={recipe.name} lazy />}
       <h4 className="diet-recipe-name">{recipe.name}</h4>
       {!recipe.reviewed && <span className="diet-recipe-unreviewed-tag">Unreviewed draft</span>}
 
@@ -118,7 +117,7 @@ function RecipeLibraryBrowser({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
-  // One value per field, not a list — see FilterPills' own comment.
+  // One value per field, not a list — see FilterSelect's own comment.
   const [conditionFilter, setConditionFilter] = useState(initialConditionFilter);
   const [gearFilter, setGearFilter] = useState(initialGearFilter);
   const [categoryFilter, setCategoryFilter] = useState('');
@@ -190,41 +189,47 @@ function RecipeLibraryBrowser({
         </button>
       </div>
 
-      <FilterPills
-        label="Condition"
-        options={Object.keys(CONDITION_LABELS)}
-        value={conditionFilter}
-        onChange={setConditionFilter}
-        renderOption={(c) => CONDITION_LABELS[c]}
-      />
-      <FilterPills
-        label="Gear"
-        options={LIBRARY_GEAR_OPTIONS}
-        value={gearFilter}
-        onChange={setGearFilter}
-        renderOption={(g) => `Gear ${g}`}
-      />
-      <FilterPills
-        label="Category"
-        options={LIBRARY_CATEGORY_OPTIONS}
-        value={categoryFilter}
-        onChange={setCategoryFilter}
-      />
-      <FilterPills
-        label="Language"
-        options={Object.keys(LANGUAGE_LABELS)}
-        value={languageFilter}
-        onChange={setLanguageFilter}
-        renderOption={(l) => LANGUAGE_LABELS[l]}
-      />
-      <FilterPills
-        label="Added"
-        options={DATE_RANGE_OPTIONS.map((o) => o.key)}
-        value={dateRange}
-        onChange={setDateRange}
-        renderOption={(key) => DATE_RANGE_OPTIONS.find((o) => o.key === key).label}
-        allowDeselect={false}
-      />
+      <div className="diet-add-filters">
+        <FilterSelect
+          label="Condition"
+          options={Object.keys(CONDITION_LABELS)}
+          value={conditionFilter}
+          onChange={setConditionFilter}
+          renderOption={(c) => CONDITION_LABELS[c]}
+          placeholder="Any condition"
+        />
+        <FilterSelect
+          label="Gear"
+          options={LIBRARY_GEAR_OPTIONS}
+          value={gearFilter}
+          onChange={setGearFilter}
+          renderOption={(g) => `Gear ${g}`}
+          placeholder="Any gear"
+          parse={(v) => (v === '' ? '' : Number(v))}
+        />
+        <FilterSelect
+          label="Category"
+          options={LIBRARY_CATEGORY_OPTIONS}
+          value={categoryFilter}
+          onChange={setCategoryFilter}
+          placeholder="Any category"
+        />
+        <FilterSelect
+          label="Language"
+          options={Object.keys(LANGUAGE_LABELS)}
+          value={languageFilter}
+          onChange={setLanguageFilter}
+          renderOption={(l) => LANGUAGE_LABELS[l]}
+          placeholder="Any language"
+        />
+        <FilterSelect
+          label="Added"
+          options={DATE_RANGE_OPTIONS.map((o) => o.key)}
+          value={dateRange}
+          onChange={setDateRange}
+          renderOption={(key) => DATE_RANGE_OPTIONS.find((o) => o.key === key).label}
+        />
+      </div>
 
       {error && <div className="error-banner">{error}</div>}
       {loading && <div className="loading-banner">Loading…</div>}

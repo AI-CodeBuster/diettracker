@@ -2915,12 +2915,14 @@ select.issue-badge { cursor: pointer; appearance: none; padding-right: 22px; bac
 .diet-ai-retry-btn { margin-top: 10px; }
 .diet-manual-image-preview { display: block; width: 100%; max-width: 240px; height: 140px; object-fit: cover; border-radius: 8px; margin-top: 8px; }
 
-/* Recipe Library (sidebar "Library" section) — condition/gear/category/
-   language/date-added filter rows above the results grid, and the tag chips
-   + added-on line on each card. */
-.library-filter-group { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
-.library-filter-group-label { flex-shrink: 0; width: 76px; font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; }
-.library-filter-pills { margin: 0; }
+/* Recipe Library (sidebar "Library" section, and embedded in DietTemplateView's
+   [+ Add Recipe] "From Library" tab) — condition/gear/category/language/
+   date-added filters render as plain <select> dropdowns via the shared
+   .diet-add-filters/.modal-field styling above (RecipeLibraryBrowser.jsx's
+   own FilterSelect); .library-toggle-* below is a DIFFERENT UI, the tag
+   picker on the [+ Add recipe] FORM itself (AddLibraryRecipeModal.jsx),
+   which stays pill-based since it's inherently multi-select. What follows
+   here is just the tag chips + added-on line on each result card. */
 .library-toggle-group { display: flex; flex-wrap: wrap; gap: 8px; }
 .library-toggle-pill { font-size: 12.5px; padding: 5px 12px; }
 
